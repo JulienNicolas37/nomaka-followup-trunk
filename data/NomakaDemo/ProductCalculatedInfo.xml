@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductCalculatedInfo productId="10000" totalQuantityOrdered="100.000000" lastUpdatedStamp="2014-03-10 14:41:35.033" lastUpdatedTxStamp="2014-03-10 14:41:34.562" createdStamp="2014-03-10 14:41:35.033" createdTxStamp="2014-03-10 14:41:34.562"/>
+    <ProductCalculatedInfo productId="10001" totalQuantityOrdered="25.000000" lastUpdatedStamp="2014-03-10 14:54:19.131" lastUpdatedTxStamp="2014-03-10 14:54:18.846" createdStamp="2014-03-10 14:54:19.131" createdTxStamp="2014-03-10 14:54:18.846"/>
+    <ProductCalculatedInfo productId="10003" totalQuantityOrdered="60.000000" lastUpdatedStamp="2014-03-10 15:00:46.597" lastUpdatedTxStamp="2014-03-10 15:00:46.381" createdStamp="2014-03-10 15:00:46.597" createdTxStamp="2014-03-10 15:00:46.381"/>
+    <ProductCalculatedInfo productId="10004" totalQuantityOrdered="25.000000" lastUpdatedStamp="2014-03-10 14:54:19.075" lastUpdatedTxStamp="2014-03-10 14:54:18.846" createdStamp="2014-03-10 14:54:19.075" createdTxStamp="2014-03-10 14:54:18.846"/>
+</entity-engine-xml>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShipmentCostEstimate shipmentCostEstimateId="10000" shipmentMethodTypeId="Rapide" carrierPartyId="10002" carrierRoleTypeId="CARRIER" productStoreShipMethId="10001" productStoreId="10000" orderFlatPrice="15.00" orderPricePercent="0.500000" lastUpdatedStamp="2014-03-10 09:48:44.877" lastUpdatedTxStamp="2014-03-10 09:48:44.762" createdStamp="2014-03-10 09:48:44.877" createdTxStamp="2014-03-10 09:48:44.762"/>
+</entity-engine-xml>

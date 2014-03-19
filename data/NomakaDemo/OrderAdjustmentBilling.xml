@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <OrderAdjustmentBilling orderAdjustmentId="10000" invoiceId="10000" invoiceItemSeqId="00002" amount="100.00" lastUpdatedStamp="2014-03-10 14:51:36.934" lastUpdatedTxStamp="2014-03-10 14:51:30.868" createdStamp="2014-03-10 14:51:36.934" createdTxStamp="2014-03-10 14:51:30.868"/>
+    <OrderAdjustmentBilling orderAdjustmentId="10010" invoiceId="10001" invoiceItemSeqId="00002" amount="300.00" lastUpdatedStamp="2014-03-10 14:55:43.362" lastUpdatedTxStamp="2014-03-10 14:55:36.966" createdStamp="2014-03-10 14:55:43.362" createdTxStamp="2014-03-10 14:55:36.966"/>
+    <OrderAdjustmentBilling orderAdjustmentId="10011" invoiceId="10001" invoiceItemSeqId="00004" amount="60.00" lastUpdatedStamp="2014-03-10 14:55:43.434" lastUpdatedTxStamp="2014-03-10 14:55:36.966" createdStamp="2014-03-10 14:55:43.434" createdTxStamp="2014-03-10 14:55:36.966"/>
+</entity-engine-xml>

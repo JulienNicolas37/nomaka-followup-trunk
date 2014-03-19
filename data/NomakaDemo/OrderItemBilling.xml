@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <OrderItemBilling orderId="R&#233;appro Carlets" orderItemSeqId="00001" invoiceId="10000" invoiceItemSeqId="00001" shipmentReceiptId="10000" quantity="100.000000" amount="5.00" lastUpdatedStamp="2014-03-10 14:51:36.792" lastUpdatedTxStamp="2014-03-10 14:51:30.868" createdStamp="2014-03-10 14:51:36.792" createdTxStamp="2014-03-10 14:51:30.868"/>
+    <OrderItemBilling orderId="r&#233;appro ferrage" orderItemSeqId="00001" invoiceId="10001" invoiceItemSeqId="00001" shipmentReceiptId="10001" quantity="25.000000" amount="60.00" lastUpdatedStamp="2014-03-10 14:55:43.221" lastUpdatedTxStamp="2014-03-10 14:55:36.966" createdStamp="2014-03-10 14:55:43.221" createdTxStamp="2014-03-10 14:55:36.966"/>
+    <OrderItemBilling orderId="r&#233;appro ferrage" orderItemSeqId="00002" invoiceId="10001" invoiceItemSeqId="00003" shipmentReceiptId="10002" quantity="25.000000" amount="12.00" lastUpdatedStamp="2014-03-10 14:55:43.402" lastUpdatedTxStamp="2014-03-10 14:55:36.966" createdStamp="2014-03-10 14:55:43.402" createdTxStamp="2014-03-10 14:55:36.966"/>
+</entity-engine-xml>

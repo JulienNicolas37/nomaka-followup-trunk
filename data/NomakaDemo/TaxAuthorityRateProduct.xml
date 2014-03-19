@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <TaxAuthorityRateProduct taxAuthorityRateSeqId="10000" taxAuthGeoId="FRA" taxAuthPartyId="10006" taxAuthorityRateTypeId="SALES_TAX" taxShipping="Y" taxPercentage="20.000000" taxPromotions="Y" fromDate="2014-03-10 10:21:55.479" lastUpdatedStamp="2014-03-10 10:21:55.479" lastUpdatedTxStamp="2014-03-10 10:21:55.267" createdStamp="2014-03-10 10:21:55.479" createdTxStamp="2014-03-10 10:21:55.267"/>
+</entity-engine-xml>

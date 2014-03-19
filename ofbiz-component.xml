@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ofbiz-component name="followup"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-component.xsd">
+    <!-- define resource loaders; most common is to use the component resource loader -->
+    <resource-loader name="main" type="component"/>
+
+    <!-- place the config directory on the classpath to access configuration files -->
+    <classpath type="dir" location="config"/>
+    <classpath type="dir" location="dtd"/>
+
+    <!-- load single or multiple external libraries -->
+    <classpath type="jar" location="build/lib/*"/>
+    <classpath type="jar" location="lib/*"/>
+
+    <!-- entity resources: model(s), eca(s), group, and data definitions -->
+    <entity-resource type="model" reader-name="main" loader="main" location="entitydef/entitymodel.xml"/>
+    <!-- <entity-resource type="eca" reader-name="main" loader="main" location="entitydef/eecas.xml"/> -->
+    <!-- <entity-resource type="data" reader-name="seed" loader="main" location="data/FollowupTypeData.xml"/> -->
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/FollowupSecurityData.xml"/>
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/FollowupPortletData.xml"/>
+    <entity-resource type="data" reader-name="seed" loader="main" location="data/FollowupPortalData.xml"/>
+    <!-- <entity-resource type="data" reader-name="demo" loader="main" location="data/FollowupDemoData.xml"/> -->
+    
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/FirstOfAll.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/Party.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/UserLogin.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/UserPreference.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/UserLoginSecurityGroup.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyRole.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/TaxAuthority.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/TaxAuthorityRateProduct.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyGroup.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ContactMech.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyContactMech.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyContactMechPurpose.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyAcctgPreference.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyStatus.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/Person.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/TelecomNumber.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/Facility.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/FacilityContactMech.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/FacilityContactMechPurpose.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PostalAddress.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ShipmentMethodType.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/CarrierShipmentMethod.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStore.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStorePaymentSetting.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStoreShipmentMeth.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStoreFacility.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProdCatalog.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductCategory.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStoreCatalog.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/Product.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductPrice.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductPriceChange.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductDimension.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductAssoc.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStoreRole.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductKeyword.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductFacility.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductCalculatedInfo.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductAverageCost.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/SupplierProduct.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/WorkEffort.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/WorkEffortKeyword.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/WorkEffortStatus.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/WorkEffortAssoc.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/WorkEffortGoodStandard.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/Invoice.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderHeader.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/InvoiceStatus.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/InvoiceRole.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/InvoiceItem.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderStatus.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderRole.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderItem.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderItemPriceInfo.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderAdjustment.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderAdjustmentBilling.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderItemShipGroup.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderItemShipGroupAssoc.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderContactMech.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderPaymentPreference.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/InventoryItem.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/Payment.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/Shipment.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ShipmentRouteSegment.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ShipmentCostEstimate.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ShipmentItem.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ShipmentReceipt.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ShipmentStatus.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderShipment.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderItemBilling.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/OrderItemShipGrpInvRes.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PaymentApplication.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/InventoryItemDetail.xml"/>
+
+    <!-- service resources: model(s), eca(s) and group definitions -->
+    <service-resource type="model" loader="main" location="servicedef/services.xml"/>
+    <!--
+    <service-resource type="eca" loader="main" location="servicedef/secas.xml"/>
+    <service-resource type="group" loader="main" location="servicedef/groups.xml"/>
+    -->
+
+    <test-suite loader="main" location="testdef/FollowupTests.xml"/>
+
+    <!-- web applications; will be mounted when using the embedded container -->
+    <webapp name="followup"
+        title="Followup"
+        server="default-server"
+        location="webapp/followup"
+        base-permission="OFBTOOLS,FOLLOWUP"
+        mount-point="/followup"/>
+</ofbiz-component>

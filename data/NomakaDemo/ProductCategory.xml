@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductCategory productCategoryId="Cat&#233;gorie g&#233;n&#233;rale" productCategoryTypeId="BEST_SELL_CATEGORY" categoryName="Cat&#233;gorie g&#233;n&#233;rale" lastUpdatedStamp="2014-03-10 12:20:26.651" lastUpdatedTxStamp="2014-03-10 12:20:26.537" createdStamp="2014-03-10 12:20:26.651" createdTxStamp="2014-03-10 12:20:26.537"/>
+</entity-engine-xml>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <InvoiceStatus statusId="INVOICE_IN_PROCESS" invoiceId="10000" statusDate="2014-03-10 14:51:35.717" lastUpdatedStamp="2014-03-10 14:51:36.042" lastUpdatedTxStamp="2014-03-10 14:51:30.868" createdStamp="2014-03-10 14:51:36.042" createdTxStamp="2014-03-10 14:51:30.868"/>
+    <InvoiceStatus statusId="INVOICE_IN_PROCESS" invoiceId="10001" statusDate="2014-03-10 14:55:42.173" lastUpdatedStamp="2014-03-10 14:55:42.512" lastUpdatedTxStamp="2014-03-10 14:55:36.966" createdStamp="2014-03-10 14:55:42.512" createdTxStamp="2014-03-10 14:55:36.966"/>
+</entity-engine-xml>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SecurityPermission description="View operations in the Followup Component." permissionId="FOLLOWUP_VIEW"/>
+    <SecurityPermission description="Create operations in the Followup Component." permissionId="FOLLOWUP_CREATE"/>
+    <SecurityPermission description="Update operations in the Followup Component." permissionId="FOLLOWUP_UPDATE"/>
+    <SecurityPermission description="Delete operations in the Followup Component." permissionId="FOLLOWUP_DELETE"/>
+    <SecurityPermission description="ALL operations in the Followup Component." permissionId="FOLLOWUP_ADMIN"/>
+    <SecurityGroupPermission groupId="FULLADMIN" permissionId="FOLLOWUP_ADMIN"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FOLLOWUP_CREATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FOLLOWUP_DELETE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FOLLOWUP_UPDATE"/>
+    <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FOLLOWUP_VIEW"/>
+    <SecurityGroupPermission groupId="VIEWADMIN" permissionId="FOLLOWUP_VIEW"/>
+    <SecurityGroupPermission groupId="BIZADMIN" permissionId="FOLLOWUP_ADMIN"/>
+</entity-engine-xml>

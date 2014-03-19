@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-properties.xsd">
+    <property key="Dashboard">
+        <value xml:lang="en">Dashboard</value>
+        <value xml:lang="fr">Tableau de bord</value>
+    </property>
+    <property key="FO_Delayed">
+        <value xml:lang="en">FO Delayed</value>
+        <value xml:lang="fr">OF en retard</value>
+    </property>
+    <property key="FO_InProduction">
+        <value xml:lang="en">FO in production</value>
+        <value xml:lang="fr">OF en production</value>
+    </property>
+    <property key="FO_Ready">
+        <value xml:lang="en">FO ready</value>
+        <value xml:lang="fr">OF prêt</value>
+    </property>
+    <property key="Followup">
+        <value xml:lang="en">Follow Up</value>
+        <value xml:lang="fr">Suivi de production</value>
+    </property>
+    <property key="FollowupActualStartDate">
+        <value xml:lang="en">Real start of production</value>
+        <value xml:lang="fr">Début de production réel</value>
+    </property>
+    <property key="FollowupActualEndDate">
+        <value xml:lang="en">Real end of production</value>
+        <value xml:lang="fr">Fin de production réelle</value>
+    </property>
+    <property key="FollowupApplication">
+        <value xml:lang="en">Followup Application</value>
+        <value xml:lang="fr">Gestion du suivi de production</value>
+        <value xml:lang="zh">Followup应用程序</value>
+    </property>
+    <property key="FollowupCompanyName">
+        <value xml:lang="en">OFBiz: Followup</value>
+        <value xml:lang="fr">OFBiz: Suivi de production</value>
+    </property>
+    <property key="FollowupCompanySubtitle">
+        <value xml:lang="en">Part of the Open For Business Family of Open Source Software</value>
+        <value xml:lang="fr">Module complémentaire du logiciel Open Source "Open For Business"</value>
+        <value xml:lang="it">Un modulo della famiglia di software open source Open For Business</value>
+        <value xml:lang="zh">开源软件OFBiz的组成部分</value>
+    </property>
+    <property key="FollowupDescription">
+        <value xml:lang="en">Description</value>
+        <value xml:lang="fr">Description</value>
+    </property>
+    <property key="FollowupDesktop">
+        <value xml:lang="en">Followup for Desktop</value>
+        <value xml:lang="fr">Suivi de production pour le bureau</value>
+    </property>
+    <property key="FollowupEstimatedStartDate">
+        <value xml:lang="en">Estimated start of production</value>
+        <value xml:lang="fr">Début de production estimé</value>
+    </property>
+    <property key="FollowupEstimatedEndDate">
+        <value xml:lang="en">Estimated end of production</value>
+        <value xml:lang="fr">Fin de production estimée</value>
+    </property>
+    <property key="FollowupFactory">
+        <value xml:lang="en">Followup for Factory</value>
+        <value xml:lang="fr">Suivi de production pour l'usine</value>
+    </property>
+    <property key="FollowupLegalNotices">
+        <value xml:lang="en">Legal notices</value>
+        <value xml:lang="fr">Mentions légales</value>
+    </property>
+    <property key="FollowupPlannedTime">
+        <value xml:lang="en">Planned time</value>
+        <value xml:lang="fr">Temps prévu</value>
+    </property>
+    <property key="FollowupPortlet">
+        <value xml:lang="en">Follow Up with Portlet</value>
+        <value xml:lang="fr">Suivi de production par Portlet</value>
+    </property>
+    <property key="FollowupProdRunId">
+        <value xml:lang="en">Prod run Id</value>
+        <value xml:lang="fr">Ref de l'OF</value>
+    </property>
+    <property key="FollowupProdRunName">
+        <value xml:lang="en">Prod run name</value>
+        <value xml:lang="fr">Nom de l'OF</value>
+    </property>
+    <property key="FollowupProductionRuns">
+        <value xml:lang="en">Production Runs</value>
+        <value xml:lang="fr">Ordres de fabrication</value>
+    </property>
+    <property key="FollowupQuantityProduced">
+        <value xml:lang="en">Produced quantity</value>
+        <value xml:lang="fr">Quantité produite</value>
+    </property>
+    <property key="FollowupQuantityToProduce">
+        <value xml:lang="en">Quantity to produce</value>
+        <value xml:lang="fr">Quantité à produire</value>
+    </property>
+    <property key="FollowupRealTime">
+        <value xml:lang="en">Real time</value>
+        <value xml:lang="fr">Temps réel</value>
+    </property>
+    <property key="FollowupReturnTopList">
+        <value xml:lang="en">Return to the top of the list</value>
+        <value xml:lang="fr">Retour en haut de la liste</value>
+    </property>
+    <property key="FollowupScreen">
+        <value xml:lang="en">Follow Up with Screen</value>
+        <value xml:lang="fr">Suivi de production par Screens</value>
+    </property>
+    <property key="FollowupSeeProductionRun">
+        <value xml:lang="en">See Production Run</value>
+        <value xml:lang="fr">Voir l'Ordre de Fabrication</value>
+    </property>
+    <property key="FollowupSelectProductionRun">
+        <value xml:lang="en">Select Production Run</value>
+        <value xml:lang="fr">Sélection de l'Ordre de Fabrication</value>
+    </property>
+    <property key="FollowupStatus">
+        <value xml:lang="en">Status</value>
+        <value xml:lang="fr">Etat</value>
+    </property>
+    <property key="FollowupTaskBreak">
+        <value xml:lang="en">Break</value>
+        <value xml:lang="fr">Pause</value>
+    </property>
+    <property key="FollowupTaskEnd">
+        <value xml:lang="en">End</value>
+        <value xml:lang="fr">Terminer</value>
+    </property>
+    <property key="FollowupTaskId">
+        <value xml:lang="en">Task Id</value>
+        <value xml:lang="fr">Ref de la tâche</value>
+    </property>
+    <property key="FollowupTaskListInProdRun">
+        <value xml:lang="en">Tasks list</value>
+        <value xml:lang="fr">Liste des tâches</value>
+    </property>
+    <property key="FollowupTaskName">
+        <value xml:lang="en">Task name</value>
+        <value xml:lang="fr">Nom de la tâche</value>
+    </property>
+    <property key="FollowupTaskResume">
+        <value xml:lang="en">Resume</value>
+        <value xml:lang="fr">Reprendre</value>
+    </property>
+    <property key="FollowupTasks">
+        <value xml:lang="en">Tasks</value>
+        <value xml:lang="fr">Tâches</value>
+    </property>
+    <property key="FollowupTaskStart">
+        <value xml:lang="en">Start</value>
+        <value xml:lang="fr">Démarrer</value>
+    </property>
+    <property key="FollowupTaskUnableToStart">
+        <value xml:lang="en">Task unable to start</value>
+        <value xml:lang="fr">Impossible de démarrer l'opération</value>
+    </property>
+    <property key="FollowupViewPermissionError">
+        <value xml:lang="en">You are not allowed to view this page.</value>
+        <value xml:lang="fr">Vous n'êtes pas autorisé à visualiser cette page.</value>
+        <value xml:lang="zh">不允许你浏览这个页面。</value>
+    </property>
+    <property key="More">
+        <value xml:lang="en">More...</value>
+        <value xml:lang="fr">Plus...</value>
+    </property>
+    <property key="PageTitleFollowupProdTask">
+        <value xml:lang="en">Follow-up of Task</value>
+        <value xml:lang="fr">Suivi de l'opération</value>
+    </property>
+    <property key="PageTitleListProdTasks">
+        <value xml:lang="en">List of production tasks</value>
+        <value xml:lang="fr">Liste des opérations de production</value>
+    </property>
+    <property key="PageTitleProdRunDetailsMenu">
+        <value xml:lang="en">Production Run information</value>
+        <value xml:lang="fr">Information sur l'Ordre de Fabrication</value>
+    </property>
+    <property key="PageTitleSelectProdRun">
+        <value xml:lang="en">Select Production Run</value>
+        <value xml:lang="fr">Sélection de l'Ordre de Fabrication</value>
+    </property>
+    
+</resource>

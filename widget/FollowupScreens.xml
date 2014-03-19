@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
+
+    <screen name="main">
+        <section>
+            <actions>
+                <set field="headerItem" value="main"/><!-- this highlights the selected menu-item with name "main" -->
+            </actions>
+            <widgets>
+                <decorator-screen name="FollowupCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="GlobalDecorator">
+        <section>
+            <actions>
+                <property-map resource="FollowupUiLabels" map-name="uiLabelMap" global="true" />
+                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true" />
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true" />
+            </actions>
+            <widgets>
+                <include-screen name="GlobalActions" location="component://common/widget/CommonScreens.xml" />
+                <platform-specific>
+                    <html>
+                        <html-template location="component://followup/webapp/followup/includes/followup/header.ftl" />
+                    </html>
+                </platform-specific>
+                <platform-specific>
+                    <html>
+                        <html-template location="component://followup/webapp/followup/includes/followup/messages.ftl" />
+                    </html>
+                </platform-specific>
+                <decorator-section-include name="body" />
+                <platform-specific>
+                    <html>
+                        <html-template location="component://followup/webapp/followup/includes/followup/footer.ftl" />
+                    </html>
+                </platform-specific>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="CommonDecorator">
+        <section>
+            <actions>
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="FollowupUiLabels" map-name="uiLabelMap" global="true"/>
+                <set field="applicationTitle" value="Follow Up"/>
+            </actions>
+            <widgets>
+                <include-screen name="GlobalDecorator"/>
+            </widgets>
+        </section>
+    </screen>
+
+    <screen name="FollowupDecorator">
+        <section>
+            <actions>
+                <set field="workEffortId" from-field="parameters.workEffortId"/>
+                <entity-one entity-name="WorkEffort" value-field="parameters.workEffort"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="CommonDecorator">
+                    <decorator-section name="body">
+                        <section>
+                            <widgets>
+                                <decorator-section-include name="body"/>
+                            </widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+<screen name="FollowupProductionRunScreen">
+        <section>
+            <actions>
+                <set field="titleProperty" value="FollowupSelectProductionRun"/>
+                <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer"/>
+                <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="50"/>
+                
+                <script location="component://followup/webapp/followup/WEB-INF/actions/LoadAvailableProductionRunAndTasks.groovy"/>
+    
+                <set field="layoutSettings.styleSheets[]" value="/followup/css/followup/style.css" global="true"/>
+                <!--the above line is used to access the newly added style.css inside the css folder-->
+
+                <set field="layoutSettings.javaScripts []" value="/followup/js/libs/jquery-1.8.0.min.js" global="true"/>
+                <set field="layoutSettings.javaScripts []" value="/followup/js/libs/jquery.peity.js" global="true"/>
+                <set field="layoutSettings.javaScripts []" value="/followup/js/libs/jquery.imageload.js" global="true"/>
+                <set field="layoutSettings.javaScripts []" value="/followup/js/libs/jquery.spriteanim.js" global="true"/>
+                <set field="layoutSettings.javaScripts []" value="/followup/js/libs/fastclick.js" global="true"/>
+                <set field="layoutSettings.javaScripts []" value="/followup/js/libs/tweens/TweenMax.min.js" global="true"/>
+                <set field="layoutSettings.javaScripts []" value="/followup/js/libs/tweens/utils/Draggable.min.js" global="true"/>
+                <set field="layoutSettings.javaScripts []" value="/followup/js/followup/script.js" global="true"/>
+                <set field="layoutSettings.javaScripts []" value="/followup/js/followup/updateStatus.js" global="true"/>
+                <!--the above line is used to access the newly added myjavascript.js inside the js folder-->
+    
+            </actions>
+            <widgets>
+                <decorator-screen name="FollowupDecorator" location="${parameters.FollowupDecorator}">
+                    <decorator-section name="body">
+                        <platform-specific><html><html-template location="component://followup/webapp/followup/followuptaskslist.ftl"/></html></platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+</screen>
+    
+</screens>

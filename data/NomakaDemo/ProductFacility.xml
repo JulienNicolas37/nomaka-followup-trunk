@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductFacility productId="10000" facilityId="10000" lastInventoryCount="100.000000" lastUpdatedStamp="2014-03-10 14:51:32.769" lastUpdatedTxStamp="2014-03-10 14:51:30.868" createdStamp="2014-03-10 12:32:26.394" createdTxStamp="2014-03-10 12:32:26.03"/>
+    <ProductFacility productId="10001" facilityId="10000" lastInventoryCount="25.000000" lastUpdatedStamp="2014-03-10 14:55:38.242" lastUpdatedTxStamp="2014-03-10 14:55:36.966" createdStamp="2014-03-10 12:36:32.307" createdTxStamp="2014-03-10 12:36:31.802"/>
+    <ProductFacility productId="10002" facilityId="10000" lastUpdatedStamp="2014-03-10 12:44:21.062" lastUpdatedTxStamp="2014-03-10 12:44:20.445" createdStamp="2014-03-10 12:44:21.062" createdTxStamp="2014-03-10 12:44:20.445"/>
+    <ProductFacility productId="10003" facilityId="10000" lastInventoryCount="-60.000000" lastUpdatedStamp="2014-03-10 15:00:52.956" lastUpdatedTxStamp="2014-03-10 15:00:46.381" createdStamp="2014-03-10 12:46:05.73" createdTxStamp="2014-03-10 12:46:05.102"/>
+    <ProductFacility productId="10004" facilityId="10000" lastInventoryCount="25.000000" lastUpdatedStamp="2014-03-10 14:55:40.448" lastUpdatedTxStamp="2014-03-10 14:55:36.966" createdStamp="2014-03-10 14:36:17.908" createdTxStamp="2014-03-10 14:36:17.287"/>
+</entity-engine-xml>

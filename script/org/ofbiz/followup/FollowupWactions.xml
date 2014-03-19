@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<simple-methods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/simple-methods-v2.xsd">
+    <!--#Bam# product-offer -->
+    <simple-method method-name="ListProdTasks" short-description="action for ListProdTasks portlet">
+        <set field="parameters.workEffortParentId" from-field="parameters.workEffortId" type="String"/>
+    </simple-method>
+   
+    <simple-method method-name="FollowupProdTask" short-description="action for FollowupProdTask portlet">
+        <if-empty field="parameters.workEffortParentId">
+            <clear-field field="parameters.workEffortId"/>
+        </if-empty>
+        <!-- R = Ready -->
+        <set field="parameters.taskStatus" value="R" type="String"/>
+        <set field="parameters.currentlyInProd" value="N" type="String"/>
+        <entity-one value-field="workEffort" entity-name="WorkEffort">
+            <field-map field-name="workEffortId" from-field="parameters.workEffortId"/>
+        </entity-one>
+        <if-compare-field field="workEffort.actualStartDate" operator="not-equals" to-field="nullField">
+            <if-compare-field field="workEffort.actualCompletionDate" operator="not-equals" to-field="nullField">
+                <!-- F = Finished -->
+                <set field="parameters.taskStatus" value="F"/>
+            <else>
+                <!-- S = Started -->
+                <set field="parameters.taskStatus" value="S"/>  
+            </else>
+            </if-compare-field>
+            <entity-condition entity-name="TimeEntry" list="timeEntries" filter-by-date="true">
+                <condition-expr field-name="workEffortId" from-field="parameters.workEffortId"/>
+            </entity-condition>
+            <if-not-empty field="timeEntries">
+                <set field="parameters.currentlyInProd" value="Y"/>
+            </if-not-empty>
+        </if-compare-field>
+    </simple-method>
+   
+    <simple-method method-name="ProdTaskTimeEntries" short-description="action for ProdTaskTimeEntries portlet">
+        <if-empty field="parameters.workEffortParentId">
+            <clear-field field="parameters.workEffortId"/>
+        </if-empty>
+        <set field="parameters.workEffortId" from-field="parameters.workEffortId"/>
+    </simple-method>
+   
+</simple-methods>

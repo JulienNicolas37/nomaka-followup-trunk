@@ -1,0 +1,11 @@
+/*!
+ * VERSION: 0.5.0
+ * DATE: 2013-07-10
+ * UPDATES AND DOCS AT: http://www.greensock.com
+ *
+ * @license Copyright (c) 2008-2013, GreenSock. All rights reserved.
+ * This work is subject to the terms at http://www.greensock.com/terms_of_use.html or for
+ * Club GreenSock members, the software agreement that was issued with your membership.
+ * 
+ * @author: Jack Doyle, jack@greensock.com
+ */(window._gsQueue||(window._gsQueue=[])).push(function(){"use strict";var e=function(t){var n=t.nodeType,r="";if(1===n||9===n||11===n){if("string"==typeof t.textContent)return t.textContent;for(t=t.firstChild;t;t=t.nextSibling)r+=e(t)}else if(3===n||4===n)return t.nodeValue;return r},t=window._gsDefine.plugin({propName:"text",API:2,init:function(t,n,r){var i,s;if("innerHTML"in t){if(this._target=t,"object"!=typeof n&&(n={value:n}),void 0===n.value)return this._text=this._original=[""],!0;for(this._delimiter=n.delimiter||"",this._original=e(t).replace(/\s+/g," ").split(this._delimiter),this._text=n.value.replace(/\s+/g," ").split(this._delimiter),this._runBackwards=r.vars.runBackwards===!0,this._runBackwards&&(i=this._original,this._original=this._text,this._text=i),"string"==typeof n.newClass&&(this._newClass=n.newClass,this._hasClass=!0),"string"==typeof n.oldClass&&(this._oldClass=n.oldClass,this._hasClass=!0),i=this._original.length-this._text.length,s=0>i?this._original:this._text,this._fillChar=n.fillChar||(n.padSpace?"&nbsp;":""),0>i&&(i=-i);--i>-1;)s.push(this._fillChar);return!0}return!1},set:function(e){e>1?e=1:0>e&&(e=0),this._runBackwards&&(e=1-e);var t,n,r,i=this._text.length,s=0|e*i+.5;this._hasClass?(t=this._newClass&&0!==s,n=this._oldClass&&s!==i,r=(t?"<span class='"+this._newClass+"'>":"")+this._text.slice(0,s).join(this._delimiter)+(t?"</span>":"")+(n?"<span class='"+this._oldClass+"'>":"")+this._delimiter+this._original.slice(s).join(this._delimiter)+(n?"</span>":"")):r=this._text.slice(0,s).join(this._delimiter)+this._delimiter+this._original.slice(s).join(this._delimiter),this._target.innerHTML="&nbsp;"===this._fillChar&&-1!==r.indexOf("  ")?r.split("  ").join("&nbsp;&nbsp;"):r}}),n=t.prototype;n._newClass=n._oldClass=n._delimiter=""}),window._gsDefine&&window._gsQueue.pop()();

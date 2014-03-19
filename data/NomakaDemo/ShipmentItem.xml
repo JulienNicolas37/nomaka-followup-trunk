@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShipmentItem shipmentId="10000" shipmentItemSeqId="00001" productId="10000" quantity="100.000000" lastUpdatedStamp="2014-03-10 14:51:12.584" lastUpdatedTxStamp="2014-03-10 14:51:08.276" createdStamp="2014-03-10 14:51:12.584" createdTxStamp="2014-03-10 14:51:08.276"/>
+    <ShipmentItem shipmentId="10001" shipmentItemSeqId="00001" productId="10001" quantity="25.000000" lastUpdatedStamp="2014-03-10 14:55:20.036" lastUpdatedTxStamp="2014-03-10 14:55:13.214" createdStamp="2014-03-10 14:55:20.036" createdTxStamp="2014-03-10 14:55:13.214"/>
+    <ShipmentItem shipmentId="10001" shipmentItemSeqId="00002" productId="10004" quantity="25.000000" lastUpdatedStamp="2014-03-10 14:55:20.469" lastUpdatedTxStamp="2014-03-10 14:55:13.214" createdStamp="2014-03-10 14:55:20.469" createdTxStamp="2014-03-10 14:55:13.214"/>
+</entity-engine-xml>

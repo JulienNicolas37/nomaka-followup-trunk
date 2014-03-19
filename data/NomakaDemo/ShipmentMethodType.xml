@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ShipmentMethodType shipmentMethodTypeId="NO_SHIPPING" description="No Shipping" lastUpdatedStamp="2014-03-10 10:23:02.076" lastUpdatedTxStamp="2014-03-10 10:23:02.008" createdStamp="2014-03-10 10:23:02.076" createdTxStamp="2014-03-10 10:23:02.008"/>
+    <ShipmentMethodType shipmentMethodTypeId="Rapide" description="Envoi sous 48h chrono" sequenceNum="20" lastUpdatedStamp="2014-03-10 09:41:43.401" lastUpdatedTxStamp="2014-03-10 09:41:43.152" createdStamp="2014-03-10 09:41:43.401" createdTxStamp="2014-03-10 09:41:43.152"/>
+    <ShipmentMethodType shipmentMethodTypeId="STANDARD" description="Standard" lastUpdatedStamp="2014-03-10 10:23:02.086" lastUpdatedTxStamp="2014-03-10 10:23:02.008" createdStamp="2014-03-10 10:23:02.086" createdTxStamp="2014-03-10 10:23:02.008"/>
+    <ShipmentMethodType shipmentMethodTypeId="Standard" description="Envoi sous 2 ou 3 jours ouvr&#233;s" sequenceNum="10" lastUpdatedStamp="2014-03-10 09:40:47.486" lastUpdatedTxStamp="2014-03-10 09:40:47.143" createdStamp="2014-03-10 09:40:47.486" createdTxStamp="2014-03-10 09:40:47.143"/>
+</entity-engine-xml>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <SupplierProduct productId="10000" partyId="10003" availableFromDate="2014-03-10 12:30:04.97" supplierPrefOrderId="10_MAIN_SUPPL" minimumOrderQuantity="0.000000" lastPrice="5.000" currencyUomId="EUR" supplierProductId="CarletChene200-200-2" canDropShip="N" lastUpdatedStamp="2014-03-10 12:32:06.154" lastUpdatedTxStamp="2014-03-10 12:32:05.952" createdStamp="2014-03-10 12:32:06.154" createdTxStamp="2014-03-10 12:32:05.952"/>
+    <SupplierProduct productId="10001" partyId="10004" availableFromDate="2014-03-10 12:34:51.5" supplierPrefOrderId="10_MAIN_SUPPL" minimumOrderQuantity="0.000000" lastPrice="60.000" currencyUomId="EUR" supplierProductId="KitFer13392" canDropShip="N" lastUpdatedStamp="2014-03-10 12:35:53.011" lastUpdatedTxStamp="2014-03-10 12:35:52.964" createdStamp="2014-03-10 12:35:53.011" createdTxStamp="2014-03-10 12:35:52.964"/>
+    <SupplierProduct productId="10004" partyId="10004" availableFromDate="2014-03-10 14:35:24.61" supplierPrefOrderId="10_MAIN_SUPPL" minimumOrderQuantity="0.000000" lastPrice="12.000" currencyUomId="EUR" supplierProductId="FixKit123910" canDropShip="N" lastUpdatedStamp="2014-03-10 14:36:02.065" lastUpdatedTxStamp="2014-03-10 14:36:01.925" createdStamp="2014-03-10 14:36:02.065" createdTxStamp="2014-03-10 14:36:01.925"/>
+</entity-engine-xml>

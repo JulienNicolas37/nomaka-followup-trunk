@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PartyContactMech partyId="10000" contactMechId="10000" fromDate="2014-03-10 09:21:46.396" lastUpdatedStamp="2014-03-10 09:22:35.791" lastUpdatedTxStamp="2014-03-10 09:22:35.136" createdStamp="2014-03-10 09:21:46.396" createdTxStamp="2014-03-10 09:21:45.721"/>
+    <PartyContactMech partyId="10001" contactMechId="10004" fromDate="2014-03-10 09:32:44.272" roleTypeId="EMPLOYEE" lastUpdatedStamp="2014-03-10 09:32:44.272" lastUpdatedTxStamp="2014-03-10 09:32:42.647" createdStamp="2014-03-10 09:32:44.272" createdTxStamp="2014-03-10 09:32:42.647"/>
+    <PartyContactMech partyId="10001" contactMechId="10005" fromDate="2014-03-10 09:32:44.498" roleTypeId="EMPLOYEE" lastUpdatedStamp="2014-03-10 09:32:44.498" lastUpdatedTxStamp="2014-03-10 09:32:42.647" createdStamp="2014-03-10 09:32:44.498" createdTxStamp="2014-03-10 09:32:42.647"/>
+    <PartyContactMech partyId="10001" contactMechId="10006" fromDate="2014-03-10 09:32:44.903" roleTypeId="EMPLOYEE" lastUpdatedStamp="2014-03-10 09:32:44.903" lastUpdatedTxStamp="2014-03-10 09:32:42.647" createdStamp="2014-03-10 09:32:44.903" createdTxStamp="2014-03-10 09:32:42.647"/>
+    <PartyContactMech partyId="10003" contactMechId="10007" fromDate="2014-03-10 09:56:50.632" lastUpdatedStamp="2014-03-10 09:56:50.632" lastUpdatedTxStamp="2014-03-10 09:56:50.001" createdStamp="2014-03-10 09:56:50.632" createdTxStamp="2014-03-10 09:56:50.001"/>
+    <PartyContactMech partyId="10004" contactMechId="10008" fromDate="2014-03-10 10:03:59.207" lastUpdatedStamp="2014-03-10 10:03:59.207" lastUpdatedTxStamp="2014-03-10 10:03:58.769" createdStamp="2014-03-10 10:03:59.207" createdTxStamp="2014-03-10 10:03:58.769"/>
+    <PartyContactMech partyId="10005" contactMechId="10009" fromDate="2014-03-10 10:16:31.327" lastUpdatedStamp="2014-03-10 10:16:31.327" lastUpdatedTxStamp="2014-03-10 10:16:30.955" createdStamp="2014-03-10 10:16:31.327" createdTxStamp="2014-03-10 10:16:30.955"/>
+</entity-engine-xml>

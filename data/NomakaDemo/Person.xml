@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <Person partyId="10001" firstName="Julien" middleName="JN" lastName="NICOLAS" personalTitle="M." lastUpdatedStamp="2014-03-10 09:32:43.199" lastUpdatedTxStamp="2014-03-10 09:32:42.647" createdStamp="2014-03-10 09:32:43.199" createdTxStamp="2014-03-10 09:32:42.647"/>
+    <Person partyId="_NA_" lastUpdatedStamp="2014-03-10 10:23:02.021" lastUpdatedTxStamp="2014-03-10 10:23:02.008" createdStamp="2014-03-10 10:23:02.021" createdTxStamp="2014-03-10 10:23:02.008"/>
+</entity-engine-xml>

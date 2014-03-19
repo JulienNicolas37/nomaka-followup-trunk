@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <OrderItemShipGroup orderId="1" shipGroupSeqId="00001" shipmentMethodTypeId="Standard" carrierPartyId="10002" carrierRoleTypeId="CARRIER" contactMechId="10009" maySplit="N" giftMessage="" isGift="N" lastUpdatedStamp="2014-03-10 15:00:47.723" lastUpdatedTxStamp="2014-03-10 15:00:46.381" createdStamp="2014-03-10 15:00:47.723" createdTxStamp="2014-03-10 15:00:46.381"/>
+    <OrderItemShipGroup orderId="R&#233;appro Carlets" shipGroupSeqId="00001" shipmentMethodTypeId="STANDARD" carrierPartyId="_NA_" carrierRoleTypeId="CARRIER" facilityId="10000" contactMechId="10003" maySplit="N" isGift="N" lastUpdatedStamp="2014-03-10 14:41:36.583" lastUpdatedTxStamp="2014-03-10 14:41:34.562" createdStamp="2014-03-10 14:41:36.583" createdTxStamp="2014-03-10 14:41:34.562"/>
+    <OrderItemShipGroup orderId="r&#233;appro ferrage" shipGroupSeqId="00001" shipmentMethodTypeId="STANDARD" carrierPartyId="_NA_" carrierRoleTypeId="CARRIER" facilityId="10000" contactMechId="10003" maySplit="N" isGift="N" lastUpdatedStamp="2014-03-10 14:54:19.743" lastUpdatedTxStamp="2014-03-10 14:54:18.846" createdStamp="2014-03-10 14:54:19.743" createdTxStamp="2014-03-10 14:54:18.846"/>
+</entity-engine-xml>

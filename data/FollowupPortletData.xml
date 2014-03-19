@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<entity-engine-xml>
+
+<!--#Bam# product-offer -->
+    <PortletCategory portletCategoryId="FOLLOWUP" description="Followup Portlet(s)"/>
+  
+<!--   Sh_ProductOfferMgmt portlet -->
+    <PortalPortlet portalPortletId="SelectProdRun"
+        portletName="Select Production Run" 
+        description="portlet to select a production run"
+        portletTypeId="Screenlet"
+        component="followup"
+        subComponent="Followup"/>
+    <PortletPortletCategory portalPortletId="SelectProdRun" portletCategoryId="FOLLOWUP"/>
+
+    <PortalPortlet portalPortletId="ListProdTasks"
+        portletName="List Manufacturing tasks" 
+        description="portlet to list Manufacturing tasks of a production run"
+        portletTypeId="ScreenletList"
+        component="followup"
+        subComponent="Followup"
+        pkIdName="workEffortId"
+        useScript="Y"/>
+    <PortletPortletCategory portalPortletId="ListProdTasks" portletCategoryId="FOLLOWUP"/>
+
+    <PortalPortlet portalPortletId="ProdRunDetailsMenu"
+        portletName="Production Run Details" 
+        description="portlet to show information about selected production run"
+        portletTypeId="Screenlet"
+        component="followup"
+        subComponent="Followup"
+        pkIdName="workEffortId"/>
+    <PortletPortletCategory portalPortletId="ProdRunDetailsMenu" portletCategoryId="FOLLOWUP"/>
+
+    <PortalPortlet portalPortletId="FollowupProdTask"
+        portletName="Follow-up Manufacturing tasks" 
+        description="portlet to follow-up the production of a Manufacturing task"
+        portletTypeId="Screenlet"
+        component="followup"
+        subComponent="Followup"
+        pkIdName="workEffortId"
+        useScript="Y"/>
+    <PortletPortletCategory portalPortletId="FollowupProdTask" portletCategoryId="FOLLOWUP"/>
+
+    <PortalPortlet portalPortletId="ProdRunTaskDetail"
+        portletTypeId="Empty"
+        portletName="Production Run Task Detail"
+        description="Container portlet"
+        component="followup"
+        subComponent="followup"
+        useScript="Y"/>
+    <PortletPortletCategory portalPortletId="ProdRunTaskDetail" portletCategoryId="FOLLOWUP"/>
+
+    <PortalPortlet portalPortletId="ProdTaskTimeEntries"
+        portletName="List Time Entries of Manufacturing tasks" 
+        description="portlet to list Time Entries of Manufacturing tasks contained in a production run"
+        portletTypeId="ScreenletList"
+        component="followup"
+        subComponent="Followup"
+        pkIdName="workEffortId"
+        useScript="Y"/>
+    <PortletPortletCategory portalPortletId="ProdTaskTimeEntries" portletCategoryId="FOLLOWUP"/>
+</entity-engine-xml>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <Payment paymentId="10000" paymentTypeId="VENDOR_PAYMENT" paymentMethodTypeId="COMPANY_ACCOUNT" paymentPreferenceId="10000" partyIdFrom="10000" partyIdTo="10003" statusId="PMNT_NOT_PAID" effectiveDate="2014-03-10 14:50:49.835" amount="600.00" currencyUomId="EUR" lastUpdatedStamp="2014-03-10 14:50:50.599" lastUpdatedTxStamp="2014-03-10 14:50:48.433" createdStamp="2014-03-10 14:50:49.911" createdTxStamp="2014-03-10 14:50:48.433"/>
+    <Payment paymentId="10001" paymentTypeId="VENDOR_PAYMENT" paymentMethodTypeId="COMPANY_ACCOUNT" paymentPreferenceId="10001" partyIdFrom="10000" partyIdTo="10004" statusId="PMNT_NOT_PAID" effectiveDate="2014-03-10 14:55:00.346" amount="2160.00" currencyUomId="EUR" lastUpdatedStamp="2014-03-10 14:55:00.875" lastUpdatedTxStamp="2014-03-10 14:54:59.622" createdStamp="2014-03-10 14:55:00.353" createdTxStamp="2014-03-10 14:54:59.622"/>
+</entity-engine-xml>

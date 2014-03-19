@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <OrderPaymentPreference orderPaymentPreferenceId="10000" orderId="R&#233;appro Carlets" paymentMethodTypeId="COMPANY_ACCOUNT" maxAmount="600.00" statusId="PMNT_NOT_PAID" createdDate="2014-03-10 14:50:50.286" createdByUserLogin="julien" lastUpdatedStamp="2014-03-10 14:50:50.286" lastUpdatedTxStamp="2014-03-10 14:50:48.433" createdStamp="2014-03-10 14:50:50.286" createdTxStamp="2014-03-10 14:50:48.433"/>
+    <OrderPaymentPreference orderPaymentPreferenceId="10001" orderId="r&#233;appro ferrage" paymentMethodTypeId="COMPANY_ACCOUNT" maxAmount="2160.00" statusId="PMNT_NOT_PAID" createdDate="2014-03-10 14:55:00.549" createdByUserLogin="julien" lastUpdatedStamp="2014-03-10 14:55:00.552" lastUpdatedTxStamp="2014-03-10 14:54:59.622" createdStamp="2014-03-10 14:55:00.552" createdTxStamp="2014-03-10 14:54:59.622"/>
+    <OrderPaymentPreference orderPaymentPreferenceId="10002" orderId="1" shipGroupSeqId="00001" paymentMethodTypeId="EXT_OFFLINE" presentFlag="N" swipedFlag="N" overflowFlag="N" maxAmount="18000.00" statusId="PAYMENT_NOT_RECEIVED" createdDate="2014-03-10 15:00:47.269" createdByUserLogin="julien" lastUpdatedStamp="2014-03-10 15:00:48.412" lastUpdatedTxStamp="2014-03-10 15:00:46.381" createdStamp="2014-03-10 15:00:48.412" createdTxStamp="2014-03-10 15:00:46.381"/>
+</entity-engine-xml>

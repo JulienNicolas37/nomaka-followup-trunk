@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
+
+    <form name="SelectProdRun" type="single" target="showPortalPage">
+        <actions>
+            <set field="lookupProductionRun" from-field="lookupProductionRun" default-value="LookupProductionRun"/>
+        </actions>
+        <field name="workEffortId">
+            <lookup target-form-name="${lookupProductionRun}"></lookup>
+        </field>
+        <field name="portalPageId"><hidden value="${parameters.portalPageId}"/></field>
+        <field name="submitButton" title="${uilabelMap.CommonShow}" widget-style="buttontext">
+            <submit/>
+        </field>
+    </form>
+
+    <form name="ProdRunDetailsMenu" type="single" default-entity-name="WorkEffort" target="">
+        <actions>
+            <entity-one entity-name="WorkEffort"/>
+        </actions>
+        <field name="workEffortId" ><display/></field>
+        <field name="workEffortName" ><display/></field>
+        <field name="currentStatusId" >
+            <display-entity entity-name="StatusItem" key-field-name="statusId" description="${description}"/>
+        </field>
+        <field name="description"><display/></field>
+        <field name="facilityId"><display/></field>
+        <field name="quantityToProduce"><display/></field>
+        <field name="quantityProduced"><display/></field>
+        <field name="estimatedStartDate"><display/></field>
+        <field name="estimatedCompletionDate"><display/></field>
+        <field name="actualStartDate"><display/></field>
+        <field name="actualCompletionDate"><display/></field>
+    </form>
+    
+    <form name="ListProdTasks" type="list" list-name="listIt" default-entity-name="WorkEffortProdRunTasksView" separate-columns="true"
+        odd-row-style="alternate-row" header-row-style="header-row" default-table-style="basic-table hover-bar"  >
+        <actions>
+            <entity-condition list="listIt" entity-name="WorkEffortProdRunTasksView" >
+                <condition-expr field-name="workEffortParentId" value="${parameters.workEffortParentId}"/>
+                <order-by field-name="priority"/>
+            </entity-condition>
+        </actions>
+        <field name="workEffortId" title="workEffortParentId = ${widget.workEffortParentId}">
+            <show-portlet portlet-id="FollowupProdTask" target="" description="${workEffortId}" area-id="PP_${portalPageId}FollowupProdTask${portletSeqId}">
+                <parameter param-name="workEffortId"/>
+                <parameter param-name="workEffortParentId"/>
+                <parameter param-name="idDescription" value=" : ${workEffortName} [${workEffortId}]"/>
+            </show-portlet>
+            <show-portlet portlet-id="ProdTaskTimeEntries" target=""  area-id="PP_${portalPageId}ProdTaskTimeEntries${portletSeqId}">
+                <parameter param-name="workEffortId"/>
+                <parameter param-name="workEffortParentId"/>
+                <parameter param-name="idDescription" value=" : ${workEffortName} [${workEffortId}]"/>
+            </show-portlet>
+        </field>
+        <field name="workEffortName"><display/></field>
+        <field name="currentStatusId">
+            <display-entity entity-name="StatusItem" key-field-name="statusId" description="${description}"/>
+        </field>
+        <field name="priority"><display/></field>
+        <field name="quantityToProduce"><display/></field>
+        <field name="quantityProduced"><display/></field>
+        <field name="actualStartDate"><display type="date-time" /></field>
+        <field name="actualCompletionDate"><display type="date-time" /></field>
+        <field name="description"><display/></field>
+    </form>
+
+    <form name="FollowupProdTask" type="single" default-entity-name="WorkEffort" default-map-name="workEffort" target="startProductionTask">
+        <actions>
+            <set field="taskStatus" from-field="parameters.taskStatus"/>
+            <set field="currentlyInProd" from-field="parameters.currentlyInProd"/>
+            <entity-one entity-name="WorkEffort" value-field="workEffort"/>
+            <set field="productionRunId" from-field="workEffort.workEffortParentId"/>
+        </actions>
+<!--         <alt-target use-when="${! empty workEffort.actualStartDate} &amp;&amp; ${empty workEffort.actualCompletionDate}" target="stopProductionTask"/> -->
+        <alt-target use-when="${taskStatus == 'S'}" target="stopProductionTask"/>
+        <field name="productionRunId"><hidden value="${productionRunId}"/></field>
+        <field name="workEffortId" position="1" title="${taskStatus}"><display/></field>
+        <field name="workEffortName" position="2" title="${currentlyInProd}"><display/></field>
+        <field name="currentStatusId" position="1" >
+            <display-entity entity-name="StatusItem" key-field-name="statusId" description="${description}"/>
+        </field>
+        <field name="description" position="2"><display/></field>
+        <field name="quantityToProduce" position="1"><display/></field>
+        <field name="quantityProduced" position="2"><display/></field>
+        <field name="estimatedStartDate" position="1"><display/></field>
+        <field name="estimatedCompletionDate" position="2"><display/></field>
+        <field name="actualStartDate" position="1"><display/></field>
+        <field name="actualCompletionDate" position="2"><display/></field>
+        <field name="submitButton" use-when="${taskStatus == 'R'}" position="1" title="${uiLabelMap.FollowupTaskStart}"><submit button-type="button"/></field>
+        <field name="submitButton" use-when="${taskStatus == 'S'}" position="1" title="${uiLabelMap.FollowupTaskEnd}"><submit button-type="button"/></field>
+        <field name="breakButton" use-when="${taskStatus == 'S' &amp;&amp; currentlyInProd == 'Y'}" title=" " position="2" widget-style="buttontext">
+            <show-portlet portlet-id="FollowupProdTask" area-id="PP_${portalPageId}FollowupProdTask${portletSeqId}" description="${uiLabelMap.FollowupTaskBreak}" target="pauseProductionTask">
+                <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
+            </show-portlet>
+            <show-portlet portlet-id="FollowupProdTask" area-id="${currentAreaId}" >
+                <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
+                <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
+            </show-portlet>
+            <show-portlet portlet-id="ProdTaskTimeEntries" area-id="PP_${portalPageId}ProdTaskTimeEntries${portletSeqId}">
+                <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
+                <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
+            </show-portlet>
+        </field>
+        <field name="resumeButton" use-when="${taskStatus == 'S' &amp;&amp; currentlyInProd == 'N'}" title=" " position="2" widget-style="buttontext">
+            <show-portlet portlet-id="FollowupProdTask" area-id="PP_${portalPageId}FollowupProdTask${portletSeqId}" description="${uiLabelMap.FollowupTaskResume}" target="resumeProductionTask">
+                <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
+            </show-portlet>
+            <show-portlet portlet-id="FollowupProdTask" area-id="${currentAreaId}" >
+                <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
+                <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
+            </show-portlet>
+            <show-portlet portlet-id="ProdTaskTimeEntries" area-id="PP_${portalPageId}ProdTaskTimeEntries${portletSeqId}">
+                <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
+                <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
+            </show-portlet>
+        </field>
+        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}FollowupProdTask${portletSeqId}">
+            <parameter param-name="area-id" value="PP_${portalPageId}FollowupProdTask${portletSeqId}"/>
+            <parameter param-name="portalPortletId" value="FollowupProdTask"/>
+            <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
+            <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
+        </on-event-update-area>
+        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}ListProdTasks${portletSeqId}">
+            <parameter param-name="area-id" value="PP_${portalPageId}ListProdTasks${portletSeqId}"/>
+            <parameter param-name="portalPortletId" value="ListProdTasks"/>
+            <parameter param-name="workEffortId" from-field="workEffort.workEffortParentId"/>
+            <parameter param-name="idDescription" value=" "/>
+        </on-event-update-area>
+        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}ProdTaskTimeEntries${portletSeqId}">
+            <parameter param-name="area-id" value="PP_${portalPageId}ProdTaskTimeEntries${portletSeqId}"/>
+            <parameter param-name="portalPortletId" value="ProdTaskTimeEntries"/>
+            <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
+            <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
+            <parameter param-name="idDescription" value=" "/>
+        </on-event-update-area>
+        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}ProdRunDetailsMenu${portletSeqId}">
+            <parameter param-name="area-id" value="PP_${portalPageId}ProdRunDetailsMenu${portletSeqId}"/>
+            <parameter param-name="portalPortletId" value="ProdRunDetailsMenu"/>
+            <parameter param-name="workEffortId" from-field="workEffort.workEffortParentId"/>
+            <parameter param-name="idDescription" value=" "/>
+        </on-event-update-area>
+    </form>
+
+    <form name="ProdTaskTimeEntries" type="list" list-name="listIt" default-entity-name="TimeEntry" default-map-name="timeEntry" separate-columns="true"
+        odd-row-style="alternate-row" header-row-style="header-row" default-table-style="basic-table hover-bar" >
+        <actions>
+            <entity-condition list="listIt" entity-name="TimeEntry" >
+                <condition-expr field-name="workEffortId" value="${parameters.workEffortId}"/>
+                <order-by field-name="fromDate"/>
+            </entity-condition>
+        </actions>
+        <field name="timeEntryId" ><display/></field>
+        <field name="partyId" ><display/></field>
+        <field name="fromDate" ><display/></field>
+        <field name="thruDate" ><display/></field>
+    </form>
+
+</forms>

@@ -1,0 +1,11 @@
+/*!
+ * VERSION: beta 1.2.0
+ * DATE: 2013-03-01
+ * UPDATES AND DOCS AT: http://www.greensock.com
+ *
+ * @license Copyright (c) 2008-2013, GreenSock. All rights reserved.
+ * This work is subject to the terms at http://www.greensock.com/terms_of_use.html or for
+ * Club GreenSock members, the software agreement that was issued with your membership.
+ * 
+ * @author: Jack Doyle, jack@greensock.com
+ **/(window._gsQueue||(window._gsQueue=[])).push(function(){"use strict";var e=/(\d|\.)+/g,t={aqua:[0,255,255],lime:[0,255,0],silver:[192,192,192],black:[0,0,0],maroon:[128,0,0],teal:[0,128,128],blue:[0,0,255],navy:[0,0,128],white:[255,255,255],fuchsia:[255,0,255],olive:[128,128,0],yellow:[255,255,0],orange:[255,165,0],gray:[128,128,128],purple:[128,0,128],green:[0,128,0],red:[255,0,0],pink:[255,192,203],cyan:[0,255,255],transparent:[255,255,255,0]},n=function(e,t,n){return e=0>e?e+1:e>1?e-1:e,0|255*(1>6*e?t+6*(n-t)*e:.5>e?n:2>3*e?t+6*(n-t)*(2/3-e):t)+.5},r=function(r){if(""===r||null==r||"none"===r)return t.transparent;if(t[r])return t[r];if("number"==typeof r)return[r>>16,255&r>>8,255&r];if("#"===r.charAt(0))return 4===r.length&&(r="#"+r.charAt(1)+r.charAt(1)+r.charAt(2)+r.charAt(2)+r.charAt(3)+r.charAt(3)),r=parseInt(r.substr(1),16),[r>>16,255&r>>8,255&r];if("hsl"===r.substr(0,3)){r=r.match(e);var s=Number(r[0])%360/360,o=Number(r[1])/100,u=Number(r[2])/100,a=.5>=u?u*(o+1):u+o-u*o,f=2*u-a;return r.length>3&&(r[3]=Number(r[3])),r[0]=n(s+1/3,f,a),r[1]=n(s,f,a),r[2]=n(s-1/3,f,a),r}return r.match(e)||t.transparent};window._gsDefine.plugin({propName:"colorProps",priority:-1,API:2,init:function(e,t){this._target=e;var n,i,o,u;for(n in t)o=r(t[n]),this._firstPT=u={_next:this._firstPT,p:n,f:"function"==typeof e[n],n:n,r:!1},i=r(u.f?e[n.indexOf("set")||"function"!=typeof e["get"+n.substr(3)]?n:"get"+n.substr(3)]():e[n]),u.s=Number(i[0]),u.c=Number(o[0])-u.s,u.gs=Number(i[1]),u.gc=Number(o[1])-u.gs,u.bs=Number(i[2]),u.bc=Number(o[2])-u.bs,(u.rgba=i.length>3||o.length>3)&&(u.as=4>i.length?1:Number(i[3]),u.ac=(4>o.length?1:Number(o[3]))-u.as),u._next&&(u._next._prev=u);return!0},set:function(e){for(var t,n=this._firstPT;n;)t=(n.rgba?"rgba(":"rgb(")+(n.s+e*n.c>>0)+", "+(n.gs+e*n.gc>>0)+", "+(n.bs+e*n.bc>>0)+(n.rgba?", "+(n.as+e*n.ac):"")+")",n.f?this._target[n.p](t):this._target[n.p]=t,n=n._next}})}),window._gsDefine&&window._gsQueue.pop()();

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <UserLogin userLoginId="admin" currentPassword="$SHA$pYUt7ntX2$vmD0oBVGVD0TCpUHiJEnBgz1dWA" enabled="Y" hasLoggedOut="N" requirePasswordChange="N" lastLocale="fr" lastUpdatedStamp="2014-03-11 10:50:23.091" lastUpdatedTxStamp="2014-03-11 10:50:23.091" createdStamp="2014-03-07 16:15:35.431" createdTxStamp="2014-03-07 16:15:35.38"/>
+    <UserLoginSecurityGroup userLoginId="admin" groupId="FULLADMIN" fromDate="2001-01-01 12:00:00.0" lastUpdatedStamp="2014-03-07 16:15:35.623" lastUpdatedTxStamp="2014-03-07 16:15:35.38" createdStamp="2014-03-07 16:15:35.623" createdTxStamp="2014-03-07 16:15:35.38"/>
+    <UserPreference userLoginId="admin" userPrefTypeId="javaScriptEnabled" userPrefGroupTypeId="GLOBAL_PREFERENCES" userPrefValue="Y" lastUpdatedStamp="2014-03-11 10:50:23.224" lastUpdatedTxStamp="2014-03-11 10:50:23.176" createdStamp="2014-03-07 16:17:49.559" createdTxStamp="2014-03-07 16:17:49.425"/>
+</entity-engine-xml>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PartyAcctgPreference partyId="10000" fiscalYearStartMonth="1" fiscalYearStartDay="1" taxFormId="US_IRS_1040" cogsMethodId="COGS_AVG_COST" baseCurrencyUomId="EUR" lastOrderNumber="1" oldInvoiceSequenceEnumId="INVSQ_ENF_SEQ" oldOrderSequenceEnumId="ODRSQ_ENF_SEQ" oldQuoteSequenceEnumId="QTESQ_ENF_SEQ" lastUpdatedStamp="2014-03-10 15:00:46.954" lastUpdatedTxStamp="2014-03-10 15:00:46.381" createdStamp="2014-03-10 09:52:49.664" createdTxStamp="2014-03-10 09:52:49.429"/>
+</entity-engine-xml>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <CarrierShipmentMethod shipmentMethodTypeId="NO_SHIPPING" partyId="_NA_" roleTypeId="CARRIER" sequenceNumber="8" lastUpdatedStamp="2014-03-10 10:23:02.143" lastUpdatedTxStamp="2014-03-10 10:23:02.008" createdStamp="2014-03-10 10:23:02.143" createdTxStamp="2014-03-10 10:23:02.008"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="Rapide" partyId="10002" roleTypeId="CARRIER" sequenceNumber="20" lastUpdatedStamp="2014-03-10 09:43:27.462" lastUpdatedTxStamp="2014-03-10 09:43:26.868" createdStamp="2014-03-10 09:43:27.462" createdTxStamp="2014-03-10 09:43:26.868"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="STANDARD" partyId="_NA_" roleTypeId="CARRIER" sequenceNumber="5" lastUpdatedStamp="2014-03-10 10:23:02.116" lastUpdatedTxStamp="2014-03-10 10:23:02.008" createdStamp="2014-03-10 10:23:02.116" createdTxStamp="2014-03-10 10:23:02.008"/>
+    <CarrierShipmentMethod shipmentMethodTypeId="Standard" partyId="10002" roleTypeId="CARRIER" sequenceNumber="10" lastUpdatedStamp="2014-03-10 09:43:06.721" lastUpdatedTxStamp="2014-03-10 09:43:06.399" createdStamp="2014-03-10 09:43:06.721" createdTxStamp="2014-03-10 09:43:06.399"/>
+</entity-engine-xml>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductPriceChange productPriceChangeId="10000" productId="10003" productPriceTypeId="DEFAULT_PRICE" productPricePurposeId="PURCHASE" currencyUomId="EUR" productStoreGroupId="_NA_" fromDate="2014-03-10 12:46:54.665" price="250.00" changedDate="2014-03-10 12:46:55.028" changedByUserLogin="julien" lastUpdatedStamp="2014-03-10 12:46:55.028" lastUpdatedTxStamp="2014-03-10 12:46:54.021" createdStamp="2014-03-10 12:46:55.028" createdTxStamp="2014-03-10 12:46:54.021"/>
+</entity-engine-xml>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-menu.xsd">
+    <menu name="MainAppBar" title="${uiLabelMap.FollowupApplication}" extends="CommonAppBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
+        <menu-item name="portalPage" parent-portal-page-value="Followup"/>
+    </menu>
+    <menu name="dropDownFollowup" id="app-navigation1" title="${uiLabelMap.FollowupApplication}">
+        <menu-item name="followupScreen" title="${uiLabelMap.FollowupFactory}">
+            <link target="followupFactory"/>
+        </menu-item>
+        <menu-item name="portalPage" title="${uiLabelMap.FollowupDesktop}">
+<!--            <link target="followupDesktop"/> -->
+            <menu-item name="portalPage" title="${uiLabelMap.FollowupDesktop}" parent-portal-page-value="Followup"/>
+        </menu-item>
+    </menu>
+    
+    
+</menus>
