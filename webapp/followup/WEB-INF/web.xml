@@ -45,7 +45,7 @@
             <param-value>/error:/control:/select:/index.html:/index.jsp:/default.html:/default.jsp:/images:/js:/css:/fonts</param-value>
         </init-param>
         <init-param><param-name>errorCode</param-name><param-value>403</param-value></init-param>
-        <init-param><param-name>redirectPath</param-name><param-value>/control/main</param-value></init-param>
+        <init-param><param-name>redirectPath</param-name><param-value>/control/dashboardFabrication</param-value></init-param>
     </filter>
     <filter-mapping><filter-name>ContextFilter</filter-name><url-pattern>/*</url-pattern></filter-mapping>
 

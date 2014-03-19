@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <menus xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-menu.xsd">
     <menu name="MainAppBar" title="${uiLabelMap.FollowupApplication}" extends="CommonAppBarMenu" extends-resource="component://common/widget/CommonMenus.xml">
-        <menu-item name="dashboardScreen" title="${uiLabelMap.Dashboard}">
+	<menu-item name="dashboardScreen" title="${uiLabelMap.Dashboard}">
             <link target="dashboardFabrication"/>
         </menu-item>
         <menu-item name="portalPage" title="${uiLabelMap.FollowupDesktop}" parent-portal-page-value="Followup"/>
@@ -20,6 +20,4 @@
             <link target="followupDesktop"/>
         </menu-item>
     </menu>
-    
-    
 </menus>

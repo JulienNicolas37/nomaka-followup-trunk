@@ -1,0 +1,15 @@
+Index: framework/common/config/CommonUiLabels.xml
+===================================================================
+--- framework/common/config/CommonUiLabels.xml	(révision 1562106)
++++ framework/common/config/CommonUiLabels.xml	(copie de travail)
+@@ -10745,6 +10745,10 @@
+         <value xml:lang="zh">财务</value>
+         <value xml:lang="zh_TW">財務</value>
+     </property>
++    <property key="Followup">
++        <value xml:lang="en">Follow Up</value>
++        <value xml:lang="fr">Suivi de production</value>
++    </property>
+     <property key="FormFieldTitle_acceptButton">
+         <value xml:lang="en">Accept</value>
+         <value xml:lang="es">Aceptar</value>
