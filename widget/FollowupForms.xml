@@ -2,12 +2,12 @@
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
 
-    <form name="SelectProdRun" type="single" target="showPortalPage">
+    <form name="SelectFabOrder" type="single" target="showPortalPage">
         <actions>
-            <set field="lookupProductionRun" from-field="lookupProductionRun" default-value="LookupProductionRun"/>
+            <set field="lookupFabricationOrder" from-field="lookupFabricationOrder" default-value="LookupFabricationOrder"/>
         </actions>
         <field name="workEffortId">
-            <lookup target-form-name="${lookupProductionRun}"></lookup>
+            <lookup target-form-name="${lookupFabricationOrder}"></lookup>
         </field>
         <field name="portalPageId"><hidden value="${parameters.portalPageId}"/></field>
         <field name="submitButton" title="${uilabelMap.CommonShow}" widget-style="buttontext">
@@ -15,7 +15,7 @@
         </field>
     </form>
 
-    <form name="ProdRunDetailsMenu" type="single" default-entity-name="WorkEffort" target="">
+    <form name="FabOrderDetailsMenu" type="single" default-entity-name="WorkEffort" target="">
         <actions>
             <entity-one entity-name="WorkEffort"/>
         </actions>
@@ -34,10 +34,10 @@
         <field name="actualCompletionDate"><display/></field>
     </form>
     
-    <form name="ListProdTasks" type="list" list-name="listIt" default-entity-name="WorkEffortProdRunTasksView" separate-columns="true"
+    <form name="ListProdTasks" type="list" list-name="listIt" default-entity-name="WorkEffortFabOrderTasksView" separate-columns="true"
         odd-row-style="alternate-row" header-row-style="header-row" default-table-style="basic-table hover-bar"  >
         <actions>
-            <entity-condition list="listIt" entity-name="WorkEffortProdRunTasksView" >
+            <entity-condition list="listIt" entity-name="WorkEffortFabOrderTasksView" >
                 <condition-expr field-name="workEffortParentId" value="${parameters.workEffortParentId}"/>
                 <order-by field-name="priority"/>
             </entity-condition>
@@ -71,11 +71,11 @@
             <set field="taskStatus" from-field="parameters.taskStatus"/>
             <set field="currentlyInProd" from-field="parameters.currentlyInProd"/>
             <entity-one entity-name="WorkEffort" value-field="workEffort"/>
-            <set field="productionRunId" from-field="workEffort.workEffortParentId"/>
+            <set field="fabricationOrderId" from-field="workEffort.workEffortParentId"/>
         </actions>
 <!--         <alt-target use-when="${! empty workEffort.actualStartDate} &amp;&amp; ${empty workEffort.actualCompletionDate}" target="stopProductionTask"/> -->
         <alt-target use-when="${taskStatus == 'S'}" target="stopProductionTask"/>
-        <field name="productionRunId"><hidden value="${productionRunId}"/></field>
+        <field name="fabricationOrderId"><hidden value="${fabricationOrderId}"/></field>
         <field name="workEffortId" position="1" title="${taskStatus}"><display/></field>
         <field name="workEffortName" position="2" title="${currentlyInProd}"><display/></field>
         <field name="currentStatusId" position="1" >
@@ -135,9 +135,9 @@
             <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
             <parameter param-name="idDescription" value=" "/>
         </on-event-update-area>
-        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}ProdRunDetailsMenu${portletSeqId}">
-            <parameter param-name="area-id" value="PP_${portalPageId}ProdRunDetailsMenu${portletSeqId}"/>
-            <parameter param-name="portalPortletId" value="ProdRunDetailsMenu"/>
+        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}FabOrderDetailsMenu${portletSeqId}">
+            <parameter param-name="area-id" value="PP_${portalPageId}FabOrderDetailsMenu${portletSeqId}"/>
+            <parameter param-name="portalPortletId" value="FabOrderDetailsMenu"/>
             <parameter param-name="workEffortId" from-field="workEffort.workEffortParentId"/>
             <parameter param-name="idDescription" value=" "/>
         </on-event-update-area>

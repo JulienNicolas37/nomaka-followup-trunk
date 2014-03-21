@@ -9,7 +9,7 @@
     <copyright></copyright>
     <version></version>
 
-    <view-entity entity-name="WorkEffortProdRunPrintedView"
+    <view-entity entity-name="WorkEffortFabOrderPrintedView"
             package-name="org.ofbiz.workeffort.workeffort"
             title="Work Effort available to production Entity">
         <member-entity entity-alias="WE" entity-name="WorkEffort"/>
@@ -35,7 +35,7 @@
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="WorkEffortProdRunTasksView"
+    <view-entity entity-name="WorkEffortFabOrderTasksView"
             package-name="org.ofbiz.workeffort.workeffort"
             title="Tasks included in Work Effort Entity">
         <member-entity entity-alias="WE" entity-name="WorkEffort"/>
@@ -60,9 +60,9 @@
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="AvailableProdRunAndTasksView"
+    <view-entity entity-name="AvailableFabOrderAndTasksView"
             package-name="org.ofbiz.workeffort.workeffort"
-            title="Available production runs and tasks Entity">
+            title="Available Fabrication orders and tasks Entity">
         <member-entity entity-alias="PR" entity-name="WorkEffort"/>
         <member-entity entity-alias="T" entity-name="WorkEffort"/>
         <alias entity-alias="PR" name="workEffortId"/>

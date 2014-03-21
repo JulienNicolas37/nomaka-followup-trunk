@@ -20,7 +20,7 @@ under the License.
 
 <simple-methods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/simple-methods-v2.xsd">
-    <!--#Bam# product-offer -->
+
     <simple-method method-name="ListProdTasks" short-description="action for ListProdTasks portlet">
         <set field="parameters.workEffortParentId" from-field="parameters.workEffortId" type="String"/>
     </simple-method>

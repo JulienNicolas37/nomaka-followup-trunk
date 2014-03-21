@@ -13,8 +13,8 @@
     
     <service name="startProductionTask" engine="java" invoke="startProductionTask"
         location="org.ofbiz.followup.FollowupServices" >
-        <description>Start Production Run Task</description>
-        <attribute name="productionRunId" type="String" mode="IN" optional="false"/>
+        <description>Start Fabrication Order Task</description>
+        <attribute name="fabricationOrderId" type="String" mode="IN" optional="false"/>
         <attribute name="workEffortId" type="String" mode="IN" optional="false"/> <!-- The task id -->
         <attribute name="statusId" type="String" mode="IN" optional="true"/>
         <attribute name="issueAllComponents" type="Boolean" mode="IN" optional="true"/>
@@ -22,20 +22,20 @@
 
     <service name="pauseProductionTask" engine="java" invoke="pauseProductionTask"
         location="org.ofbiz.followup.FollowupServices" >
-        <description>Pause Production Run Task</description>
+        <description>Pause Fabrication Order Task</description>
         <attribute name="workEffortId" type="String" mode="IN" optional="false"/> <!-- The task id -->
     </service>
 
     <service name="resumeProductionTask" engine="java" invoke="resumeProductionTask"
         location="org.ofbiz.followup.FollowupServices" >
-        <description>Resume Production Run Task</description>
+        <description>Resume Fabrication Order Task</description>
         <attribute name="workEffortId" type="String" mode="IN" optional="false"/> <!-- The task id -->
     </service>
 
     <service name="stopProductionTask" engine="java" invoke="stopProductionTask"
         location="org.ofbiz.followup.FollowupServices" >
-        <description>Stop Production Run Task</description>
-        <attribute name="productionRunId" type="String" mode="IN" optional="false"/>
+        <description>Stop Fabrication Order Task</description>
+        <attribute name="fabricationOrderId" type="String" mode="IN" optional="false"/>
         <attribute name="workEffortId" type="String" mode="IN" optional="false"/> <!-- The task id -->
         <attribute name="statusId" type="String" mode="IN" optional="true"/>
         <attribute name="issueAllComponents" type="Boolean" mode="IN" optional="true"/>

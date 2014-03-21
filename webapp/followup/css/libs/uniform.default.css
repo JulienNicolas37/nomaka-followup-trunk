@@ -11,7 +11,7 @@ http://uniformjs.com/
 */
 /* General settings */
 div.selector, div.selector span, div.checker span, div.radio span, div.uploader, div.uploader span.action, div.button, div.button span {
-  background-image: url("../../images/uniform/sprite.png");
+  background-image: url("../../images/followup/uniform/sprite.png");
   background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased; }
 div.selector, div.checker, div.button, div.radio, div.uploader {
@@ -28,14 +28,14 @@ div.selector, div.selector *, div.radio, div.radio *, div.checker, div.checker *
   padding: 0; }
 
 .highContrastDetect {
-  background: url("../../images/uniform/bg-input.png") repeat-x 0 0;
+  background: url("../../images/followup/uniform/bg-input.png") repeat-x 0 0;
   width: 0px;
   height: 0px; }
 
 /* Input & Textarea */
 input.uniform-input{
   padding: 0 28px;
-  background: url("../../images/uniform/bg-input-nomaka.png") no-repeat 0 0;
+  background: url("../../images/followup/uniform/bg-input-nomaka.png") no-repeat 0 0;
   width: 317px;
   height: 85px;
   outline: 0; 
@@ -44,7 +44,7 @@ input.uniform-input{
 }
   
   input.uniform-input.active, input.uniform-input:focus{
-    background: url("../../images/uniform/bg-input-focus-nomaka.png") no-repeat 0 0; }
+    background: url("../../images/followup/uniform/bg-input-focus-nomaka.png") no-repeat 0 0; }
 
 /* Remove default webkit and possible mozilla .search styles.
  * Keeping this as :active to remove browser styles */

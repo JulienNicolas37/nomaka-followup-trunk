@@ -65,14 +65,14 @@
         </section>
     </screen>
 
-<screen name="FollowupProductionRunScreen">
+<screen name="FollowupFabricationOrderScreen">
         <section>
             <actions>
-                <set field="titleProperty" value="FollowupSelectProductionRun"/>
+                <set field="titleProperty" value="FollowupSelectFabricationOrder"/>
                 <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer"/>
                 <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="50"/>
                 
-                <script location="component://followup/webapp/followup/WEB-INF/actions/LoadAvailableProductionRunAndTasks.groovy"/>
+                <script location="component://followup/webapp/followup/WEB-INF/actions/LoadAvailableFabricationOrderAndTasks.groovy"/>
     
                 <set field="layoutSettings.styleSheets[]" value="/followup/css/followup/style.css" global="true"/>
                 <!--the above line is used to access the newly added style.css inside the css folder-->

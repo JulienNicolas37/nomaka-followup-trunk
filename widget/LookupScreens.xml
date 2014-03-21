@@ -20,12 +20,12 @@ under the License.
 
 <screens xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-screen.xsd">
-    <screen name="LookupProductionRun">
+    <screen name="LookupFabricationOrder">
         <section>
             <actions>
                 <property-map resource="FollowupUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
-                <set field="title" value="${uiLabelMap.FollowupSelectProductionRun}"/>
+                <set field="title" value="${uiLabelMap.FollowupSelectFabricationOrder}"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer" default-value="0"/>
                 <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="20"/>
@@ -48,10 +48,10 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-options">
-                        <include-form name="lookupProductionRun" location="component://followup/widget/LookupForms.xml"/>
+                        <include-form name="lookupFabricationOrder" location="component://followup/widget/LookupForms.xml"/>
                     </decorator-section>
                     <decorator-section name="search-results">
-                        <include-form name="listLookupProductionRun" location="component://followup/widget/LookupForms.xml"/>
+                        <include-form name="listLookupFabricationOrder" location="component://followup/widget/LookupForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>

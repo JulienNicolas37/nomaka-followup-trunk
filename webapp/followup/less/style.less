@@ -174,7 +174,7 @@ textarea {
 
 /* @end */
 
-/* @group Mes styles */
+/* @group My styles */
 
 html,body {
 	
@@ -186,7 +186,7 @@ body{
 	position: relative;
 	padding: 0;
 	margin: 0;
-	background: #868382 url('../images/fond-texture.jpg') repeat left top;
+	background: #868382 url('../../images/followup/background-texture.jpg') repeat left top;
 	&.login{
 		background: @grisfonce;
 	}
@@ -201,8 +201,8 @@ body{
 	width: 100%;
 }
 
-/* @group Mentions légales */
-#popup-mentions-legales-fond{
+/* @group Legal notices */
+#popup-legal-notices-background{
 	position: relative;	
 	width: 100%;
 	height: 100%;
@@ -212,7 +212,7 @@ body{
 	pointer-events: none;
 	background-color: rgba(0,0,0,0);
 	.roboto-thin(1em);
-	#popup-mentions-legales{
+	#popup-legal-notices{
 		position: relative;
 		width: 80%;
 		margin: 0 auto;
@@ -236,17 +236,17 @@ body{
 			h4{
 				.roboto-thin(1.1em);
 			}
-			a#btn-fermer-popup{
+			a#btn-close-popup{
 				display: block;
 				width: 40px;
 				height: 38px;
-				background: url('../images/btn/btn-fermer-blanc.png') no-repeat left top;
+				background: url('../../images/followup/btn/btn-close-white.png') no-repeat left top;
 				position: absolute;
 				top: 30px;
 				right: 30px;
 			}
 		}
-		.ombre-ligne{
+		.line-shadow{
 			z-index: 0;
 			display: block;
 			width: 99%;
@@ -313,10 +313,10 @@ body{
 		&:focus{
 			outline: none;
 		}
-		&#btn-of{
+		&#btn-faborder{
 			z-index: 2;
-			background: @grisfonce url('../images/picto-of.png') no-repeat 15px 23px;
-			#fleche-btn-of{
+			background: @grisfonce url('../../images/followup/picto-faborder.png') no-repeat 15px 23px;
+			#arrow-btn-faborder{
 				display: none;
 				width: 45px;
 				height: 121px;
@@ -324,23 +324,23 @@ body{
 				top: 0;
 				right: 0;
 				margin-right: -45px;
-				background: url('../images/btn/fleche-btn-bleu.png') no-repeat left top;
+				background: url('../../images/followup/btn/arrow-blue-btn.png') no-repeat left top;
 			}
 			&.active{
-				background: @theme1 url('../images/picto-of-active.png') no-repeat 15px 23px;
-				&.ligne-selec{
-					#fleche-btn-of{
+				background: @theme1 url('../../images/followup/picto-faborder-active.png') no-repeat 15px 23px;
+				&.line-selec{
+					#arrow-btn-faborder{
 						display: block;
 					}
 				}
 			}
 		}
-		&#btn-t{
+		&#btn-task{
 			z-index: 1;
-			background: @grisfonce url('../images/picto-t.png') no-repeat 15px 23px;
+			background: @grisfonce url('../../images/followup/picto-task.png') no-repeat 15px 23px;
 			height: 44px;
 			padding: 48px 18px 23px 80px;
-			#of-selec{
+			#faborder-selec{
 				vertical-align: middle;
 				display: inline-block;
 				background: #2a2a2a;
@@ -352,25 +352,25 @@ body{
 				//.roboto-thin(0.8em);
 				.roboto(0.8em);
 				opacity: 1;
-				.num-of-selec{
+				.faborder-id-selec{
 					display: inline-block;
 					vertical-align: top;
 					width: 58px;
 				}
-				#btn-of-corres{
+				#btn-parent-faborder{
 					vertical-align: middle;
 					display: inline-block;
 					position: relative;
 					width: 15px;
 					height: 16px;
 					margin-left: 4px;
-					background: url('../images/btn/btn-of-corres.png') no-repeat left top;
+					background: url('../../images/followup/btn/btn-parent-faborder.png') no-repeat left top;
 				}
-				&.masque{
+				&.mask{
 					display: none;
 				}
 			}
-			#fleche-btn-t{
+			#arrow-btn-task{
 				display: none;
 				width: 45px;
 				height: 121px;
@@ -378,29 +378,29 @@ body{
 				top: 0;
 				right: 0;
 				margin-right: -45px;
-				background: url('../images/btn/fleche-btn-violet.png') no-repeat left top;
+				background: url('../../images/followup/btn/arrow-purple-btn.png') no-repeat left top;
 			}
 			&.active{
-				background: @theme2 url('../images/picto-t-active.png') no-repeat 15px 23px;
-				&.ligne-selec{
-					#fleche-btn-t{
+				background: @theme2 url('../../images/followup/picto-task-active.png') no-repeat 15px 23px;
+				&.line-selec{
+					#arrow-btn-task{
 						display: block;
 					}
 				}
 			}
 		}
-		.ombre{
+		.shadow{
 			display: block;
 			width: 200px;
 			height: 5px;
 			position: absolute;
 			bottom: -5px;
 			left: 0;
-			background: url('../images/ombre-btn.png') no-repeat left top;
+			background: url('../../images/followup/shadow-btn.png') no-repeat left top;
 		}
 	}
 	
-	#bloc-bottom-sidebar{
+	#block-bottom-sidebar{
 		display: block;
 		height: 155px;
 		width: 200px;
@@ -411,14 +411,14 @@ body{
 			display: block;
 			width: 200px;
 			height: 84px;
-			background: url('../images/logo-nomaka.png') no-repeat center center;
+			background: url('../../images/followup/logo-nomaka.png') no-repeat center center;
 			margin: 0;
 		}
-		a#btn-mentions-legales{
+		a#btn-legal-notices{
 			display: block;
 			width: 100%;
 			height: 70px;
-			background: @grisnoir url('../images/fleche-lien.png') no-repeat 29px 30px;
+			background: @grisnoir url('../../images/followup/arrow-link.png') no-repeat 29px 30px;
 			margin: 0;
 			padding: 0;
 			color: @blanc;
@@ -428,14 +428,14 @@ body{
 			line-height: 70px;
 			text-decoration: none;
 			position: relative;
-			.ombre{
+			.shadow{
 				display: block;
 				width: 200px;
 				height: 5px;
 				position: absolute;
 				top: 0;
 				left: 0;
-				background: url('../images/ombre-btn.png') no-repeat left top;
+				background: url('../../images/followup/shadow-btn.png') no-repeat left top;
 			}
 		}
 	}
@@ -444,7 +444,7 @@ body{
 
 /* @group Bloc content */
 
-#bloc-content-login{
+#block-content-login{
 	display: block;
 	position: relative;
 	width: 916px;
@@ -457,7 +457,7 @@ body{
 			width: 373px;
 			height: 94px;
 			margin-top: 83px;
-			background: url('../images/logo-nomaka.gif') no-repeat left top;
+			background: url('../../images/followup/logo-nomaka.gif') no-repeat left top;
 		}
 	}
 	#content-right{
@@ -496,7 +496,7 @@ body{
 				margin: 23px 0;
 			}
 			input[type="submit"]{
-				background: url('../images/btn/btn-login.png') no-repeat left top;
+				background: url('../../images/followup/btn/btn-login.png') no-repeat left top;
 				-webkit-appearance: none;
 				border: none;
 				width: 373px;
@@ -514,7 +514,7 @@ body{
 
 /* @group Bloc content */
 
-#bloc-content{
+#block-content{
 	display: block;
 	width: 100%;
 	padding-left: 200px;
@@ -527,7 +527,7 @@ body{
 		width: 98%;
 		box-sizing: content-box;
 		-moz-box-sizing: content-box;
-		ul.liste-elements{
+		ul.elements-list{
 			list-style-type: none;
 			margin: 0;
 			padding: 30px 0;
@@ -537,7 +537,7 @@ body{
 			left: 0;
 			width: 100%;
 			overflow: hidden;
-			li.ligne-liste{
+			li.list-line{
 				transition-delay: 0s !important;
 				display: block;
 				width: 100%;
@@ -548,19 +548,19 @@ body{
 				position: relative;
 				.roboto(1em);
 				text-transform: uppercase;
-				&.titres{
+				&.titles{
 					.case{
 						background: #cee7e7;
 					}
 				}
-				.ligne-clic{
+				.line-clic{
 					position: absolute;
 					top: 0;
 					left: 0;
 					height: 85px;
 					width: 100%;
 				}
-				.of-correspondant{
+				.parent-faborder{
 					width: 100%;
 					height: 100px;
 					.radius(5px);
@@ -570,7 +570,7 @@ body{
 					display: none;
 					top: -120px;
 					z-index: 3;
-					a.lien-of-correspondant{
+					a.parent-faborder-link{
 						display: inline-block;
 						height: 58px;
 						color: #5a5a5a;
@@ -578,7 +578,7 @@ body{
 						line-height: 58px;
 						margin: 0 30px;
 						position: relative;
-						.content-lien-of-correspondant{
+						.content-parent-faborder-link{
 							display: block;
 							position: relative;
 							z-index: 1;
@@ -587,7 +587,7 @@ body{
 							background: #cee7e7;
 							.radius(5px);
 						}
-						.ombre-btn{
+						.shadow-btn{
 							z-index: 0;
 							display: block;
 							width: 99%;
@@ -600,14 +600,14 @@ body{
 							left: 0.5%;
 						}
 					}
-					.nom-ordre-correspondant{
+					.parent-faborder-name{
 						display: inline-block;
 						color: #5a5a5a;
 						.roboto(1.125em);
 					}
 				}
-				&.retour-haut{
-					a.btn-retour-haut{
+				&.back-to-top{
+					a.btn-back-to-top{
 						z-index: 2;
 						display: block;
 						height: 45px;
@@ -644,7 +644,7 @@ body{
 				}
 				&:nth-child(even){
 					color: @blanc;
-					&.fini{
+					&.finished{
 						color: @vert;
 						.case{
 							background: #535353;
@@ -689,15 +689,15 @@ body{
 						-webkit-border-bottom-left-radius: 5px;
 						-moz-border-bottom-left-radius: 5px;
 						border-bottom-left-radius: 5px;
-						.titre-masque{
+						.mask-title{
 							display: none;
 							.roboto-bold(1.1em);
 						}
-						a.btn-fermer{
+						a.btn-close{
 							display: none;
 							width: 40px;
 							height: 38px;
-							background: url('../images/btn/btn-fermer.png') no-repeat left top;
+							background: url('../../images/followup/btn/btn-close.png') no-repeat left top;
 							position: absolute;
 							top: 50%;
 							margin-top: -19px;
@@ -706,13 +706,13 @@ body{
 							opacity: 0;
 							//.transitionCustom(margin 300ms);
 						}
-						.fleche-detail{
+						.arrow-detail{
 							position: absolute;
 							top: 0;
 							right: 0;
 							width: 30px;
 							height: 85px;
-							background: url('../images/fleche-detail-of.png') no-repeat left top;
+							background: url('../../images/followup/arrow-detail-faborder.png') no-repeat left top;
 							//margin-right: -30px;
 							margin-right: 0;
 							display: block;
@@ -720,18 +720,18 @@ body{
 							z-index: 0;
 						}
 					}
-					&.nom{
+					&.name{
 						width: 25%;
 						left: 14%;
 					}
-					&.statut{
+					&.status{
 						width: 12%;
 						left: 36%;
 						text-align: center;
 						.case-content{
 							padding: 0;
 						}
-						.picto-statut{
+						.picto-status{
 							display: block;
 							width: 70px;
 							height: 70px;
@@ -745,7 +745,7 @@ body{
 						text-transform: none;
 						color: @gristexte;
 					}
-					&.avancement{
+					&.progress{
 						width: 12%;
 						left: 88%;
 						text-align: center;
@@ -756,7 +756,7 @@ body{
 						-webkit-border-bottom-right-radius: 5px;
 						-moz-border-bottom-right-radius: 5px;
 						border-bottom-right-radius: 5px;
-						.temps{
+						.prod-time{
 							position: absolute;
 							top: 18px;
 							margin-left: -300px;
@@ -777,10 +777,10 @@ body{
 								text-align: center;
 								margin-top: -7px;
 							}
-							&.passe{
+							&.real{
 								left: 38px;
 							}
-							&.prevu{
+							&.estimated{
 								left: 138px;
 								strong{
 									background: #d4d4d4;
@@ -790,7 +790,7 @@ body{
 								}
 							}
 						}
-						.ombre-pourcent{
+						.percent-shadow{
 							display: block;
 							height: 51px;
 							width: 51px;
@@ -798,7 +798,7 @@ body{
 							top: 50%;
 							left: 50%;
 							margin: -24px 0 0 -24px;
-							background: url('../images/avancement/ombre-pourcent.png') no-repeat left top;
+							background: url('../../images/followup/progress/percent-shadow.png') no-repeat left top;
 						}
 						.pie, canvas.peity{
 							position: absolute;
@@ -806,7 +806,7 @@ body{
 							top: 50%;
 							margin: -25px 0 0 -25px;
 						}
-						.pourcent{
+						.percent{
 							color: @blanc;
 							display: block;
 							position: absolute;
@@ -820,7 +820,7 @@ body{
 							}
 						}
 					}
-					&.avancement-open{
+					&.progress-open{
 						width: 50%;
 						left: 25.5%;
 						text-align: center;
@@ -828,7 +828,7 @@ body{
 						margin-left: -300px;
 						background: #f7f7f7;
 						.radius(5px);
-						.temps{
+						.prod-time{
 							position: absolute;
 							top: 18px;
 							opacity: 1;
@@ -848,10 +848,10 @@ body{
 								text-align: center;
 								margin-top: -7px;
 							}
-							&.passe{
+							&.real{
 								left: 38px;
 							}
-							&.prevu{
+							&.estimated{
 								left: 138px;
 								strong{
 									background: #d4d4d4;
@@ -861,7 +861,7 @@ body{
 								}
 							}
 						}
-						.ombre-pourcent{
+						.percent-shadow{
 							display: block;
 							height: 51px;
 							width: 51px;
@@ -869,7 +869,7 @@ body{
 							top: 50%;
 							left: 80%;
 							margin: -24px 0 0 -24px;
-							background: url('../images/avancement/ombre-pourcent.png') no-repeat left top;
+							background: url('../../images/followup/progress/percent-shadow.png') no-repeat left top;
 						}
 						.pie, canvas.peity{
 							position: absolute;
@@ -877,7 +877,7 @@ body{
 							top: 50%;
 							margin: -25px 0 0 -25px;
 						}
-						.pourcent{
+						.percent{
 							color: @blanc;
 							display: inline-block;
 							position: absolute;
@@ -901,7 +901,7 @@ body{
 						z-index: 1;
 					}
 				}
-				.ombre-ligne{
+				.line-shadow{
 					z-index: 0;
 					display: block;
 					width: 99%;
@@ -913,7 +913,7 @@ body{
 					bottom: -8px;
 					left: 0.5%;
 				}
-				a.btn-ligne{
+				a.btn-line{
 					display: block;
 					width: 85px;
 					height: 85px;
@@ -925,14 +925,14 @@ body{
 					opacity: 1;
 					z-index: 3;
 					&.up{
-						background: @theme1 url('../images/fleche-top.png') no-repeat center center;
+						background: @theme1 url('../../images/followup/arrow-top.png') no-repeat center center;
 						right: 95px;
 					}
 					&.down{
-						background: @theme1 url('../images/fleche-bottom.png') no-repeat center center;
+						background: @theme1 url('../../images/followup/arrow-bottom.png') no-repeat center center;
 						right: 0;
 					}
-					&.btn-ligne-masque{
+					&.btn-line-mask{
 						opacity: 0.3!important;
 						pointer-events: none;
 						cursor: default;
@@ -943,7 +943,7 @@ body{
 							right: 0;
 						}
 					}
-					.ombre-btn-ligne{
+					.shadow-btn-line{
 						display: block;
 						width: 78px;
 						height: 11px;
@@ -951,7 +951,7 @@ body{
 						bottom: -11px;
 						left: 50%;
 						margin-left: -39px;
-						background: url('../images/btn/ombre-btn-ligne.png') no-repeat left top;
+						background: url('../../images/followup/btn/shadow-btn-line.png') no-repeat left top;
 					}
 					-webkit-tap-highlight-color: rgba(0,0,0,0);
 					-webkit-tap-highlight-color: transparent;
@@ -960,13 +960,13 @@ body{
 						outline: none;
 					}
 				}
-				.bloc-bottom{
+				.block-bottom{
 					display: none;
 					width: 98%;
 					margin: 0 auto;
 					padding: 50px 0 30px 0;
 					position: relative;
-					.bloc-btn{
+					.block-btn{
 						padding: 75px 0 0 0;
 						background: #5a5a5a;
 						display: inline-block;
@@ -995,19 +995,19 @@ body{
 							color: @blanc;
 							&.btn-pause{
 								margin: 4px auto;
-								background: @bleu url('../images/btn/picto-pause-btn.png') no-repeat center 27px;
+								background: @bleu url('../../images/followup/btn/picto-pause-btn.png') no-repeat center 27px;
 							}
-							&.btn-terminer{
+							&.btn-stop{
 								margin: 4px auto;
-								background: @vert url('../images/btn/picto-terminer-btn.png') no-repeat center 23px;
+								background: @vert url('../../images/followup/btn/picto-stop-btn.png') no-repeat center 23px;
 							}
-							&.btn-demarrer{
+							&.btn-start{
 								margin: 4px auto;
-								background: @theme2 url('../images/btn/picto-demarrer-btn.png') no-repeat center 23px;
+								background: @theme2 url('../../images/followup/btn/picto-start-btn.png') no-repeat center 23px;
 							}
-							&.btn-reprendre{
+							&.btn-resume{
 								margin: 4px auto;
-								background: @vert url('../images/btn/picto-demarrer-btn.png') no-repeat center 23px;
+								background: @vert url('../../images/followup/btn/picto-start-btn.png') no-repeat center 23px;
 							}
 							.txt-btn{
 								display: block;
@@ -1018,7 +1018,7 @@ body{
 							}
 						}
 					}
-					.bloc-description{
+					.block-description{
 						background: @blanc;
 						color: #5a5a5a;
 						padding: 75px 0 0 0;
@@ -1028,7 +1028,7 @@ body{
 						vertical-align: top;
 						.radius(5px);
 						
-						.bloc-description-content{
+						.block-description-content{
 							width: 90%;
 							margin: 0 auto;
 							h2{
@@ -1052,21 +1052,21 @@ body{
 						&.id{
 							z-index: 4;
 						}
-						&.avancement-open{
+						&.progress-open{
 							z-index: 3;
 						}
 					}
-					.of-correspondant{
+					.parent-faborder{
 						display: block;
 					}
-					.bloc-bottom{
+					.block-bottom{
 						display: block;
 						overflow: hidden;
-						ul.liste-elements-inte{
+						ul.elements-list-cont{
 							margin: 20px auto 50px auto;
 							width: 96%;
 							padding: 0;
-							li.ligne-liste-inte{
+							li.list-line-cont{
 								transition-delay: 0s !important;
 								display: block;
 								width: 100%;
@@ -1077,13 +1077,13 @@ body{
 								position: relative;
 								.roboto(1em);
 								text-transform: uppercase;
-								&.titres{
+								&.titles{
 									.case{
 										background: #cee7e7;
 									}
 								}
-								&.retour-haut{
-									a.btn-retour-haut{
+								&.back-to-top{
+									a.btn-back-to-top{
 										z-index: 2;
 										display: block;
 										height: 45px;
@@ -1120,7 +1120,7 @@ body{
 								}
 								&:nth-child(even){
 									color: @blanc;
-									&.fini{
+									&.finished{
 										color: @vert;
 										.case{
 											background: #535353;
@@ -1165,15 +1165,15 @@ body{
 										-webkit-border-bottom-left-radius: 5px;
 										-moz-border-bottom-left-radius: 5px;
 										border-bottom-left-radius: 5px;
-										.titre-masque{
+										.mask-title{
 											display: none;
 											.roboto-bold(1.1em);
 										}
-										a.btn-fermer{
+										a.btn-close{
 											display: none;
 											width: 40px;
 											height: 38px;
-											background: url('../images/btn/btn-fermer.png') no-repeat left top;
+											background: url('../../images/followup/btn/btn-close.png') no-repeat left top;
 											position: absolute;
 											top: 50%;
 											margin-top: -19px;
@@ -1182,13 +1182,13 @@ body{
 											opacity: 0;
 											//.transitionCustom(margin 300ms);
 										}
-										.fleche-detail{
+										.arrow-detail{
 											position: absolute;
 											top: 0;
 											right: 0;
 											width: 30px;
 											height: 85px;
-											background: url('../images/fleche-detail-of.png') no-repeat left top;
+											background: url('../../images/followup/arrow-detail-faborder.png') no-repeat left top;
 											//margin-right: -30px;
 											margin-right: 0;
 											display: block;
@@ -1196,18 +1196,18 @@ body{
 											z-index: 0;
 										}
 									}
-									&.nom{
+									&.name{
 										width: 25%;
 										left: 14%;
 									}
-									&.statut{
+									&.status{
 										width: 12%;
 										left: 36%;
 										text-align: center;
 										.case-content{
 											padding: 0;
 										}
-										.picto-statut{
+										.picto-status{
 											display: block;
 											width: 70px;
 											height: 70px;
@@ -1221,7 +1221,7 @@ body{
 										text-transform: none;
 										color: @gristexte;
 									}
-									&.avancement{
+									&.progress{
 										width: 12%;
 										left: 88%;
 										text-align: center;
@@ -1232,7 +1232,7 @@ body{
 										-webkit-border-bottom-right-radius: 5px;
 										-moz-border-bottom-right-radius: 5px;
 										border-bottom-right-radius: 5px;
-										.temps{
+										.prod-time{
 											position: absolute;
 											top: 18px;
 											margin-left: -300px;
@@ -1253,10 +1253,10 @@ body{
 												text-align: center;
 												margin-top: -7px;
 											}
-											&.passe{
+											&.real{
 												left: 38px;
 											}
-											&.prevu{
+											&.estimated{
 												left: 138px;
 												strong{
 													background: #d4d4d4;
@@ -1266,7 +1266,7 @@ body{
 												}
 											}
 										}
-										.ombre-pourcent{
+										.percent-shadow{
 											display: block;
 											height: 51px;
 											width: 51px;
@@ -1274,7 +1274,7 @@ body{
 											top: 50%;
 											left: 50%;
 											margin: -24px 0 0 -24px;
-											background: url('../images/avancement/ombre-pourcent.png') no-repeat left top;
+											background: url('../../images/followup/progress/percent-shadow.png') no-repeat left top;
 										}
 										.pie, canvas.peity{
 											position: absolute;
@@ -1282,7 +1282,7 @@ body{
 											top: 50%;
 											margin: -25px 0 0 -25px;
 										}
-										.pourcent{
+										.percent{
 											color: @blanc;
 											display: block;
 											position: absolute;
@@ -1296,7 +1296,7 @@ body{
 											}
 										}
 									}
-									&.avancement-open{
+									&.progress-open{
 										width: 50%;
 										left: 25.5%;
 										text-align: center;
@@ -1304,7 +1304,7 @@ body{
 										margin-left: -300px;
 										background: #f7f7f7;
 										.radius(5px);
-										.temps{
+										.prod-time{
 											position: absolute;
 											top: 18px;
 											opacity: 1;
@@ -1324,10 +1324,10 @@ body{
 												text-align: center;
 												margin-top: -7px;
 											}
-											&.passe{
+											&.real{
 												left: 38px;
 											}
-											&.prevu{
+											&.estimated{
 												left: 138px;
 												strong{
 													background: #d4d4d4;
@@ -1337,7 +1337,7 @@ body{
 												}
 											}
 										}
-										.ombre-pourcent{
+										.percent-shadow{
 											display: block;
 											height: 51px;
 											width: 51px;
@@ -1345,7 +1345,7 @@ body{
 											top: 50%;
 											left: 80%;
 											margin: -24px 0 0 -24px;
-											background: url('../images/avancement/ombre-pourcent.png') no-repeat left top;
+											background: url('../../images/followup/progress/percent-shadow.png') no-repeat left top;
 										}
 										.pie, canvas.peity{
 											position: absolute;
@@ -1353,7 +1353,7 @@ body{
 											top: 50%;
 											margin: -25px 0 0 -25px;
 										}
-										.pourcent{
+										.percent{
 											color: @blanc;
 											display: inline-block;
 											position: absolute;
@@ -1377,7 +1377,7 @@ body{
 										z-index: 1;
 									}
 								}
-								.ombre-ligne{
+								.line-shadow{
 									z-index: 0;
 									display: block;
 									width: 99%;
@@ -1389,7 +1389,7 @@ body{
 									bottom: -8px;
 									left: 0.5%;
 								}
-								a.btn-ligne{
+								a.btn-line{
 									display: block;
 									width: 85px;
 									height: 85px;
@@ -1401,17 +1401,17 @@ body{
 									opacity: 0;
 									z-index: 3;
 									&.up{
-										background: @theme1 url('../images/fleche-top.png') no-repeat center center;
+										background: @theme1 url('../../images/followup/arrow-top.png') no-repeat center center;
 										right: 95px;
 									}
 									&.down{
-										background: @theme1 url('../images/fleche-bottom.png') no-repeat center center;
+										background: @theme1 url('../../images/followup/arrow-bottom.png') no-repeat center center;
 										right: 0;
 									}
-									&.btn-ligne-masque{
+									&.btn-line-mask{
 										display: none;
 									}
-									.ombre-btn-ligne{
+									.shadow-btn-line{
 										display: block;
 										width: 78px;
 										height: 11px;
@@ -1419,7 +1419,7 @@ body{
 										bottom: -11px;
 										left: 50%;
 										margin-left: -39px;
-										background: url('../images/btn/ombre-btn-ligne.png') no-repeat left top;
+										background: url('../../images/followup/btn/shadow-btn-line.png') no-repeat left top;
 									}
 									-webkit-tap-highlight-color: rgba(0,0,0,0);
 									-webkit-tap-highlight-color: transparent;
@@ -1428,13 +1428,13 @@ body{
 										outline: none;
 									}
 								}
-								.bloc-bottom{
+								.block-bottom{
 									display: none;
 									width: 98%;
 									margin: 0 auto;
 									padding: 50px 0 30px 0;
 									position: relative;
-									.bloc-btn{
+									.block-btn{
 										padding: 75px 0 0 0;
 										background: #5a5a5a;
 										display: inline-block;
@@ -1463,19 +1463,19 @@ body{
 											color: @blanc;
 											&.btn-pause{
 												margin: 4px auto;
-												background: @bleu url('../images/btn/picto-pause-btn.png') no-repeat center 27px;
+												background: @bleu url('../../images/followup/btn/picto-pause-btn.png') no-repeat center 27px;
 											}
-											&.btn-terminer{
+											&.btn-stop{
 												margin: 4px auto;
-												background: @vert url('../images/btn/picto-terminer-btn.png') no-repeat center 23px;
+												background: @vert url('../../images/followup/btn/picto-stop-btn.png') no-repeat center 23px;
 											}
-											&.btn-demarrer{
+											&.btn-start{
 												margin: 4px auto;
-												background: @vert url('../images/btn/picto-terminer-btn.png') no-repeat center 23px;
+												background: @vert url('../../images/followup/btn/picto-stop-btn.png') no-repeat center 23px;
 											}
-											&.btn-reprendre{
+											&.btn-resume{
 												margin: 4px auto;
-												background: @vert url('../images/btn/picto-terminer-btn.png') no-repeat center 23px;
+												background: @vert url('../../images/followup/btn/picto-stop-btn.png') no-repeat center 23px;
 											}
 											.txt-btn{
 												display: block;
@@ -1486,7 +1486,7 @@ body{
 											}
 										}
 									}
-									.bloc-description{
+									.block-description{
 										background: @blanc;
 										color: #5a5a5a;
 										padding: 75px 0 0 0;
@@ -1496,7 +1496,7 @@ body{
 										vertical-align: top;
 										.radius(5px);
 										
-										.bloc-description-content{
+										.block-description-content{
 											width: 90%;
 											margin: 0 auto;
 											h2{
@@ -1513,59 +1513,59 @@ body{
 									}
 								}
 								&.selec{
-									.bloc-bottom{
+									.block-bottom{
 										display: block;
 									}
 									.id{
-										.titre-masque{
+										.mask-title{
 											display: inline;
 										}
 									}
-									.avancement{
+									.progress{
 										display: none;
 									}
-									.nom{
+									.name{
 										display: none;
 									}
 									.description{
 										display: none;
 									}
-									.statut{
+									.status{
 										display: none;
 									}
-									.ombre-ligne{
+									.line-shadow{
 										width: 97%;
 										left: 1.5%;
 										bottom: 20px;
 									}
 								}
 							}
-							&#liste-t{
-								li.ligne-liste{
+							&#task-list{
+								li.list-line{
 									.case{
 										&.id{
-											.fleche-detail{
-												background: url('../images/fleche-detail-t.png') no-repeat left top;
+											.arrow-detail{
+												background: url('../../images/followup/arrow-detail-task.png') no-repeat left top;
 											}
 										}
 									}
-									&.retour-haut{
-										a.btn-retour-haut{
+									&.back-to-top{
+										a.btn-back-to-top{
 											.triangle{
 												border-bottom: 11px solid @theme2;
 											}
 										}
 									}
-									a.btn-ligne{
+									a.btn-line{
 										&.up{
-											background: @theme2 url('../images/fleche-top.png') no-repeat center center;
+											background: @theme2 url('../../images/followup/arrow-top.png') no-repeat center center;
 										}
 										&.down{
-											background: @theme2 url('../images/fleche-bottom.png') no-repeat center center;
+											background: @theme2 url('../../images/followup/arrow-bottom.png') no-repeat center center;
 										}
 									}
-									.bloc-bottom{
-										.bloc-description {
+									.block-bottom{
+										.block-description {
 											width: 80%;
 											-webkit-border-top-right-radius: 5px;
 											-moz-border-top-right-radius: 5px;
@@ -1580,57 +1580,57 @@ body{
 						}
 					}
 					.id{
-						.titre-masque{
+						.mask-title{
 							display: inline;
 						}
 					}
-					.avancement{
+					.progress{
 						display: none;
 					}
-					.nom{
+					.name{
 						display: none;
 					}
 					.description{
 						display: none;
 					}
-					.statut{
+					.status{
 						display: none;
 					}
-					.ombre-ligne{
+					.line-shadow{
 						width: 97%;
 						left: 1.5%;
 						bottom: 20px;
 					}
 				}
 			}
-			&#liste-t{
+			&#task-list{
 				padding: 120px 0 30px 0;
 				margin-top: -90px;
-				li.ligne-liste{
+				li.list-line{
 					.case{
 						&.id{
-							.fleche-detail{
-								background: url('../images/fleche-detail-t.png') no-repeat left top;
+							.arrow-detail{
+								background: url('../../images/followup/arrow-detail-task.png') no-repeat left top;
 							}
 						}
 					}
-					&.retour-haut{
-						a.btn-retour-haut{
+					&.back-to-top{
+						a.btn-back-to-top{
 							.triangle{
 								border-bottom: 11px solid @theme2;
 							}
 						}
 					}
-					a.btn-ligne{
+					a.btn-line{
 						&.up{
-							background: @theme2 url('../images/fleche-top.png') no-repeat center center;
+							background: @theme2 url('../../images/followup/arrow-top.png') no-repeat center center;
 						}
 						&.down{
-							background: @theme2 url('../images/fleche-bottom.png') no-repeat center center;
+							background: @theme2 url('../../images/followup/arrow-bottom.png') no-repeat center center;
 						}
 					}
-					.bloc-bottom{
-						.bloc-description {
+					.block-bottom{
+						.block-description {
 							width: 80%;
 							-webkit-border-top-right-radius: 5px;
 							-moz-border-top-right-radius: 5px;
@@ -1668,7 +1668,7 @@ body{
 
 /* @group Non semantic Boilerplate */
 
-/* remplacement image */
+/* replace image */
 .ir {
     background-color: transparent;
     border: 0;
@@ -1683,20 +1683,20 @@ body{
     height: 100%;
 }
 
-/* masquage de texte, alternative (buggé?) */
+/* mask text, alternative (bug ?) */
 .hide-text {
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
 }
 
-/* masqué */
+/* masked */
 .hidden {
     display: none !important;
     visibility: hidden;
 }
 
-/* masqué juste sur l'écran (pas sur RSS ou moteurs) */
+/* masked only on the screen (not on RSS nor motors) */
 .visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -1726,13 +1726,13 @@ body{
    ========================================================================== */
 
 
-/* mes resolutions responsives "classiques" */
+/* my "classic" responsives resolutions */
 @media (max-width: 1150px) {
-	#bloc-content{
+	#block-content{
 		#content{
-			ul.liste-elements{
-				li.ligne-liste{
-					.of-correspondant{
+			ul.elements-list{
+				li.list-line{
+					.parent-faborder{
 						font-size: 0.9em;
 					}
 				}
@@ -1745,20 +1745,20 @@ body{
 	body{
 		font-size: 0.9em;
 	}
-	#bloc-content{
+	#block-content{
 		#content{
-			ul.liste-elements{
-				li.ligne-liste{
-					.of-correspondant{
+			ul.elements-list{
+				li.list-line{
+					.parent-faborder{
 						padding-top: 15px;
 						padding-bottom: 19px;
-						a.lien-of-correspondant{
+						a.parent-faborder-link{
 							display: block;
 							text-align: center;
 							width: 430px;
 							margin: 0 auto;
 						}
-						.nom-ordre-correspondant{
+						.parent-faborder-name{
 							text-align: center;
 							margin-top: 10px;
 							width: 100%;
@@ -1768,7 +1768,7 @@ body{
 			}
 		}
 	}
-	#bloc-content-login{
+	#block-content-login{
 		width: 100%;
 		#content-left{
 			float: none;
@@ -1797,45 +1797,45 @@ body{
 }
 
 @media (max-width: 770px) {
-	#bloc-content{
+	#block-content{
 		padding-left: 150px;
 		#content{
-			ul.liste-elements{
-				li.ligne-liste{
-					a.btn-ligne{
+			ul.elements-list{
+				li.list-line{
+					a.btn-line{
 						width: 75px;
 						height: 75px;
 						&.up{
-							background: @theme1 url('../images/fleche-top.png') no-repeat center center;
+							background: @theme1 url('../../images/followup/arrow-top.png') no-repeat center center;
 							right: 80px;
 						}
 						&.down{
-							background: @theme1 url('../images/fleche-bottom.png') no-repeat center center;
+							background: @theme1 url('../../images/followup/arrow-bottom.png') no-repeat center center;
 							right: 0;
 						}
-						&.btn-ligne-masque{
+						&.btn-line-mask{
 							display: none;
 						}
-						.ombre-btn-ligne{
+						.shadow-btn-line{
 							width: 70px;
 							height: 10px;
 							bottom: -10px;
 							left: 50%;
 							margin-left: -35px;
-							background: url('../images/btn/ombre-btn-ligne-small.png') no-repeat left top;
+							background: url('../../images/followup/btn/shadow-btn-line-small.png') no-repeat left top;
 						}
 					}
 					.case{
 						&.id{
-							.fleche-detail{
-								background: url('../images/fleche-detail-of-small.png') no-repeat left top;
+							.arrow-detail{
+								background: url('../../images/followup/arrow-detail-faborder-small.png') no-repeat left top;
 							}
 						}
 					}
-					.case.avancement-open{
+					.case.progress-open{
 						width: 42%;
 						left: 29.5%;
-						.temps{
+						.prod-time{
 							top: 16px;
 							strong{
 								width: 50px;
@@ -1845,10 +1845,10 @@ body{
 								padding-top: 5px;
 								font-size: 1.7em;
 							}
-							&.passe{
+							&.real{
 								left: 24px;
 							}
-							&.prevu{
+							&.estimated{
 								left: 100px;
 							}
 							
@@ -1856,21 +1856,21 @@ body{
 						.pie, canvas.peity{
 							left: 83%;
 						}
-						.ombre-pourcent{
+						.percent-shadow{
 							left: 83%;
 						}
-						.pourcent{
+						.percent{
 							left: 83%;
 							margin-left: -25px;
 						}
 					}
 				}
-				&#liste-t{
-					li.ligne-liste{
+				&#task-list{
+					li.list-line{
 						.case{
 							&.id{
-								.fleche-detail{
-									background: url('../images/fleche-detail-t-small.png') no-repeat left top;
+								.arrow-detail{
+									background: url('../../images/followup/arrow-detail-task-small.png') no-repeat left top;
 								}
 							}
 						}
@@ -1884,39 +1884,39 @@ body{
 		a.btn-sidebar{
 			width: 72px;
 			padding: 38px 12px 23px 66px;
-			&#btn-of{
-				background: @grisfonce url('../images/picto-of-small.png') no-repeat 15px 29px;
+			&#btn-faborder{
+				background: @grisfonce url('../../images/followup/picto-faborder-small.png') no-repeat 15px 29px;
 				&.active{
-					background: @theme1 url('../images/picto-of-active-small.png') no-repeat 15px 29px;
+					background: @theme1 url('../../images/followup/picto-faborder-active-small.png') no-repeat 15px 29px;
 				}
-				#fleche-btn-of{
-					background: url('../images/btn/fleche-btn-bleu-small.png') no-repeat left top;
+				#arrow-btn-faborder{
+					background: url('../../images/followup/btn/arrow-blue-btn-small.png') no-repeat left top;
 				}
 			}
-			&#btn-t{
+			&#btn-task{
 				padding: 48px 12px 23px 66px;
-				background: @grisfonce url('../images/picto-t-small.png') no-repeat 15px 29px;
+				background: @grisfonce url('../../images/followup/picto-task-small.png') no-repeat 15px 29px;
 				&.active{
-					background: @theme2 url('../images/picto-t-active-small.png') no-repeat 15px 29px;
+					background: @theme2 url('../../images/followup/picto-task-active-small.png') no-repeat 15px 29px;
 				}
-				#fleche-btn-t{
-					background: url('../images/btn/fleche-btn-violet-small.png') no-repeat left top;
+				#arrow-btn-task{
+					background: url('../../images/followup/btn/arrow-purple-btn-small.png') no-repeat left top;
 				}
 			}
-			.ombre{
+			.shadow{
 				width: 150px;
 			}
 		}
 		
-		#bloc-bottom-sidebar{
+		#block-bottom-sidebar{
 			width: 150px;
 			.logo{
 				width: 150px;
-				background: url('../images/logo-nomaka-small.png') no-repeat center center;
+				background: url('../../images/followup/logo-nomaka-small.png') no-repeat center center;
 			}
-			a#btn-mentions-legales{
-				background: #202020 url('../images/fleche-lien.png') no-repeat 12px 30px;
-				.ombre{
+			a#btn-legal-notices{
+				background: #202020 url('../../images/followup/arrow-link.png') no-repeat 12px 30px;
+				.shadow{
 					width: 150px;
 				}
 			}

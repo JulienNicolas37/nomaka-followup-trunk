@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-engine-xml>
-    <PortalPage portalPageId="Followup" sequenceNum="1" portalPageName="Followup Desktop" parentPortalPageId="Followup" description="Followup of manufacturing tasks from a production run for desktop" ownerUserLoginId="_NA_"/>
+    <PortalPage portalPageId="Followup" sequenceNum="1" portalPageName="Followup Desktop" parentPortalPageId="Followup" description="Followup of manufacturing tasks from a fabrication order for desktop" ownerUserLoginId="_NA_"/>
     <PortalPageColumn portalPageId="Followup" columnSeqId="00001" columnWidthPercentage="25"/>
-        <PortalPagePortlet portalPageId="Followup" portalPortletId="SelectProdRun" portletSeqId="00001" columnSeqId="00001" sequenceNum="2"/>
-        <PortalPagePortlet portalPageId="Followup" portalPortletId="ProdRunDetailsMenu" portletSeqId="00001" columnSeqId="00001" sequenceNum="3"/>
+        <PortalPagePortlet portalPageId="Followup" portalPortletId="SelectFabOrder" portletSeqId="00001" columnSeqId="00001" sequenceNum="2"/>
+        <PortalPagePortlet portalPageId="Followup" portalPortletId="FabOrderDetailsMenu" portletSeqId="00001" columnSeqId="00001" sequenceNum="3"/>
     <PortalPageColumn portalPageId="Followup" columnSeqId="00002"/><!-- no width in pixels or percent, use the rest of the space available -->
         <PortalPagePortlet portalPageId="Followup" portalPortletId="ListProdTasks" portletSeqId="00001" columnSeqId="00002" sequenceNum="1"/>
         <PortalPagePortlet portalPageId="Followup" portalPortletId="FollowupProdTask" portletSeqId="00001" columnSeqId="00002" sequenceNum="2"/>
         <PortalPagePortlet portalPageId="Followup" portalPortletId="ProdTaskTimeEntries" portletSeqId="00001" columnSeqId="00002" sequenceNum="2"/>
-    <PortletAttribute portalPageId="Followup" portalPortletId="SelectProdRun" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
-    <PortletAttribute portalPageId="Followup" portalPortletId="ProdRunDetailsMenu" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
+    <PortletAttribute portalPageId="Followup" portalPortletId="SelectFabOrder" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
+    <PortletAttribute portalPageId="Followup" portalPortletId="FabOrderDetailsMenu" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
     <PortletAttribute portalPageId="Followup" portalPortletId="ListProdTasks" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
     <PortletAttribute portalPageId="Followup" portalPortletId="FollowupProdTask" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
     <PortletAttribute portalPageId="Followup" portalPortletId="ProdTaskTimeEntries" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>

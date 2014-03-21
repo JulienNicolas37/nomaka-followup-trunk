@@ -1,9 +1,9 @@
-function sendStart(urlPath,prodRunId, taskId, taskOriginalStatus) {
+function sendStart(urlPath,fabOrderId, taskId, taskOriginalStatus) {
     $.ajax({
             type: "POST",
             async:false,
             url: urlPath,
-            data: {productionRunId: prodRunId, workEffortId: taskId, currentStatusId: taskOriginalStatus},
+            data: {fabricationOrderId: fabOrderId, workEffortId: taskId, currentStatusId: taskOriginalStatus},
             dataType: 'json',
             success: function (data) {
                 if (data._ERROR_MESSAGE_ ) {
@@ -75,12 +75,12 @@ function sendResume(urlPath,taskId) {
             }
     });
 }
-function sendStop(urlPath,prodRunId, taskId, taskOriginalStatus) {
+function sendStop(urlPath,fabOrderId, taskId, taskOriginalStatus) {
     $.ajax({
             type: "POST",
             async:false,
             url: urlPath,
-            data: {productionRunId: prodRunId, workEffortId: taskId, currentStatusId: taskOriginalStatus},
+            data: {fabricationOrderId: fabOrderId, workEffortId: taskId, currentStatusId: taskOriginalStatus},
             dataType: 'json',
             success: function (data) {
                 if (data._ERROR_MESSAGE_ ) {
@@ -91,7 +91,7 @@ function sendStop(urlPath,prodRunId, taskId, taskOriginalStatus) {
 //                	document.location.reload()
                     <!-- modify status class -->
                     <!--    statusChangeIcon("stop",taskId);-->
-                    <!--document.getElementById(taskId+"list").className = "ligne-liste fini" ;-->
+                    <!--document.getElementById(taskId+"list").className = "list-line finished" ;-->
                     statusChangeIcon("stop", taskId);
                     spriteAnimation();
                     <!-- Show buttons -->
@@ -116,22 +116,22 @@ function statusChangeIcon(status,taskId) {
   elementDescript = element.innerHTML ;
   baseURL = baseIconURLFromStatus(elementDescript);
   if(status == "start") {
-    path = "background-image: url(&quot;../../images/followup/sprite/5-pourcent/en-cours/encours";
+    path = "background-image: url(&quot;../images/followup/sprite/5-percent/in-progress/inprogress";
   }
   if(status == "pause") {
     path = getIconBasePath(baseURL)+"pause/pause" ;
   }
   if(status == "resume") {
-    path = getIconBasePath(baseURL)+"en-cours/encours" ;
+    path = getIconBasePath(baseURL)+"in-progress/inprogress" ;
   }
   if(status == "stop"){
-    path = "background-image: url(&quot;../../images/followup/sprite/fini/fini";
+    path = "background-image: url(&quot;../images/followup/sprite/finished/finished";
   }
   replaceIconPath(element,baseURL,path);
   if(status == "stop"){
     element.innerHTML = element.innerHTML.replace("data-frames=\"24","data-frames=\"47");
   }
-  element = document.getElementById(taskId+"status-task-in-of");
+  element = document.getElementById(taskId+"status-task-in-faborder");
   replaceIconPath(element,baseURL,path);
   if(status == "stop"){
     element.innerHTML = element.innerHTML.replace("data-frames=\"24","data-frames=\"47");
@@ -141,21 +141,21 @@ function statusChangeIcon(status,taskId) {
   elementDescript = element.innerHTML ;
   baseURL = baseFolderURLFromStatus(elementDescript);
   if(status == "start") {
-    path = "data-baseurl=\"../../images/followup/sprite/5-pourcent/en-cours/encours";
+    path = "data-baseurl=\"../images/followup/sprite/5-percent/in-progress/inprogress";
   }
   if(status == "pause") {
     path = getIconBasePath(baseURL)+"pause/pause" ;
   }
   if(status == "resume") {
-    path = getIconBasePath(baseURL)+"en-cours/encours" ;
+    path = getIconBasePath(baseURL)+"in-progress/inprogress" ;
   }
   if(status == "stop"){
-    path = "data-baseurl=\"../../images/followup/sprite/fini/fini";
+    path = "data-baseurl=\"../images/followup/sprite/finished/finished";
   }
 
   
   replaceFolderPath(element,baseURL,path);
-  element = document.getElementById(taskId+"status-task-in-of");
+  element = document.getElementById(taskId+"status-task-in-faborder");
   replaceFolderPath(element,baseURL,path);
 }
 function replaceIconPath(element,baseURL,newPath) {
@@ -173,7 +173,7 @@ function getIconBasePath(baseURL) {
   if(baseURL.lastIndexOf("pause")>0){
     path = baseURL.substring(0,baseURL.lastIndexOf("pause/pause"));
   } else {
-    path = baseURL.substring(0,baseURL.lastIndexOf("en-cours"));
+    path = baseURL.substring(0,baseURL.lastIndexOf("in-progress"));
   }
   return path ;
 }

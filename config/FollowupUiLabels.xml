@@ -75,16 +75,16 @@
         <value xml:lang="en">Follow Up with Portlet</value>
         <value xml:lang="fr">Suivi de production par Portlet</value>
     </property>
-    <property key="FollowupProdRunId">
-        <value xml:lang="en">Prod run Id</value>
+    <property key="FollowupFabOrderId">
+        <value xml:lang="en">Fab Order Id</value>
         <value xml:lang="fr">Ref de l'OF</value>
     </property>
-    <property key="FollowupProdRunName">
-        <value xml:lang="en">Prod run name</value>
+    <property key="FollowupFabOrderName">
+        <value xml:lang="en">Fab order name</value>
         <value xml:lang="fr">Nom de l'OF</value>
     </property>
-    <property key="FollowupProductionRuns">
-        <value xml:lang="en">Production Runs</value>
+    <property key="FollowupFabricationOrders">
+        <value xml:lang="en">Fabrication orders</value>
         <value xml:lang="fr">Ordres de fabrication</value>
     </property>
     <property key="FollowupQuantityProduced">
@@ -107,12 +107,12 @@
         <value xml:lang="en">Follow Up with Screen</value>
         <value xml:lang="fr">Suivi de production par Screens</value>
     </property>
-    <property key="FollowupSeeProductionRun">
-        <value xml:lang="en">See Production Run</value>
+    <property key="FollowupSeeFabricationOrder">
+        <value xml:lang="en">See Fabrication Order</value>
         <value xml:lang="fr">Voir l'Ordre de Fabrication</value>
     </property>
-    <property key="FollowupSelectProductionRun">
-        <value xml:lang="en">Select Production Run</value>
+    <property key="FollowupSelectFabricationOrder">
+        <value xml:lang="en">Select Fabrication Order</value>
         <value xml:lang="fr">Sélection de l'Ordre de Fabrication</value>
     </property>
     <property key="FollowupStatus">
@@ -131,7 +131,7 @@
         <value xml:lang="en">Task Id</value>
         <value xml:lang="fr">Ref de la tâche</value>
     </property>
-    <property key="FollowupTaskListInProdRun">
+    <property key="FollowupTaskListInFabOrder">
         <value xml:lang="en">Tasks list</value>
         <value xml:lang="fr">Liste des tâches</value>
     </property>
@@ -172,12 +172,12 @@
         <value xml:lang="en">List of production tasks</value>
         <value xml:lang="fr">Liste des opérations de production</value>
     </property>
-    <property key="PageTitleProdRunDetailsMenu">
-        <value xml:lang="en">Production Run information</value>
+    <property key="PageTitleFabOrderDetailsMenu">
+        <value xml:lang="en">Fabrication Order information</value>
         <value xml:lang="fr">Information sur l'Ordre de Fabrication</value>
     </property>
-    <property key="PageTitleSelectProdRun">
-        <value xml:lang="en">Select Production Run</value>
+    <property key="PageTitleSelectFabOrder">
+        <value xml:lang="en">Select Fabrication Order</value>
         <value xml:lang="fr">Sélection de l'Ordre de Fabrication</value>
     </property>
     

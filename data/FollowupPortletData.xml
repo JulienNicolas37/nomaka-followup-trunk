@@ -23,17 +23,17 @@ under the License.
     <PortletCategory portletCategoryId="FOLLOWUP" description="Followup Portlet(s)"/>
   
 <!--   Sh_ProductOfferMgmt portlet -->
-    <PortalPortlet portalPortletId="SelectProdRun"
-        portletName="Select Production Run" 
-        description="portlet to select a production run"
+    <PortalPortlet portalPortletId="SelectFabOrder"
+        portletName="Select Fabrication order" 
+        description="portlet to select a Fabrication order"
         portletTypeId="Screenlet"
         component="followup"
         subComponent="Followup"/>
-    <PortletPortletCategory portalPortletId="SelectProdRun" portletCategoryId="FOLLOWUP"/>
+    <PortletPortletCategory portalPortletId="SelectFabOrder" portletCategoryId="FOLLOWUP"/>
 
     <PortalPortlet portalPortletId="ListProdTasks"
         portletName="List Manufacturing tasks" 
-        description="portlet to list Manufacturing tasks of a production run"
+        description="portlet to list Manufacturing tasks of a Fabrication order"
         portletTypeId="ScreenletList"
         component="followup"
         subComponent="Followup"
@@ -41,14 +41,14 @@ under the License.
         useScript="Y"/>
     <PortletPortletCategory portalPortletId="ListProdTasks" portletCategoryId="FOLLOWUP"/>
 
-    <PortalPortlet portalPortletId="ProdRunDetailsMenu"
-        portletName="Production Run Details" 
-        description="portlet to show information about selected production run"
+    <PortalPortlet portalPortletId="FabOrderDetailsMenu"
+        portletName="Fabrication order Details" 
+        description="portlet to show information about selected Fabrication order"
         portletTypeId="Screenlet"
         component="followup"
         subComponent="Followup"
         pkIdName="workEffortId"/>
-    <PortletPortletCategory portalPortletId="ProdRunDetailsMenu" portletCategoryId="FOLLOWUP"/>
+    <PortletPortletCategory portalPortletId="FabOrderDetailsMenu" portletCategoryId="FOLLOWUP"/>
 
     <PortalPortlet portalPortletId="FollowupProdTask"
         portletName="Follow-up Manufacturing tasks" 
@@ -60,18 +60,18 @@ under the License.
         useScript="Y"/>
     <PortletPortletCategory portalPortletId="FollowupProdTask" portletCategoryId="FOLLOWUP"/>
 
-    <PortalPortlet portalPortletId="ProdRunTaskDetail"
+    <PortalPortlet portalPortletId="FabOrderTaskDetail"
         portletTypeId="Empty"
-        portletName="Production Run Task Detail"
+        portletName="Fabrication order Task Detail"
         description="Container portlet"
         component="followup"
         subComponent="followup"
         useScript="Y"/>
-    <PortletPortletCategory portalPortletId="ProdRunTaskDetail" portletCategoryId="FOLLOWUP"/>
+    <PortletPortletCategory portalPortletId="FabOrderTaskDetail" portletCategoryId="FOLLOWUP"/>
 
     <PortalPortlet portalPortletId="ProdTaskTimeEntries"
         portletName="List Time Entries of Manufacturing tasks" 
-        description="portlet to list Time Entries of Manufacturing tasks contained in a production run"
+        description="portlet to list Time Entries of Manufacturing tasks contained in a Fabrication order"
         portletTypeId="ScreenletList"
         component="followup"
         subComponent="Followup"

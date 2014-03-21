@@ -21,7 +21,7 @@ under the License.
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
 
-    <form name="lookupProductionRun" target="LookupProductionRun" type="single"
+    <form name="lookupFabricationOrder" target="LookupFabricationOrder" type="single"
         header-row-style="header-row" default-table-style="basic-table">
         <field name="workEffortId" ><text-find/></field>
         <field name="workEffortName" ><text-find/></field>
@@ -34,11 +34,11 @@ under the License.
         <field name="submitButton" title="${uiLabelMap.CommonFind}"><submit button-type="button"/></field>
     </form>
 
-    <form name="listLookupProductionRun" type="list" list-name="listIt" paginate-target="LookupProductionRun"
+    <form name="listLookupFabricationOrder" type="list" list-name="listIt" paginate-target="LookupFabricationOrder"
         odd-row-style="alternate-row" default-table-style="basic-table" view-size="20">
         <actions>
             <set field="orderBy" from-field="parameters.sortField" default-value="workEffortId"/>
-            <set field="entityName" value="WorkEffortProdRunPrintedView"/>
+            <set field="entityName" value="WorkEffortFabOrderPrintedView"/>
             <service service-name="performFind" result-map="result" result-map-list="listIt">
                 <field-map field-name="inputFields" from-field="parameters"/>
                 <field-map field-name="entityName" from-field="entityName"/>

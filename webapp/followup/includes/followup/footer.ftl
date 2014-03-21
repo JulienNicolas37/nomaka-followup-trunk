@@ -18,11 +18,11 @@ under the License.
 -->
 
 			<div id="sidebar">
-				<a href="#" class="btn-sidebar active" id="btn-of">${uiLabelMap.FollowupProductionRuns}<span id="fleche-btn-of"></span><span class="ombre"></span></a>
-				<a href="#" class="btn-sidebar" id="btn-t">${uiLabelMap.FollowupTasks}<span id="fleche-btn-t"></span><div id="of-selec" class="masque">OF<span class="num-of-selec"></span><div id="btn-of-corres"></div></div><span class="ombre"></span></a>
-				<div id="bloc-bottom-sidebar">
+				<a href="#" class="btn-sidebar active" id="btn-faborder">${uiLabelMap.FollowupFabricationOrders}<span id="arrow-btn-faborder"></span><span class="shadow"></span></a>
+				<a href="#" class="btn-sidebar" id="btn-task">${uiLabelMap.FollowupTasks}<span id="arrow-btn-task"></span><div id="faborder-selec" class="mask">OF<span class="faborder-id-selec"></span><div id="btn-parent-faborder"></div></div><span class="shadow"></span></a>
+				<div id="block-bottom-sidebar">
 					<div class="logo"> </div>
-					<a href="#" id="btn-mentions-legales">${uiLabelMap.FollowupLegalNotices}<span class="ombre"></span></a>
+					<a href="#" id="btn-legal-notices">${uiLabelMap.FollowupLegalNotices}<span class="shadow"></span></a>
 				</div>
 			</div>
 			

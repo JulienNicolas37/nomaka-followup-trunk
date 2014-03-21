@@ -16,6 +16,7 @@ import org.ofbiz.entity.GenericValue;
 import org.ofbiz.service.DispatchContext;
 import org.ofbiz.service.GenericServiceException;
 import org.ofbiz.service.LocalDispatcher;
+import org.ofbiz.service.ModelService;
 import org.ofbiz.service.ServiceUtil;
 
 public class FollowupServices {
@@ -29,7 +30,11 @@ public class FollowupServices {
         Map<String, Object> result = null;
         
         try {
-            dispatcher.runSync("changeProductionRunTaskStatus", context);
+            String fabricationOrderId = (String) context.get("fabricationOrderId");
+            ModelService createService = dctx.getModelService("changeProductionRunTaskStatus");
+            Map<String, Object> inContext = createService.makeValid(context, ModelService.IN_PARAM);
+            inContext.put("productionRunId", fabricationOrderId);
+            dispatcher.runSync("changeProductionRunTaskStatus", inContext);
         } catch (GenericServiceException e) {
             Debug.logError(e, "Problem calling the changeProductionRunTaskStatus service", module);
             return ServiceUtil.returnError(UtilProperties.getMessage(resource, "FollowupTaskUnableToStart", locale));
@@ -129,7 +134,11 @@ public class FollowupServices {
         Map<String, Object> result = null;
         
         try {
-            dispatcher.runSync("changeProductionRunTaskStatus", context);
+            String fabricationOrderId = (String) context.get("fabricationOrderId");
+            ModelService createService = dctx.getModelService("changeProductionRunTaskStatus");
+            Map<String, Object> inContext = createService.makeValid(context, ModelService.IN_PARAM);
+            inContext.put("productionRunId", fabricationOrderId);
+            dispatcher.runSync("changeProductionRunTaskStatus", inContext);
         } catch (GenericServiceException e) {
             Debug.logError(e, "Problem calling the changeProductionRunTaskStatus service", module);
             return ServiceUtil.returnError(UtilProperties.getMessage(resource, "FollowupTaskUnableToStart", locale));
