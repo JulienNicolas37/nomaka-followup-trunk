@@ -25,8 +25,8 @@ under the License.
                     <div id="content-popup">
                         <h3>${uiLabelMap.FollowupLegalNotices}</h3>
                         <a href="#" id="btn-close-popup"></a>
-                        <p>Droit d'auteur (c) 2001-2014 The Apache Software Foundation - www.apache.org</p>
-                        <p>Fonctionne grâce à Apache OFBiz </p>
+                        <p>${uiLabelMap.CommonCopyright} (c) 2001-${nowTimestamp?string("yyyy")} The Apache Software Foundation - http://www.apache.org</p>
+                        <p>${uiLabelMap.CommonPoweredBy} Apache OFBiz</p>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@ under the License.
                                 <div class="block-bottom">
                                     <div class="block-description">
                                         <div class="block-description-content">
-                                            <h2>Description</h2>
+                                            <h2>${uiLabelMap.FollowupDescription}</h2>
                                             <p>${fabOrder.fabOrderDescription}</p>
                                             <h2 class="top-plus">${uiLabelMap.FollowupTaskListInFabOrder}</h2>
                                         </div>
@@ -117,7 +117,7 @@ under the License.
                                     </#if></#if></#if>
                                     </div><div class="block-description">
                                         <div class="block-description-content">
-                                            <h2>Description</h2>
+                                            <h2>${uiLabelMap.FollowupDescription}</h2>
                                             <p>${task.taskDescription}</p>
                                     </div></div>
                                 </div>
