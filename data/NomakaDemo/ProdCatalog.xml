@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-engine-xml>
-    <ProdCatalog prodCatalogId="10000" catalogName="Catalogue principal" useQuickAdd="Y" viewAllowPermReqd="N" purchaseAllowPermReqd="N" lastUpdatedStamp="2014-03-10 12:18:39.255" lastUpdatedTxStamp="2014-03-10 12:18:38.965" createdStamp="2014-03-10 12:18:39.255" createdTxStamp="2014-03-10 12:18:38.965"/>
+    <ProdCatalog prodCatalogId="NMK10000" catalogName="Catalogue principal" useQuickAdd="Y" viewAllowPermReqd="N" purchaseAllowPermReqd="N" lastUpdatedStamp="2014-03-10 12:18:39.255" lastUpdatedTxStamp="2014-03-10 12:18:38.965" createdStamp="2014-03-10 12:18:39.255" createdTxStamp="2014-03-10 12:18:38.965"/>
 </entity-engine-xml>

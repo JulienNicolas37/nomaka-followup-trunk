@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <Facility facilityId="NMK10000" facilityTypeId="WAREHOUSE" ownerPartyId="NMK10000" defaultInventoryItemTypeId="NON_SERIAL_INV_ITEM" facilityName="Nomaka St Seb." lastUpdatedStamp="2014-03-10 09:23:48.478" lastUpdatedTxStamp="2014-03-10 09:23:48.113" createdStamp="2014-03-10 09:23:48.478" createdTxStamp="2014-03-10 09:23:48.113"/>
+</entity-engine-xml>

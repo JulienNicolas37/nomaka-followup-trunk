@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-engine-xml>
-    <OrderItemShipGrpInvRes orderId="1" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="10003" reserveOrderEnumId="INVRO_FIFO_REC" quantity="60.000000" quantityNotAvailable="60.000000" reservedDatetime="2014-03-10 15:00:55.208" createdDatetime="2014-03-10 15:00:55.208" promisedDatetime="2014-04-09 15:00:46.406" priority="2" lastUpdatedStamp="2014-03-10 15:00:56.361" lastUpdatedTxStamp="2014-03-10 15:00:56.288" createdStamp="2014-03-10 15:00:55.209" createdTxStamp="2014-03-10 15:00:46.381"/>
+    <OrderItemShipGrpInvRes orderId="1" shipGroupSeqId="00001" orderItemSeqId="00001" inventoryItemId="NMK10003" reserveOrderEnumId="INVRO_FIFO_REC" quantity="60.000000" quantityNotAvailable="60.000000" reservedDatetime="2014-03-10 15:00:55.208" createdDatetime="2014-03-10 15:00:55.208" promisedDatetime="2014-04-09 15:00:46.406" priority="2" lastUpdatedStamp="2014-03-10 15:00:56.361" lastUpdatedTxStamp="2014-03-10 15:00:56.288" createdStamp="2014-03-10 15:00:55.209" createdTxStamp="2014-03-10 15:00:46.381"/>
 </entity-engine-xml>

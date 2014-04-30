@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <FacilityContactMechPurpose facilityId="NMK10000" contactMechId="NMK10003" contactMechPurposeTypeId="SHIPPING_LOCATION" fromDate="2014-03-10 09:26:34.922" lastUpdatedStamp="2014-03-10 09:26:34.924" lastUpdatedTxStamp="2014-03-10 09:26:34.748" createdStamp="2014-03-10 09:26:34.924" createdTxStamp="2014-03-10 09:26:34.748"/>
+</entity-engine-xml>

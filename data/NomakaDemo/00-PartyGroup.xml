@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PartyGroup partyId="NMK10000" groupName="Nomaka" lastUpdatedStamp="2014-03-10 09:19:01.803" lastUpdatedTxStamp="2014-03-10 09:19:01.541" createdStamp="2014-03-10 09:19:01.803" createdTxStamp="2014-03-10 09:19:01.541"/>
+    <PartyGroup partyId="NMK10002" groupName="La Poste" lastUpdatedStamp="2014-03-10 09:38:46.414" lastUpdatedTxStamp="2014-03-10 09:38:46.312" createdStamp="2014-03-10 09:38:46.414" createdTxStamp="2014-03-10 09:38:46.312"/>
+    <PartyGroup partyId="NMK10005" groupName="Gwendalavir Construction" lastUpdatedStamp="2014-03-10 10:10:12.885" lastUpdatedTxStamp="2014-03-10 10:10:12.859" createdStamp="2014-03-10 10:10:12.885" createdTxStamp="2014-03-10 10:10:12.859"/>
+    <PartyGroup partyId="NMK10006" groupName="Perception" lastUpdatedStamp="2014-03-10 10:19:52.441" lastUpdatedTxStamp="2014-03-10 10:19:52.427" createdStamp="2014-03-10 10:19:52.441" createdTxStamp="2014-03-10 10:19:52.427"/>
+</entity-engine-xml>

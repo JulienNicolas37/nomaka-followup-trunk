@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PartyRole partyId="NMK10000" roleTypeId="AGENT" lastUpdatedStamp="2014-03-10 09:19:50.806" lastUpdatedTxStamp="2014-03-10 09:19:50.436" createdStamp="2014-03-10 09:19:50.806" createdTxStamp="2014-03-10 09:19:50.436"/>
+    <PartyRole partyId="NMK10000" roleTypeId="BILL_FROM_VENDOR" lastUpdatedStamp="2014-03-10 09:19:27.31" lastUpdatedTxStamp="2014-03-10 09:19:26.988" createdStamp="2014-03-10 09:19:27.31" createdTxStamp="2014-03-10 09:19:26.988"/>
+    <PartyRole partyId="NMK10000" roleTypeId="BILL_TO_CUSTOMER" lastUpdatedStamp="2014-03-10 09:19:36.714" lastUpdatedTxStamp="2014-03-10 09:19:36.705" createdStamp="2014-03-10 09:19:36.714" createdTxStamp="2014-03-10 09:19:36.705"/>
+    <PartyRole partyId="NMK10000" roleTypeId="CARRIER" lastUpdatedStamp="2014-03-10 09:19:43.719" lastUpdatedTxStamp="2014-03-10 09:19:43.707" createdStamp="2014-03-10 09:19:43.719" createdTxStamp="2014-03-10 09:19:43.707"/>
+    <PartyRole partyId="NMK10000" roleTypeId="INTERNAL_ORGANIZATIO" lastUpdatedStamp="2014-03-10 09:20:00.8" lastUpdatedTxStamp="2014-03-10 09:20:00.666" createdStamp="2014-03-10 09:20:00.8" createdTxStamp="2014-03-10 09:20:00.666"/>
+    <PartyRole partyId="NMK10000" roleTypeId="_NA_" lastUpdatedStamp="2014-03-10 09:19:02.031" lastUpdatedTxStamp="2014-03-10 09:19:01.541" createdStamp="2014-03-10 09:19:02.031" createdTxStamp="2014-03-10 09:19:01.541"/>
+    <PartyRole partyId="NMK10001" roleTypeId="EMPLOYEE" lastUpdatedStamp="2014-03-10 09:32:43.956" lastUpdatedTxStamp="2014-03-10 09:32:42.647" createdStamp="2014-03-10 09:32:43.956" createdTxStamp="2014-03-10 09:32:42.647"/>
+    <PartyRole partyId="NMK10001" roleTypeId="PACKER" lastUpdatedStamp="2014-03-10 09:34:48.446" lastUpdatedTxStamp="2014-03-10 09:34:47.99" createdStamp="2014-03-10 09:34:48.446" createdTxStamp="2014-03-10 09:34:47.99"/>
+    <PartyRole partyId="NMK10001" roleTypeId="_NA_" lastUpdatedStamp="2014-03-10 09:32:43.39" lastUpdatedTxStamp="2014-03-10 09:32:42.647" createdStamp="2014-03-10 09:32:43.39" createdTxStamp="2014-03-10 09:32:42.647"/>
+    <PartyRole partyId="NMK10002" roleTypeId="CARRIER" lastUpdatedStamp="2014-03-10 09:39:17.091" lastUpdatedTxStamp="2014-03-10 09:39:16.702" createdStamp="2014-03-10 09:39:17.091" createdTxStamp="2014-03-10 09:39:16.702"/>
+    <PartyRole partyId="NMK10002" roleTypeId="_NA_" lastUpdatedStamp="2014-03-10 09:38:46.529" lastUpdatedTxStamp="2014-03-10 09:38:46.312" createdStamp="2014-03-10 09:38:46.529" createdTxStamp="2014-03-10 09:38:46.312"/>
+    <PartyRole partyId="NMK10005" roleTypeId="BILL_TO_CUSTOMER" lastUpdatedStamp="2014-03-10 10:17:52.169" lastUpdatedTxStamp="2014-03-10 10:17:51.807" createdStamp="2014-03-10 10:17:52.169" createdTxStamp="2014-03-10 10:17:51.807"/>
+    <PartyRole partyId="NMK10005" roleTypeId="CUSTOMER" lastUpdatedStamp="2014-03-10 10:17:38.119" lastUpdatedTxStamp="2014-03-10 10:17:37.391" createdStamp="2014-03-10 10:17:38.119" createdTxStamp="2014-03-10 10:17:37.391"/>
+    <PartyRole partyId="NMK10005" roleTypeId="END_USER_CUSTOMER" lastUpdatedStamp="2014-03-10 15:00:48.304" lastUpdatedTxStamp="2014-03-10 15:00:46.381" createdStamp="2014-03-10 15:00:48.304" createdTxStamp="2014-03-10 15:00:46.381"/>
+    <PartyRole partyId="NMK10005" roleTypeId="PLACING_CUSTOMER" lastUpdatedStamp="2014-03-10 15:00:48.106" lastUpdatedTxStamp="2014-03-10 15:00:46.381" createdStamp="2014-03-10 15:00:48.106" createdTxStamp="2014-03-10 15:00:46.381"/>
+    <PartyRole partyId="NMK10005" roleTypeId="SHIP_TO_CUSTOMER" lastUpdatedStamp="2014-03-10 15:00:48.289" lastUpdatedTxStamp="2014-03-10 15:00:46.381" createdStamp="2014-03-10 15:00:48.289" createdTxStamp="2014-03-10 15:00:46.381"/>
+    <PartyRole partyId="NMK10005" roleTypeId="_NA_" lastUpdatedStamp="2014-03-10 10:10:12.964" lastUpdatedTxStamp="2014-03-10 10:10:12.859" createdStamp="2014-03-10 10:10:12.964" createdTxStamp="2014-03-10 10:10:12.859"/>
+    <PartyRole partyId="NMK10006" roleTypeId="TAX_AUTHORITY" lastUpdatedStamp="2014-03-10 10:20:17.449" lastUpdatedTxStamp="2014-03-10 10:20:16.905" createdStamp="2014-03-10 10:20:17.449" createdTxStamp="2014-03-10 10:20:16.905"/>
+    <PartyRole partyId="NMK10006" roleTypeId="_NA_" lastUpdatedStamp="2014-03-10 10:19:52.553" lastUpdatedTxStamp="2014-03-10 10:19:52.427" createdStamp="2014-03-10 10:19:52.553" createdTxStamp="2014-03-10 10:19:52.427"/>
+    <PartyRole partyId="_NA_" roleTypeId="CARRIER" lastUpdatedStamp="2014-03-10 10:23:02.051" lastUpdatedTxStamp="2014-03-10 10:23:02.008" createdStamp="2014-03-10 10:23:02.051" createdTxStamp="2014-03-10 10:23:02.008"/>
+</entity-engine-xml>

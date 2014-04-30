@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ProductStoreShipmentMeth productStoreShipMethId="NMK10000" productStoreId="NMK10000" shipmentMethodTypeId="Standard" partyId="NMK10002" roleTypeId="CARRIER" allowUspsAddr="Y" requireUspsAddr="N" allowCompanyAddr="Y" requireCompanyAddr="N" includeNoChargeItems="Y" lastUpdatedStamp="2014-03-10 09:46:42.602" lastUpdatedTxStamp="2014-03-10 09:46:42.43" createdStamp="2014-03-10 09:46:42.602" createdTxStamp="2014-03-10 09:46:42.43"/>
+    <ProductStoreShipmentMeth productStoreShipMethId="NMK10001" productStoreId="NMK10000" shipmentMethodTypeId="Rapide" partyId="NMK10002" roleTypeId="CARRIER" allowUspsAddr="Y" requireUspsAddr="N" allowCompanyAddr="Y" requireCompanyAddr="N" includeNoChargeItems="Y" lastUpdatedStamp="2014-03-10 09:46:57.868" lastUpdatedTxStamp="2014-03-10 09:46:57.616" createdStamp="2014-03-10 09:46:57.868" createdTxStamp="2014-03-10 09:46:57.616"/>
+</entity-engine-xml>

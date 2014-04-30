@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <ProductStorePaymentSetting productStoreId="10000" paymentMethodTypeId="EXT_BILLACT" paymentServiceTypeEnumId="PRDS_PAY_EXTERNAL" paymentService="30 jours r&#233;ception facture" applyToAllProducts="Y" lastUpdatedStamp="2014-03-10 09:50:58.652" lastUpdatedTxStamp="2014-03-10 09:50:58.49" createdStamp="2014-03-10 09:50:58.652" createdTxStamp="2014-03-10 09:50:58.49"/>
-</entity-engine-xml>

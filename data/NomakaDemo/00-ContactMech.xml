@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <ContactMech contactMechId="NMK10000" contactMechTypeId="POSTAL_ADDRESS" lastUpdatedStamp="2014-03-10 09:21:46.061" lastUpdatedTxStamp="2014-03-10 09:21:45.721" createdStamp="2014-03-10 09:21:46.061" createdTxStamp="2014-03-10 09:21:45.721"/>
+    <ContactMech contactMechId="NMK10003" contactMechTypeId="POSTAL_ADDRESS" lastUpdatedStamp="2014-03-10 09:26:34.908" lastUpdatedTxStamp="2014-03-10 09:26:34.748" createdStamp="2014-03-10 09:26:34.908" createdTxStamp="2014-03-10 09:26:34.748"/>
+    <ContactMech contactMechId="NMK10004" contactMechTypeId="POSTAL_ADDRESS" lastUpdatedStamp="2014-03-10 09:32:44.108" lastUpdatedTxStamp="2014-03-10 09:32:42.647" createdStamp="2014-03-10 09:32:44.108" createdTxStamp="2014-03-10 09:32:42.647"/>
+    <ContactMech contactMechId="NMK10005" contactMechTypeId="TELECOM_NUMBER" lastUpdatedStamp="2014-03-10 09:32:44.341" lastUpdatedTxStamp="2014-03-10 09:32:42.647" createdStamp="2014-03-10 09:32:44.341" createdTxStamp="2014-03-10 09:32:42.647"/>
+    <ContactMech contactMechId="NMK10006" contactMechTypeId="EMAIL_ADDRESS" infoString="julien.nicolas@nomaka.fr" lastUpdatedStamp="2014-03-10 09:32:44.899" lastUpdatedTxStamp="2014-03-10 09:32:42.647" createdStamp="2014-03-10 09:32:44.899" createdTxStamp="2014-03-10 09:32:42.647"/>
+    <ContactMech contactMechId="NMK10007" contactMechTypeId="POSTAL_ADDRESS" lastUpdatedStamp="2014-03-10 09:56:50.332" lastUpdatedTxStamp="2014-03-10 09:56:50.001" createdStamp="2014-03-10 09:56:50.332" createdTxStamp="2014-03-10 09:56:50.001"/>
+    <ContactMech contactMechId="NMK10008" contactMechTypeId="POSTAL_ADDRESS" lastUpdatedStamp="2014-03-10 10:03:59.174" lastUpdatedTxStamp="2014-03-10 10:03:58.769" createdStamp="2014-03-10 10:03:59.174" createdTxStamp="2014-03-10 10:03:58.769"/>
+    <ContactMech contactMechId="NMK10009" contactMechTypeId="POSTAL_ADDRESS" lastUpdatedStamp="2014-03-10 10:16:31.269" lastUpdatedTxStamp="2014-03-10 10:16:30.955" createdStamp="2014-03-10 10:16:31.269" createdTxStamp="2014-03-10 10:16:30.955"/>
+</entity-engine-xml>

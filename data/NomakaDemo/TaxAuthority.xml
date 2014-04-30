@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<entity-engine-xml>
-    <TaxAuthority taxAuthGeoId="FRA" taxAuthPartyId="10006" requireTaxIdForExemption="Y" includeTaxInPrice="N" lastUpdatedStamp="2014-03-10 10:21:17.615" lastUpdatedTxStamp="2014-03-10 10:21:17.409" createdStamp="2014-03-10 10:21:17.615" createdTxStamp="2014-03-10 10:21:17.409"/>
-</entity-engine-xml>

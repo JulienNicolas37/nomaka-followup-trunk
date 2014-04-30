@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-engine-xml>
+    <PartyStatus statusId="PARTY_ENABLED" partyId="NMK10000" statusDate="2014-03-10 09:19:01.541" lastUpdatedStamp="2014-03-10 09:19:01.732" lastUpdatedTxStamp="2014-03-10 09:19:01.541" createdStamp="2014-03-10 09:19:01.732" createdTxStamp="2014-03-10 09:19:01.541"/>
+    <PartyStatus statusId="PARTY_ENABLED" partyId="NMK10001" statusDate="2014-03-10 09:32:42.966" lastUpdatedStamp="2014-03-10 09:32:43.182" lastUpdatedTxStamp="2014-03-10 09:32:42.647" createdStamp="2014-03-10 09:32:43.182" createdTxStamp="2014-03-10 09:32:42.647"/>
+    <PartyStatus statusId="PARTY_ENABLED" partyId="NMK10002" statusDate="2014-03-10 09:38:46.312" lastUpdatedStamp="2014-03-10 09:38:46.403" lastUpdatedTxStamp="2014-03-10 09:38:46.312" createdStamp="2014-03-10 09:38:46.403" createdTxStamp="2014-03-10 09:38:46.312"/>
+    <PartyStatus statusId="PARTY_ENABLED" partyId="NMK10005" statusDate="2014-03-10 10:10:12.86" lastUpdatedStamp="2014-03-10 10:10:12.878" lastUpdatedTxStamp="2014-03-10 10:10:12.859" createdStamp="2014-03-10 10:10:12.878" createdTxStamp="2014-03-10 10:10:12.859"/>
+    <PartyStatus statusId="PARTY_ENABLED" partyId="NMK10006" statusDate="2014-03-10 10:19:52.427" lastUpdatedStamp="2014-03-10 10:19:52.437" lastUpdatedTxStamp="2014-03-10 10:19:52.427" createdStamp="2014-03-10 10:19:52.437" createdTxStamp="2014-03-10 10:19:52.427"/>
+</entity-engine-xml>
