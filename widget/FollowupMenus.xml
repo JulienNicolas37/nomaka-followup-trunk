@@ -5,7 +5,7 @@
             <link target="dashboardFabrication"/>
         </menu-item>
         <menu-item name="portalPage" title="${uiLabelMap.FollowupDesktop}" parent-portal-page-value="Followup"/>
-	<menu-item name="followupScreen" title="${uiLabelMap.FollowupFactory}">
+        <menu-item name="followupScreen" title="${uiLabelMap.FollowupFactory}">
             <link target="followupFactory"/>
         </menu-item>
     </menu>

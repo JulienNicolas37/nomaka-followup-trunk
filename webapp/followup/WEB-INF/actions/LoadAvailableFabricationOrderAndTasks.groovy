@@ -26,223 +26,240 @@ import org.ofbiz.entity.*
 import org.ofbiz.base.util.Debug;
 import javolution.util.FastList;
 import org.ofbiz.base.util.UtilDateTime;
+import org.ofbiz.entity.util.EntityUtil;
 
 List<GenericValue> fabOrderList = FastList.newInstance();
+List<GenericValue> taskInFabOrderList = FastList.newInstance();
 List<GenericValue> taskList = FastList.newInstance();
-List<GenericValue> totalTaskList = FastList.newInstance();
 
 /****** Manage Fabrication orders ******/
 fabOrderCount = 0;
+taskCount = 0;
 fabOrders = delegator.findList("WorkEffortFabOrderPrintedView", null, null, null, null, false);
 for (fabOrder in fabOrders) {
-    fabOrderCount ++;
+    isFaOrderValid = true;
+    List<GenericValue> mandatoryWorkEffortAssocs = EntityUtil.filterByDate(delegator.findByAnd("WorkEffortAssoc", UtilMisc.toMap("workEffortIdTo", fabOrder.workEffortId, "workEffortAssocTypeId", "WORK_EFF_PRECEDENCY")));
+    for (GenericValue mandatoryWorkEffortAssoc : mandatoryWorkEffortAssocs) {
+        GenericValue mandatoryWorkEffort = mandatoryWorkEffortAssoc.getRelatedOne("FromWorkEffort");
+        if (!(mandatoryWorkEffort.getString("currentStatusId").equals("PRUN_COMPLETED") ||
+             mandatoryWorkEffort.getString("currentStatusId").equals("PRUN_RUNNING") ||
+             mandatoryWorkEffort.getString("currentStatusId").equals("PRUN_CLOSED"))) {
+            isFaOrderValid = false;
+        }
+    }
+    if (isFaOrderValid) {
+        fabOrderCount ++;
 Debug.logInfo("##############################################################","");
-    fabOrderId = (String) fabOrder.workEffortId;
-    fabOrderName = (String) fabOrder.workEffortName;
-    fabOrderDescription = (String) fabOrder.description;
-    fabOrderOriginalStatus = (String) fabOrder.currentStatusId;
-    fabOrderQuantityToProduce = (BigDecimal) fabOrder.quantityToProduce;
-    fabOrderQuantityProduced = (BigDecimal) fabOrder.quantityProduced;
-    fabOrderEstimatedStartDate = (Timestamp) fabOrder.estimatedStartDate;
-    fabOrderEstimatedEndDate = (Timestamp) fabOrder.estimatedCompletionDate;
-    fabOrderActualStartDate = (Timestamp) fabOrder.actualStartDate;
-    fabOrderActualEndDate = (Timestamp) fabOrder.actualCompletionDate;
-    if (UtilValidate.isEmpty(fabOrderActualStartDate))
-    {
-        fabOrderStatus = "Ready";
-        fabOrderClassListLine = "ready";
-        fabOrderDataFrames = "24";
-    } else {
-        if (UtilValidate.isEmpty(fabOrderActualEndDate)) {
-            fabOrderStatus = "InProduction";
-            fabOrderClassListLine = "in-progress";
+        fabOrderId = (String) fabOrder.workEffortId;
+        fabOrderName = (String) fabOrder.workEffortName;
+        fabOrderDescription = (String) fabOrder.description;
+        fabOrderOriginalStatus = (String) fabOrder.currentStatusId;
+        fabOrderQuantityToProduce = (BigDecimal) fabOrder.quantityToProduce;
+        fabOrderQuantityProduced = (BigDecimal) fabOrder.quantityProduced;
+        fabOrderEstimatedStartDate = (Timestamp) fabOrder.estimatedStartDate;
+        fabOrderEstimatedEndDate = (Timestamp) fabOrder.estimatedCompletionDate;
+        fabOrderActualStartDate = (Timestamp) fabOrder.actualStartDate;
+        fabOrderActualEndDate = (Timestamp) fabOrder.actualCompletionDate;
+        if (UtilValidate.isEmpty(fabOrderActualStartDate))
+        {
+            fabOrderStatus = "Ready";
+            fabOrderClassListLine = "ready";
             fabOrderDataFrames = "24";
         } else {
-            fabOrderStatus = "Finished";
-            fabOrderClassListLine = "finished";
-            fabOrderDataFrames = "47";
+            if (UtilValidate.isEmpty(fabOrderActualEndDate)) {
+                fabOrderStatus = "InProduction";
+                fabOrderClassListLine = "in-progress";
+                fabOrderDataFrames = "24";
+            } else {
+                fabOrderStatus = "Finished";
+                fabOrderClassListLine = "finished";
+                fabOrderDataFrames = "47";
+            }
         }
-    }
-    if (UtilValidate.isEmpty(fabOrderName)){
-        fabOrderName = "No name";
-    }
-    if (UtilValidate.isEmpty(fabOrderDescription)){
-        fabOrderDescription = "No description";
-    }
-    if (UtilValidate.isEmpty(fabOrderQuantityToProduce)){
-        fabOrderQuantityToProduce = "0";
-    }
-    if (UtilValidate.isEmpty(fabOrderQuantityProduced)){
-        fabOrderQuantityProduced = "0";
-    }
-
-    fabOrderRealMilliSeconds = 0;
-    fabOrderEstimatedMilliSeconds = 0;
-    taskClassListLine = "ready";
+        if (UtilValidate.isEmpty(fabOrderName)){
+            fabOrderName = "No name";
+        }
+        if (UtilValidate.isEmpty(fabOrderDescription)){
+            fabOrderDescription = "No description";
+        }
+        if (UtilValidate.isEmpty(fabOrderQuantityToProduce)){
+            fabOrderQuantityToProduce = "0";
+        }
+        if (UtilValidate.isEmpty(fabOrderQuantityProduced)){
+            fabOrderQuantityProduced = "0";
+        }
     
+        fabOrderRealMilliSeconds = 0;
+        fabOrderEstimatedMilliSeconds = 0;
+        taskClassListLine = "ready";
+        
 Debug.logInfo("fabOrderId = " + fabOrderId,"");
 Debug.logInfo("fabOrderStatus = " + fabOrderStatus,"");
-
-taskList = FastList.newInstance();
-    /****** Manage tasks ******/
-    taskCount = 0;
-    tasks = delegator.findByAnd("WorkEffortFabOrderTasksView", UtilMisc.toMap("workEffortParentId", fabOrderId));
-    for (task in tasks) {
-        taskCount ++;
+    
+    taskInFabOrderList = FastList.newInstance();
+        /****** Manage tasks ******/
+        taskInFabOrderCount = 0;
+        tasks = delegator.findByAnd("WorkEffortFabOrderTasksView", UtilMisc.toMap("workEffortParentId", fabOrderId));
+        for (task in tasks) {
+            taskCount ++;
+            taskInFabOrderCount ++;
 Debug.logInfo("**************************************************************","");
-        taskId = (String) task.workEffortId;
-        taskName = (String) task.workEffortName;
-        taskDescription = (String) task.description;
-        taskOriginalStatus = (String) task.currentStatusId;
-        taskQuantityToProduce = (BigDecimal) task.quantityToProduce;
-        taskQuantityProduced = (BigDecimal) fabOrder.quantityProduced;
-        taskEstimatedStartDate = (Timestamp) task.estimatedStartDate;
-        taskEstimatedEndDate = (Timestamp) task.estimatedCompletionDate;
-        taskActualStartDate = (Timestamp) task.actualStartDate;
-        taskActualEndDate = (Timestamp) task.actualCompletionDate;
+            taskId = (String) task.workEffortId;
+            taskName = (String) task.workEffortName;
+            taskDescription = (String) task.description;
+            taskOriginalStatus = (String) task.currentStatusId;
+            taskQuantityToProduce = (BigDecimal) task.quantityToProduce;
+            taskQuantityProduced = (BigDecimal) fabOrder.quantityProduced;
+            taskEstimatedStartDate = (Timestamp) task.estimatedStartDate;
+            taskEstimatedEndDate = (Timestamp) task.estimatedCompletionDate;
+            taskActualStartDate = (Timestamp) task.actualStartDate;
+            taskActualEndDate = (Timestamp) task.actualCompletionDate;
 Debug.logInfo("taskId = " + taskId,"");
-        if (UtilValidate.isEmpty(task.estimatedMilliSeconds)){
-            taskEstimatedMilliSeconds = (long) 0;
-        } else {
-            taskEstimatedMilliSeconds = (long) task.estimatedMilliSeconds
-        }
-        
-        if (UtilValidate.isEmpty(taskName)){
-            taskName = "No name";
-        }
-        if (UtilValidate.isEmpty(taskDescription)){
-            taskDescription = "No description";
-        }
-        if (UtilValidate.isEmpty(taskQuantityToProduce)){
-            taskQuantityToProduce = "0";
-        }
-        if (UtilValidate.isEmpty(taskQuantityProduced)){
-            taskQuantityProduced = "0";
-        }
-        
-        // Calculate planned time
-        taskPlannedTime = getFormatedTime(taskEstimatedMilliSeconds);
-        fabOrderEstimatedMilliSeconds = fabOrderEstimatedMilliSeconds + taskEstimatedMilliSeconds
-        
-        taskRealMilliSeconds = 0;
-        taskRealTime = 0;
-        if (fabOrderStatus == "InProduction") {
-            // Load TimeEntries linked to this task
-            taskActualStartDate = (Timestamp) task.get("actualStartDate");
-            taskActualEndDate = (Timestamp) task.get("actualCompletionDate");
-            timeEntries = delegator.findByAnd("TimeEntry", UtilMisc.toMap("workEffortId", taskId));
-            status = "InProduction";
-            isInProduction = false;
-            for (timeEntry in timeEntries){
-                startDate = (Timestamp) timeEntry.get("fromDate");
-                endDate = (Timestamp) timeEntry.get("thruDate");
-Debug.logInfo("startDate = " + startDate, "");
-Debug.logInfo("endDate = " + endDate, "");
-                if (UtilValidate.isEmpty(endDate)){
-                    endDate = (Timestamp) UtilDateTime.nowTimestamp();
-                    isInProduction = true;
-                }
-                diffTime = (long) (endDate.getTime() - startDate.getTime());
-                taskRealMilliSeconds = taskRealMilliSeconds + diffTime;
-            }
-            if (isInProduction) {
-                status = "InProduction";
-                taskClassListLine = "in-progress";
+            if (UtilValidate.isEmpty(task.estimatedMilliSeconds)){
+                taskEstimatedMilliSeconds = (long) 0;
             } else {
-                status = "Break";
-                taskClassListLine = "pause";
+                taskEstimatedMilliSeconds = (long) task.estimatedMilliSeconds
             }
             
-            // Give task status
-            if (UtilValidate.isEmpty(taskActualStartDate)) {
-                taskStatus = "Ready";
-                taskClassListLine = "ready";
-                taskDataFrames = "24";
-            } else {
-                if (UtilValidate.isNotEmpty(taskActualEndDate)) {
-                    taskStatus = "Finished";
-                    taskClassListLine = "finished";
-                    taskDataFrames = "47";
-                } else {
-                    taskStatus = status;
-                    taskDataFrames = "24";
-                }
+            if (UtilValidate.isEmpty(taskName)){
+                taskName = "No name";
             }
-        } else {
-            taskStatus = fabOrderStatus;
-            taskDataFrames = fabOrderDataFrames;
-        }
-        // Calculate real time of production
-        taskRealTime = getFormatedTime(taskRealMilliSeconds);
-        fabOrderRealMilliSeconds = fabOrderRealMilliSeconds + taskRealMilliSeconds;
-        
+            if (UtilValidate.isEmpty(taskDescription)){
+                taskDescription = "No description";
+            }
+            if (UtilValidate.isEmpty(taskQuantityToProduce)){
+                taskQuantityToProduce = "0";
+            }
+            if (UtilValidate.isEmpty(taskQuantityProduced)){
+                taskQuantityProduced = "0";
+            }
+            
+            // Calculate planned time
+            taskPlannedTime = getFormatedTime(taskEstimatedMilliSeconds);
+            fabOrderEstimatedMilliSeconds = fabOrderEstimatedMilliSeconds + taskEstimatedMilliSeconds
+            
+            taskRealMilliSeconds = 0;
+            taskRealTime = 0;
+            if (fabOrderStatus == "InProduction") {
+                // Load TimeEntries linked to this task
+                taskActualStartDate = (Timestamp) task.get("actualStartDate");
+                taskActualEndDate = (Timestamp) task.get("actualCompletionDate");
+                timeEntries = delegator.findByAnd("TimeEntry", UtilMisc.toMap("workEffortId", taskId));
+                status = "InProduction";
+                isInProduction = false;
+                for (timeEntry in timeEntries){
+                    startDate = (Timestamp) timeEntry.get("fromDate");
+                    endDate = (Timestamp) timeEntry.get("thruDate");
+Debug.logInfo("startDate = " + startDate, "");
+Debug.logInfo("endDate = " + endDate, "");
+                    if (UtilValidate.isEmpty(endDate)){
+                        endDate = (Timestamp) UtilDateTime.nowTimestamp();
+                        isInProduction = true;
+                    }
+                    diffTime = (long) (endDate.getTime() - startDate.getTime());
+                    taskRealMilliSeconds = taskRealMilliSeconds + diffTime;
+                }
+                if (isInProduction) {
+                    status = "InProduction";
+                    taskClassListLine = "in-progress";
+                } else {
+                    status = "Break";
+                    taskClassListLine = "pause";
+                }
+                
+                // Give task status
+                if (UtilValidate.isEmpty(taskActualStartDate)) {
+                    taskStatus = "Ready";
+                    taskClassListLine = "ready";
+                    taskDataFrames = "24";
+                } else {
+                    if (UtilValidate.isNotEmpty(taskActualEndDate)) {
+                        taskStatus = "Finished";
+                        taskClassListLine = "finished";
+                        taskDataFrames = "47";
+                    } else {
+                        taskStatus = status;
+                        taskDataFrames = "24";
+                    }
+                }
+            } else {
+                taskStatus = fabOrderStatus;
+                taskDataFrames = fabOrderDataFrames;
+            }
+            // Calculate real time of production
+            taskRealTime = getFormatedTime(taskRealMilliSeconds);
+            fabOrderRealMilliSeconds = fabOrderRealMilliSeconds + taskRealMilliSeconds;
+            
 Debug.logInfo("taskStatus = " + taskStatus,"");
-        taskProgress = getPercentageProgress(taskRealMilliSeconds, taskEstimatedMilliSeconds, taskStatus);
-        taskStatusPath = getStatusPath(taskStatus, taskProgress, taskCount);
-        taskRest = 100 - taskProgress;
+            taskProgress = getPercentageProgress(taskRealMilliSeconds, taskEstimatedMilliSeconds, taskStatus);
+            taskStatusPath = getStatusPath(taskStatus, taskProgress, taskInFabOrderCount);
+            taskRest = 100 - taskProgress;
+            
+            taskInFabOrderList.add(UtilMisc.toMap(
+                    "fabOrderId", fabOrderId,
+                    "fabOrderName", fabOrderName,
+                    "taskId", taskId,
+                    "taskName", taskName,
+                    "taskStatus", taskStatus,
+                    "taskOriginalStatus", taskOriginalStatus,
+                    "taskDescription", taskDescription,
+                    "taskPlannedTime", taskPlannedTime,
+                    "taskRealTime", taskRealTime,
+                    "taskStatusPath", taskStatusPath,
+                    "taskProgress", taskProgress,
+                    "taskRest", taskRest,
+                    "taskClassListLine", taskClassListLine,
+                    "taskDataFrames", taskDataFrames));
+    
+            // Second time for white or black icon when task is in ready status
+            taskStatusPath = getStatusPath(taskStatus, taskProgress, taskCount);
+    
+            taskList.add(UtilMisc.toMap(
+                    "fabOrderId", fabOrderId,
+                    "fabOrderName", fabOrderName,
+                    "taskId", taskId,
+                    "taskName", taskName,
+                    "taskStatus", taskStatus,
+                    "taskOriginalStatus", taskOriginalStatus,
+                    "taskDescription", taskDescription,
+                    "taskPlannedTime", taskPlannedTime,
+                    "taskRealTime", taskRealTime,
+                    "taskStatusPath", taskStatusPath,
+                    "taskProgress", taskProgress,
+                    "taskRest", taskRest,
+                    "taskClassListLine", taskClassListLine,
+                    "taskDataFrames", taskDataFrames));
+        }
         
-        taskList.add(UtilMisc.toMap(
+    //    taskInFabOrderList = sortByStatus(taskInFabOrderList, "task");
+        
+        fabOrderRealTime = getFormatedTime(fabOrderRealMilliSeconds);
+        fabOrderPlannedTime = getFormatedTime(fabOrderEstimatedMilliSeconds);
+        fabOrderProgress = getPercentageProgress(fabOrderRealMilliSeconds, fabOrderEstimatedMilliSeconds, taskStatus);
+        fabOrderStatusPath = getStatusPath(fabOrderStatus, fabOrderProgress, fabOrderCount);
+        fabOrderRest = 100 - fabOrderProgress;
+    
+        fabOrderList.add(UtilMisc.toMap(
                 "fabOrderId", fabOrderId,
                 "fabOrderName", fabOrderName,
-                "taskId", taskId,
-                "taskName", taskName,
-                "taskStatus", taskStatus,
-                "taskOriginalStatus", taskOriginalStatus,
-                "taskDescription", taskDescription,
-                "taskPlannedTime", taskPlannedTime,
-                "taskRealTime", taskRealTime,
-                "taskStatusPath", taskStatusPath,
-                "taskProgress", taskProgress,
-                "taskRest", taskRest,
-                "taskClassListLine", taskClassListLine,
-                "taskDataFrames", taskDataFrames));
-        
-        totalTaskList.add(UtilMisc.toMap(
-                "fabOrderId", fabOrderId,
-                "fabOrderName", fabOrderName,
-                "taskId", taskId,
-                "taskName", taskName,
-                "taskStatus", taskStatus,
-                "taskOriginalStatus", taskOriginalStatus,
-                "taskDescription", taskDescription,
-                "taskPlannedTime", taskPlannedTime,
-                "taskRealTime", taskRealTime,
-                "taskStatusPath", taskStatusPath,
-                "taskProgress", taskProgress,
-                "taskRest", taskRest,
-                "taskClassListLine", taskClassListLine,
-                "taskDataFrames", taskDataFrames));
+                "fabOrderStatus", fabOrderStatus,
+                "fabOrderOriginalStatus", fabOrderOriginalStatus,
+                "fabOrderDescription", fabOrderDescription,
+                "fabOrderPlannedTime", fabOrderPlannedTime,
+                "fabOrderRealTime", fabOrderRealTime,
+                "fabOrderStatusPath", fabOrderStatusPath,
+                "fabOrderProgress", fabOrderProgress,
+                "fabOrderRest", fabOrderRest,
+                "taskList", taskInFabOrderList,
+                "fabOrderClassListLine", fabOrderClassListLine,
+                "fabOrderDataFrames", fabOrderDataFrames)); 
     }
-    
-//    taskList = sortByStatus(taskList, "task");
-    
-    fabOrderRealTime = getFormatedTime(fabOrderRealMilliSeconds);
-    fabOrderPlannedTime = getFormatedTime(fabOrderEstimatedMilliSeconds);
-    fabOrderProgress = getPercentageProgress(fabOrderRealMilliSeconds, fabOrderEstimatedMilliSeconds, taskStatus);
-    fabOrderStatusPath = getStatusPath(fabOrderStatus, fabOrderProgress, fabOrderCount);
-    fabOrderRest = 100 - fabOrderProgress;
-
-    fabOrderList.add(UtilMisc.toMap(
-            "fabOrderId", fabOrderId,
-            "fabOrderName", fabOrderName,
-            "fabOrderStatus", fabOrderStatus,
-            "fabOrderOriginalStatus", fabOrderOriginalStatus,
-            "fabOrderDescription", fabOrderDescription,
-            "fabOrderPlannedTime", fabOrderPlannedTime,
-            "fabOrderRealTime", fabOrderRealTime,
-            "fabOrderStatusPath", fabOrderStatusPath,
-            "fabOrderProgress", fabOrderProgress,
-            "fabOrderRest", fabOrderRest,
-            "taskList", taskList,
-            "fabOrderClassListLine", fabOrderClassListLine,
-            "fabOrderDataFrames", fabOrderDataFrames)); 
-
 }
-//totalTaskList = sortByStatus(totalTaskList, "task");
+//taskList = sortByStatus(taskList, "task");
 //fabOrderList = sortByStatus(fabOrderList, "fabOrder");
 
 context.fabOrderList = fabOrderList;
-context.taskList = totalTaskList;
+context.taskList = taskList;
 
 public String getFormatedTime(long milliSeconds) {
 
@@ -325,45 +342,45 @@ public String getStatusPath(status, progress, count) {
     
     return statusPath;
 }
-
-public List<GenericValue> sortByStatus(elements, type) {
-    List<GenericValue> listReady = FastList.newInstance();
-    List<GenericValue> listInProduction = FastList.newInstance();
-    List<GenericValue> listBreak = FastList.newInstance();
-    List<GenericValue> listFinished = FastList.newInstance();
-    List<GenericValue> sortedList = FastList.newInstance();
-    if (type == "task"){
-        status = "taskStatus";
-    } else {
-        status = "fabOrderStatus";
-    }
-    for (element in elements){
-        if (element.get(status) == "Ready"){
-            listReady.add(element);
-        } else {
-            if (element.get(status) == "Finished"){
-                listFinished.add(element);
-            } else {
-                if (element.get(status) == "Break"){
-                    listBreak.add(element);
-                } else {
-                    listInProduction.add(element);
-                }
-            }
-        }
-    }
-    for (inProd in listInProduction){
-        sortedList.add(inProd);
-    }
-    for (inBreak in listBreak){
-        sortedList.add(inBreak);
-    }
-    for (ready in listReady){
-        sortedList.add(ready);
-    }
-    for (finished in listFinished){
-        sortedList.add(finished);
-    }
-    
-    return sortedList;
-}
+//
+//public List<GenericValue> sortByStatus(elements, type) {
+//    List<GenericValue> listReady = FastList.newInstance();
+//    List<GenericValue> listInProduction = FastList.newInstance();
+//    List<GenericValue> listBreak = FastList.newInstance();
+//    List<GenericValue> listFinished = FastList.newInstance();
+//    List<GenericValue> sortedList = FastList.newInstance();
+//    if (type == "task"){
+//        status = "taskStatus";
+//    } else {
+//        status = "fabOrderStatus";
+//    }
+//    for (element in elements){
+//        if (element.get(status) == "Ready"){
+//            listReady.add(element);
+//        } else {
+//            if (element.get(status) == "Finished"){
+//                listFinished.add(element);
+//            } else {
+//                if (element.get(status) == "Break"){
+//                    listBreak.add(element);
+//                } else {
+//                    listInProduction.add(element);
+//                }
+//            }
+//        }
+//    }
+//    for (inProd in listInProduction){
+//        sortedList.add(inProd);
+//    }
+//    for (inBreak in listBreak){
+//        sortedList.add(inBreak);
+//    }
+//    for (ready in listReady){
+//        sortedList.add(ready);
+//    }
+//    for (finished in listFinished){
+//        sortedList.add(finished);
+//    }
+//    
+//    return sortedList;
+//}

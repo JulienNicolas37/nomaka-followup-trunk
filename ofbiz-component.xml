@@ -21,33 +21,38 @@
     <entity-resource type="data" reader-name="seed" loader="main" location="data/FollowupPortletData.xml"/>
     <entity-resource type="data" reader-name="seed" loader="main" location="data/FollowupPortalData.xml"/>
     <!-- <entity-resource type="data" reader-name="demo" loader="main" location="data/FollowupDemoData.xml"/> -->
+
+    <!-- followup-base basic data -->
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-FirstOfAll.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-Party.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-PartyRole.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-TaxAuthority.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-TaxAuthorityRateProduct.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-PartyGroup.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-ContactMech.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-PartyContactMech.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-PartyContactMechPurpose.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-PartyAcctgPreference.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-PartyStatus.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-Person.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-TelecomNumber.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-Facility.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-FacilityContactMech.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-FacilityContactMechPurpose.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-PostalAddress.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-ShipmentMethodType.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-CarrierShipmentMethod.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-ProductStore.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-ProductStorePaymentSetting.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-ProductStoreShipmentMeth.xml"/>
+    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/00-ProductStoreFacility.xml"/>
     
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/FirstOfAll.xml"/>
+    <!-- followup-base demo data -->
     <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/Party.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/UserLogin.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/UserPreference.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/UserLoginSecurityGroup.xml"/>
     <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyRole.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/TaxAuthority.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/TaxAuthorityRateProduct.xml"/>
     <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyGroup.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ContactMech.xml"/>
     <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyContactMech.xml"/>
     <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyContactMechPurpose.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyAcctgPreference.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PartyStatus.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/Person.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/TelecomNumber.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/Facility.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/FacilityContactMech.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/FacilityContactMechPurpose.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/PostalAddress.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ShipmentMethodType.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/CarrierShipmentMethod.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStore.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStorePaymentSetting.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStoreShipmentMeth.xml"/>
-    <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStoreFacility.xml"/>
     <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProdCatalog.xml"/>
     <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductCategory.xml"/>
     <entity-resource type="data" reader-name="ext" loader="main" location="data/NomakaDemo/ProductStoreCatalog.xml"/>

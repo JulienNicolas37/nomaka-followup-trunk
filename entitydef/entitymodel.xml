@@ -84,7 +84,6 @@
 <!--                 </condition-list> -->
 <!--             </condition-list> -->
 <!--         </entity-condition> -->
-
     </view-entity>
     
     <view-entity entity-name="WorkEffortFabOrdersView"
@@ -111,6 +110,7 @@
             </condition-list>
             <order-by field-name="workEffortId"/>
         </entity-condition>
-    </view-entity>
+     </view-entity>
+ 
 
 </entitymodel>
