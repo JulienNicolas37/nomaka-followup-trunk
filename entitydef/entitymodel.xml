@@ -52,10 +52,7 @@
         <alias entity-alias="WE" name="quantityToProduce"/>
         <alias entity-alias="WE" name="estimatedMilliSeconds"/>
         <entity-condition>
-            <condition-list>
-                <condition-expr entity-alias="WE" field-name="workEffortTypeId" operator="equals" value="PROD_ORDER_TASK"/>
-                <condition-expr entity-alias="WE" field-name="workEffortPurposeTypeId" operator="equals" value="ROU_MANUFACTURING"/>
-            </condition-list>
+            <condition-expr entity-alias="WE" field-name="workEffortTypeId" operator="equals" value="PROD_ORDER_TASK"/>
             <order-by field-name="priority"/>
         </entity-condition>
     </view-entity>
