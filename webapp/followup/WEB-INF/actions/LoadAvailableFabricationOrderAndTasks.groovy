@@ -27,6 +27,7 @@ import org.ofbiz.base.util.Debug;
 import javolution.util.FastList;
 import org.ofbiz.base.util.UtilDateTime;
 import org.ofbiz.entity.util.EntityUtil;
+import java.util.StringTokenizer;
 
 List<GenericValue> fabOrderList = FastList.newInstance();
 List<GenericValue> taskInFabOrderList = FastList.newInstance();
@@ -52,6 +53,7 @@ for (fabOrder in fabOrders) {
 Debug.logInfo("##############################################################","");
         fabOrderId = (String) fabOrder.workEffortId;
         fabOrderName = (String) fabOrder.workEffortName;
+        fabOrderName = getMaxLengthName(fabOrderName);
         fabOrderDescription = (String) fabOrder.description;
         fabOrderOriginalStatus = (String) fabOrder.currentStatusId;
         fabOrderQuantityToProduce = (BigDecimal) fabOrder.quantityToProduce;
@@ -106,6 +108,7 @@ Debug.logInfo("fabOrderStatus = " + fabOrderStatus,"");
 Debug.logInfo("**************************************************************","");
             taskId = (String) task.workEffortId;
             taskName = (String) task.workEffortName;
+            taskName = getMaxLengthName(taskName);
             taskDescription = (String) task.description;
             taskOriginalStatus = (String) task.currentStatusId;
             taskQuantityToProduce = (BigDecimal) task.quantityToProduce;
@@ -342,6 +345,35 @@ public String getStatusPath(status, progress, count) {
     
     return statusPath;
 }
+
+public String getMaxLengthName(originalName) {
+    newName = originalName;
+    
+    // Each word must not be longer than a line : Maximum chars = 22
+    String tmpName = "";
+    StringTokenizer st = new StringTokenizer(newName, " ");
+    while (st.hasMoreTokens()) {
+        word = st.nextToken();
+        if (word.length() > 22) {
+            secondPart = word.substring(22);
+            firstPart = word.substring(0, 22);
+            tmpName += " " + firstPart + " " + secondPart;
+        } else {
+            tmpName += " " + word;
+        }
+    }
+    if (! tmpName.isEmpty()) {
+        newName = tmpName;
+    }
+    
+    // Maximum length = 44 chars
+    if (newName.length() > 40) {
+        newName = newName.substring(0, 36) + "[...]";
+    }
+    
+    return newName;
+}
+
 //
 //public List<GenericValue> sortByStatus(elements, type) {
 //    List<GenericValue> listReady = FastList.newInstance();
