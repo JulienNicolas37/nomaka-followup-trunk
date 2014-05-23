@@ -51,25 +51,9 @@ $(document).ready(function(){
 	
 	//popup legal notices
 	TweenLite.to($("#popup-legal-notices"), 0, {x: "-500"});
-	$('#block-bottom-sidebar a#btn-legal-notices').click(function(){
-		tlPopup = new TimelineLite();
-		if(popupopen == false){
-			$("#popup-legal-notices-background").css("pointer-events","auto");
-			tlPopup.to($("#popup-legal-notices-background"), 0.1, {backgroundColor: "rgba(0,0,0,0.4)"});
-			tlPopup.to($("#popup-legal-notices"), 0.2, {opacity: "1", x: "0"});
-			popupopen = true;
-		}
-		return false;
-	});
-	$('a#btn-close-popup').click(function(){
-		if(popupopen == true){
-			$("#popup-legal-notices-background").css("pointer-events","none");
-			tlPopup.to($("#popup-legal-notices"), 0.2, {opacity: "0", x: "-500"});
-			tlPopup.to($("#popup-legal-notices-background"), 0.1, {backgroundColor: "rgba(0,0,0,0)"});
-			popupopen = false;
-		}
-		return false;
-	});
+	$('#block-bottom-sidebar a#btn-legal-notices').click(openLegalNoticesPopup);
+	
+	$('a#btn-close-popup').click(closeLegalNoticesPopup);
 
 	// fullscreen
 	$('#block-bottom-sidebar .logo').click(function(){
@@ -84,49 +68,7 @@ $(document).ready(function(){
 	});
 	
 	//pie
-	if(typeof(onetwo) === 'undefined'){
-		onetwo=true;
-	}
-	$(".pie").peity("pie", {
-		width: 50,
-		height: 50,
-		colours: function(value) {
-			if(onetwo){
-				if(value < 5){
-					onetwo = false;
-					return "#5a5a5a";
-				}else if (value < 12){
-					onetwo = false;
-					return "#878787";
-				}else if (value < 25){
-					onetwo = false;
-					return "#ce3e17";
-				}else if (value < 37) {
-					onetwo = false;
-					return "#ce9100";
-				}else if (value < 50) {
-					onetwo = false;
-					return "#ffc71c";
-				}else if (value < 67) {
-					onetwo = false;
-					return "#c6ba00";
-				}else if (value < 75) {
-					onetwo = false;
-					return "#aad413";
-				}else if (value < 100) {
-					onetwo = false;
-					return "#30ca2f";
-				}else if (value == 100) {
-					onetwo = false;
-					return "#3a9633";
-				}
-			}else {
-				onetwo = true;
-				return "#5a5a5a";
-			}
-		}
-	});
-	
+	pieManagement();
 	
 	//scrolltop
 	$('a.btn-back-to-top').click(function(){
@@ -143,192 +85,28 @@ $(document).ready(function(){
 	showDetailArrows();
 
 	// click on sidebar buttons
-	$('a.btn-sidebar').click(function(){
-		//////////////////////////////push state/////////////////////////////
-		categClicAze = $(this).attr('id');
-		if(categClicAze == "btn-faborder"){
-			history.pushState(null, null, "#fo");
-		}else {
-			history.pushState(null, null, "#t");
-		}
-		/////////////////////////////////////////////////////////////////////
-		closeLine("",true);
-		$("a.btn-sidebar.active").removeClass("line-selec");
-		$('li.list-line').removeClass("selec");
-		categClic = $(this).attr('id');
-		if (!($(this).hasClass("active"))) {
-			$('a.btn-sidebar').removeClass("active");
-			$(this).addClass("active");
-			
-			// show and mask right lines
-			showMask(categClic,"",true);
-			if(categClic == "btn-faborder"){
-				removeCorresFabOrder(true);
-			}
-		}else{
-			if(categClic == "btn-faborder"){
-				TweenLite.to($("ul#faborder-list"), tweenDuration, {y:0});
-			}else{
-				TweenLite.to($("ul#task-list"), tweenDuration, {y:0});
-			}
-		}
-		showDetailArrows();
-		$("html, body").animate({ scrollTop: 0 }, 300);
-		return false;
-	});
+	$('a.btn-sidebar').click(clickOnSidebarBtn);
 	
 	// click on a line
-	$('ul.elements-list li.list-line .line-clic').click(function(){
-		if( ($(this).parent().parent().hasClass("elements-list")) && !($(this).parent().hasClass("titles")) && !($(this).parent().hasClass("back-to-top")) && !($(this).parent().hasClass("selec"))){
-			//////////////////////////////push state/////////////////////////////
-			var idElemStock = $(".id .case-content .num-id",this).first().html();
-			if($("a#btn-faborder").hasClass("active")){
-				var typeElemStock = "fo";
-				history.pushState(null, null, "#"+typeElemStock+"-"+idElemStock);
-			}else{
-				var typeElemStock = "t";
-				if($("#faborder-selec").hasClass("mask")){
-					history.pushState(null, null, "#"+typeElemStock+"-"+idElemStock);
-				}else {
-					var foId = $("li.list-line.selec .line-clic .parent-faborder .parent-faborder-name .parent-faborder-id").first().html();
-					history.pushState(null, null, "#fo-"+foId+"/t-"+idElemStock);
-				}
-			}
-			
-			/////////////////////////////////////////////////////////////////////
-			if($("li.list-line").hasClass("selec")){
-				animTweenAze($(this).parent(), true);
-			}else {
-				animTween($(this).parent(), true);
-			}
-		}
-		return false;
-	});
+	$('ul.elements-list li.list-line .line-clic').click(openLineBtn);
 	
 	// click on a task contained in a fabrication order
-	$('ul.elements-list-cont li.list-line-cont .line-clic').click(function(){
-		// get corresponding task id
-		idTask = $(".id .case-content .num-id", this).html();
-		parentFabOrderRegroup = $(this).parent().parent().parent().parent().parent();
-		idFabOrderRegroup = $(".id .case-content .num-id",parentFabOrderRegroup).html();
-		//////////////////////////////push state/////////////////////////////
-		var idElemStock = $(".id .case-content .num-id",this).first().html();
-		history.pushState(null, null, "#fo-"+idFabOrderRegroup+"/t-"+idElemStock);
-		/////////////////////////////////////////////////////////////////////
-		// close current line
-		closeLine("",true);
-		tl.timeScale(3);
-		tl.reverse(0,{onReverseComplete:$(this).parent().parent().parent().parent().removeClass("selec")});
-		$("html, body").animate({ scrollTop: 0 }, 300);
-		// go on tasks
-		$("a.btn-sidebar.active").removeClass("line-selec").removeClass("active");
-		showMask("btn-task", idFabOrderRegroup, true);
-		$("a#btn-task").addClass("active").addClass("line-selec");
-		
-		// open the right task
-		corresTask = $("ul#task-list li.list-line .line-clic .case.id .case-content .num-id:contains('" + idTask + "')").parent().parent().parent().parent();
-		setTimeout(function(){
-			animTween(corresTask,true);
-		}, 400);
-		
-		// show fabrication order in the sidebar btn
-		showCorresFabOrder(idFabOrderRegroup,true);
-		return false;
-	});
+	$('ul.elements-list-cont li.list-line-cont .line-clic').click(openTaskInFabOrder);
 	
 	// click on button to show corresponding fabrication order
-	$('a.parent-faborder-link').click(function(){
-		// get corresponding fabrication order id
-		parentCorres = $(this).parent();
-		idFabOrder = $(".parent-faborder-name .parent-faborder-id", parentCorres).html();
-		//////////////////////////////push state/////////////////////////////
-		history.pushState(null, null, "#fo-"+idFabOrder);
-		/////////////////////////////////////////////////////////////////////
-		// close current line
-		closeLine("",true);
-		tl.timeScale(3);
-		tl.reverse(0,{onReverseComplete:$(this).parent().parent().removeClass("selec")});
-		$("html, body").animate({ scrollTop: 0 }, 300);
-		// go to fabrication orders
-		$("a.btn-sidebar.active").removeClass("line-selec").removeClass("active");
-		showMask("btn-faborder","",true);
-		$("a#btn-faborder").addClass("active").addClass("line-selec");
-		removeCorresFabOrder(true);
-		// open the right fabrication order
-		var corresFabOrder = $("ul#faborder-list li.list-line .line-clic .case.id .case-content .num-id:contains('" + idFabOrder + "')").parent().parent().parent().parent();
-		setTimeout(function(){
-			animTween(corresFabOrder,true);
-		}, 400);
-		return false;
-	});
+	$('a.parent-faborder-link').click(openCorrespondingFabOrder);
 	
 	// click on next arrow of the line detail
-	$('a.btn-line.down').click(function(){
-		closeLine("next", true);
-		return false;
-	});
+	$('a.btn-line.down').click(nextArrowBtn);
 	
 	// click on previous arrow of the line detail
-	$('a.btn-line.up').click(function(){
-		closeLine("prev",true);
-		return false;
-	});
+	$('a.btn-line.up').click(previousArrowBtn);
 	
 	// click on close line button
-	$('a.btn-close').click(function(){
-		//////////////////////////////push state/////////////////////////////
-		if($("#faborder-selec").hasClass("mask")){
-			categClicAze = $("a.btn-sidebar.active").attr('id');
-			if(categClicAze == "btn-faborder"){
-				history.pushState(null, null, "#fo");
-			}else {
-				history.pushState(null, null, "#t");
-			}
-		}else {
-			var idFabOrder = $("#faborder-selec .faborder-id-selec").html();
-			history.pushState(null, null, "#fo-"+idFabOrder+"/t");
-		}
-		/////////////////////////////////////////////////////////////////////
-		TweenMax.to($("li.list-line.selec .block-bottom").first(), 0.2, {height: "0",onComplete: function() {
-			tl.timeScale(3);
-			tl.reverse(0,{onReverseComplete:$("li.list-line.selec").removeClass("selec")});
-		}});
-		$("a.btn-sidebar.active.line-selec").removeClass("line-selec");
-		categActive = $("a.btn-sidebar.active").attr("id");
-		if(categActive == "btn-faborder"){
-			TweenLite.to($("ul#faborder-list"), 0.8, {y:0});
-		}else {
-			TweenLite.to($("ul#task-list"), 0.8, {y:0});
-		}
-		$("html, body").animate({ scrollTop: 0 }, 300);
-		
-		return false;
-	});
+	$('a.btn-close').click(closeLineBtn);
 	
 	// click on the corresponding fabrication order button, on the sidebar
-	$('#sidebar a.btn-sidebar#btn-task #faborder-selec').click(function(){
-		//////////////////////////////push state/////////////////////////////
-		history.pushState(null, null, "#t");
-		/////////////////////////////////////////////////////////////////////
-		// close current line
-		if($("li.list-line").hasClass("selec")){
-			tl.timeScale(3);
-			tl.reverse(0,{onReverseComplete:$("li.list-line.selec").removeClass("selec")});
-			
-			$("a.btn-sidebar.active.line-selec").removeClass("line-selec");
-			categActive = $("a.btn-sidebar.active").attr("id");
-			if(categActive == "btn-faborder"){
-				TweenLite.to($("ul#faborder-list"), 0.8, {y:0});
-			}else {
-				TweenLite.to($("ul#task-list"), 0.8, {y:0});
-			}
-			$("html, body").animate({ scrollTop: 0 }, 300);
-		}
-		$("ul#task-list li.list-line").css("display", "block");
-		removeCorresFabOrder(true);
-		showDetailArrows();
-		return false;
-	});
+	$('#sidebar a.btn-sidebar#btn-task #faborder-selec').click(fabOrderFilterSidebarBtn);
 	
 	// click on pause button in a task detail
 	/*$('a.btn-pause').click(function(){
@@ -655,7 +433,7 @@ function exitFullscreen() {
   }
 }
 
-function spriteAnimation(){
+function spriteAnimation() {
 	// animation of sprites
 	$("#block-content #content ul.elements-list li.list-line.finished .case.status .picto-status").spriteanim().on('frame-46-shown', function() {
 		$(this).spriteanim('stop');
@@ -666,3 +444,260 @@ function spriteAnimation(){
 	$("#block-content #content ul.elements-list li.list-line.ready .case.status .picto-status").spriteanim();
 
 }
+
+// click on sidebar buttons
+function clickOnSidebarBtn() {
+	//////////////////////////////push state/////////////////////////////
+	categClicAze = $(this).attr('id');
+	if(categClicAze == "btn-faborder"){
+		history.pushState(null, null, "#fo");
+	}else {
+		history.pushState(null, null, "#t");
+	}
+	/////////////////////////////////////////////////////////////////////
+	closeLine("",true);
+	$("a.btn-sidebar.active").removeClass("line-selec");
+	$('li.list-line').removeClass("selec");
+	categClic = $(this).attr('id');
+	if (!($(this).hasClass("active"))) {
+		$('a.btn-sidebar').removeClass("active");
+		$(this).addClass("active");
+		
+		// show and mask right lines
+		showMask(categClic,"",true);
+		if(categClic == "btn-faborder"){
+			removeCorresFabOrder(true);
+		}
+	}else{
+		if(categClic == "btn-faborder"){
+			TweenLite.to($("ul#faborder-list"), tweenDuration, {y:0});
+		}else{
+			TweenLite.to($("ul#task-list"), tweenDuration, {y:0});
+		}
+	}
+	showDetailArrows();
+	$("html, body").animate({ scrollTop: 0 }, 300);
+	return false;
+}
+
+// Click on a line
+function openLineBtn() {
+	if( ($(this).parent().parent().hasClass("elements-list")) && !($(this).parent().hasClass("titles")) && !($(this).parent().hasClass("back-to-top")) && !($(this).parent().hasClass("selec"))){
+		//////////////////////////////push state/////////////////////////////
+		var idElemStock = $(".id .case-content .num-id",this).first().html();
+		if($("a#btn-faborder").hasClass("active")){
+			var typeElemStock = "fo";
+			history.pushState(null, null, "#"+typeElemStock+"-"+idElemStock);
+		}else{
+			var typeElemStock = "t";
+			if($("#faborder-selec").hasClass("mask")){
+				history.pushState(null, null, "#"+typeElemStock+"-"+idElemStock);
+			}else {
+				var foId = $("li.list-line.selec .line-clic .parent-faborder .parent-faborder-name .parent-faborder-id").first().html();
+				history.pushState(null, null, "#fo-"+foId+"/t-"+idElemStock);
+			}
+		}
+		
+		/////////////////////////////////////////////////////////////////////
+		if($("li.list-line").hasClass("selec")){
+			animTweenAze($(this).parent(), true);
+		}else {
+			animTween($(this).parent(), true);
+		}
+	}
+	return false;
+}
+
+// click on next arrow of the line detail
+function nextArrowBtn() {
+	closeLine("next", true);
+	return false;
+}
+
+function previousArrowBtn() {
+	closeLine("prev",true);
+	return false;
+}
+
+//click on a task contained in a fabrication order
+function openTaskInFabOrder() {
+	// get corresponding task id
+	idTask = $(".id .case-content .num-id", this).html();
+	parentFabOrderRegroup = $(this).parent().parent().parent().parent().parent();
+	idFabOrderRegroup = $(".id .case-content .num-id",parentFabOrderRegroup).html();
+	//////////////////////////////push state/////////////////////////////
+	var idElemStock = $(".id .case-content .num-id",this).first().html();
+	history.pushState(null, null, "#fo-"+idFabOrderRegroup+"/t-"+idElemStock);
+	/////////////////////////////////////////////////////////////////////
+	// close current line
+	closeLine("",true);
+	tl.timeScale(3);
+	tl.reverse(0,{onReverseComplete:$(this).parent().parent().parent().parent().removeClass("selec")});
+	$("html, body").animate({ scrollTop: 0 }, 300);
+	// go on tasks
+	$("a.btn-sidebar.active").removeClass("line-selec").removeClass("active");
+	showMask("btn-task", idFabOrderRegroup, true);
+	$("a#btn-task").addClass("active").addClass("line-selec");
+	
+	// open the right task
+	corresTask = $("ul#task-list li.list-line .line-clic .case.id .case-content .num-id:contains('" + idTask + "')").parent().parent().parent().parent();
+	setTimeout(function(){
+		animTween(corresTask,true);
+	}, 400);
+	
+	// show fabrication order in the sidebar btn
+	showCorresFabOrder(idFabOrderRegroup,true);
+	return false;
+}
+
+// click on button to show corresponding fabrication order
+function openCorrespondingFabOrder() {
+	// get corresponding fabrication order id
+	parentCorres = $(this).parent();
+	idFabOrder = $(".parent-faborder-name .parent-faborder-id", parentCorres).html();
+	//////////////////////////////push state/////////////////////////////
+	history.pushState(null, null, "#fo-"+idFabOrder);
+	/////////////////////////////////////////////////////////////////////
+	// close current line
+	closeLine("",true);
+	tl.timeScale(3);
+	tl.reverse(0,{onReverseComplete:$(this).parent().parent().removeClass("selec")});
+	$("html, body").animate({ scrollTop: 0 }, 300);
+	// go to fabrication orders
+	$("a.btn-sidebar.active").removeClass("line-selec").removeClass("active");
+	showMask("btn-faborder","",true);
+	$("a#btn-faborder").addClass("active").addClass("line-selec");
+	removeCorresFabOrder(true);
+	// open the right fabrication order
+	var corresFabOrder = $("ul#faborder-list li.list-line .line-clic .case.id .case-content .num-id:contains('" + idFabOrder + "')").parent().parent().parent().parent();
+	setTimeout(function(){
+		animTween(corresFabOrder,true);
+	}, 400);
+	return false;
+}
+
+//pie
+function pieManagement() {
+	if(typeof(onetwo) === 'undefined'){
+		onetwo=true;
+	}
+	$(".pie").peity("pie", {
+		width: 50,
+		height: 50,
+		colours: function(value) {
+			if(onetwo){
+				if(value < 5){
+					onetwo = false;
+					return "#5a5a5a";
+				}else if (value < 12){
+					onetwo = false;
+					return "#878787";
+				}else if (value < 25){
+					onetwo = false;
+					return "#ce3e17";
+				}else if (value < 37) {
+					onetwo = false;
+					return "#ce9100";
+				}else if (value < 50) {
+					onetwo = false;
+					return "#ffc71c";
+				}else if (value < 67) {
+					onetwo = false;
+					return "#c6ba00";
+				}else if (value < 75) {
+					onetwo = false;
+					return "#aad413";
+				}else if (value < 100) {
+					onetwo = false;
+					return "#30ca2f";
+				}else if (value == 100) {
+					onetwo = false;
+					return "#3a9633";
+				}
+			}else {
+				onetwo = true;
+				return "#5a5a5a";
+			}
+		}
+	});
+}
+
+//click on close line button
+function closeLineBtn() {
+	//////////////////////////////push state/////////////////////////////
+	if($("#faborder-selec").hasClass("mask")){
+		categClicAze = $("a.btn-sidebar.active").attr('id');
+		if(categClicAze == "btn-faborder"){
+			history.pushState(null, null, "#fo");
+		}else {
+			history.pushState(null, null, "#t");
+		}
+	}else {
+		var idFabOrder = $("#faborder-selec .faborder-id-selec").html();
+		history.pushState(null, null, "#fo-"+idFabOrder+"/t");
+	}
+	/////////////////////////////////////////////////////////////////////
+	TweenMax.to($("li.list-line.selec .block-bottom").first(), 0.2, {height: "0",onComplete: function() {
+		tl.timeScale(3);
+		tl.reverse(0,{onReverseComplete:$("li.list-line.selec").removeClass("selec")});
+	}});
+	$("a.btn-sidebar.active.line-selec").removeClass("line-selec");
+	categActive = $("a.btn-sidebar.active").attr("id");
+	if(categActive == "btn-faborder"){
+		TweenLite.to($("ul#faborder-list"), 0.8, {y:0});
+	}else {
+		TweenLite.to($("ul#task-list"), 0.8, {y:0});
+	}
+	$("html, body").animate({ scrollTop: 0 }, 300);
+	
+	return false;
+}
+
+// click on the corresponding fabrication order button, on the sidebar
+function fabOrderFilterSidebarBtn() {
+	//////////////////////////////push state/////////////////////////////
+	history.pushState(null, null, "#t");
+	/////////////////////////////////////////////////////////////////////
+	// close current line
+	if($("li.list-line").hasClass("selec")){
+		tl.timeScale(3);
+		tl.reverse(0,{onReverseComplete:$("li.list-line.selec").removeClass("selec")});
+		
+		$("a.btn-sidebar.active.line-selec").removeClass("line-selec");
+		categActive = $("a.btn-sidebar.active").attr("id");
+		if(categActive == "btn-faborder"){
+			TweenLite.to($("ul#faborder-list"), 0.8, {y:0});
+		}else {
+			TweenLite.to($("ul#task-list"), 0.8, {y:0});
+		}
+		$("html, body").animate({ scrollTop: 0 }, 300);
+	}
+	$("ul#task-list li.list-line").css("display", "block");
+	removeCorresFabOrder(true);
+	showDetailArrows();
+	return false;
+}
+
+//popup legal notices
+function openLegalNoticesPopup() {
+	tlPopup = new TimelineLite();
+	if(popupopen == false){
+		$("#popup-legal-notices-background").css("pointer-events","auto");
+		tlPopup.to($("#popup-legal-notices-background"), 0.1, {backgroundColor: "rgba(0,0,0,0.4)"});
+		tlPopup.to($("#popup-legal-notices"), 0.2, {opacity: "1", x: "0"});
+		popupopen = true;
+	}
+	return false;
+}
+
+// Close Legal Notices popup
+function closeLegalNoticesPopup() {
+	if(popupopen == true){
+		$("#popup-legal-notices-background").css("pointer-events","none");
+		tlPopup.to($("#popup-legal-notices"), 0.2, {opacity: "0", x: "-500"});
+		tlPopup.to($("#popup-legal-notices-background"), 0.1, {backgroundColor: "rgba(0,0,0,0)"});
+		popupopen = false;
+	}
+	return false;
+}
+
