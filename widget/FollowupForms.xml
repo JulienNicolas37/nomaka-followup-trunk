@@ -42,7 +42,7 @@
                 <order-by field-name="priority"/>
             </entity-condition>
         </actions>
-        <field name="workEffortId" title="workEffortParentId = ${widget.workEffortParentId}">
+        <field name="workEffortId">
             <show-portlet portlet-id="FollowupRoutingTask" target="" description="${workEffortId}" area-id="PP_${portalPageId}FollowupRoutingTask${portletSeqId}">
                 <parameter param-name="workEffortId"/>
                 <parameter param-name="workEffortParentId"/>
