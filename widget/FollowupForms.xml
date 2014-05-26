@@ -73,8 +73,7 @@
             <entity-one entity-name="WorkEffort" value-field="workEffort"/>
             <set field="fabricationOrderId" from-field="workEffort.workEffortParentId"/>
         </actions>
-<!--         <alt-target use-when="${! empty workEffort.actualStartDate} &amp;&amp; ${empty workEffort.actualCompletionDate}" target="stopProductionTask"/> -->
-        <alt-target use-when="${taskStatus == 'S'}" target="stopProductionTask"/>
+        <alt-target use-when="taskStatus == 'S'" target="stopProductionTask"/>
         <field name="fabricationOrderId"><hidden value="${fabricationOrderId}"/></field>
         <field name="workEffortId" position="1" title="${taskStatus}"><display/></field>
         <field name="workEffortName" position="2" title="${currentlyInProd}"><display/></field>
