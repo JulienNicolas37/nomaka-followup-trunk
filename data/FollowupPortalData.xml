@@ -5,12 +5,12 @@
         <PortalPagePortlet portalPageId="Followup" portalPortletId="SelectFabOrder" portletSeqId="00001" columnSeqId="00001" sequenceNum="2"/>
         <PortalPagePortlet portalPageId="Followup" portalPortletId="FabOrderDetailsMenu" portletSeqId="00001" columnSeqId="00001" sequenceNum="3"/>
     <PortalPageColumn portalPageId="Followup" columnSeqId="00002"/><!-- no width in pixels or percent, use the rest of the space available -->
-        <PortalPagePortlet portalPageId="Followup" portalPortletId="ListProdTasks" portletSeqId="00001" columnSeqId="00002" sequenceNum="1"/>
-        <PortalPagePortlet portalPageId="Followup" portalPortletId="FollowupProdTask" portletSeqId="00001" columnSeqId="00002" sequenceNum="2"/>
-        <PortalPagePortlet portalPageId="Followup" portalPortletId="ProdTaskTimeEntries" portletSeqId="00001" columnSeqId="00002" sequenceNum="2"/>
+        <PortalPagePortlet portalPageId="Followup" portalPortletId="ListRoutingTasks" portletSeqId="00001" columnSeqId="00002" sequenceNum="1"/>
+        <PortalPagePortlet portalPageId="Followup" portalPortletId="FollowupRoutingTask" portletSeqId="00001" columnSeqId="00002" sequenceNum="2"/>
+        <PortalPagePortlet portalPageId="Followup" portalPortletId="RoutingTaskTimeEntries" portletSeqId="00001" columnSeqId="00002" sequenceNum="2"/>
     <PortletAttribute portalPageId="Followup" portalPortletId="SelectFabOrder" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
     <PortletAttribute portalPageId="Followup" portalPortletId="FabOrderDetailsMenu" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
-    <PortletAttribute portalPageId="Followup" portalPortletId="ListProdTasks" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
-    <PortletAttribute portalPageId="Followup" portalPortletId="FollowupProdTask" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
-    <PortletAttribute portalPageId="Followup" portalPortletId="ProdTaskTimeEntries" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
+    <PortletAttribute portalPageId="Followup" portalPortletId="ListRoutingTasks" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
+    <PortletAttribute portalPageId="Followup" portalPortletId="FollowupRoutingTask" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
+    <PortletAttribute portalPageId="Followup" portalPortletId="RoutingTaskTimeEntries" portletSeqId="00001" attrName="helpAvailable" attrValue="N"/>
 </entity-engine-xml>

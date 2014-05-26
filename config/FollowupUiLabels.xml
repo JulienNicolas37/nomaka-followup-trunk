@@ -164,17 +164,21 @@
         <value xml:lang="en">More...</value>
         <value xml:lang="fr">Plus...</value>
     </property>
-    <property key="PageTitleFollowupProdTask">
+    <property key="PageTitleFollowupRoutingTask">
         <value xml:lang="en">Follow-up of Task</value>
         <value xml:lang="fr">Suivi de l'opération</value>
     </property>
-    <property key="PageTitleListProdTasks">
+    <property key="PageTitleListRoutingTasks">
         <value xml:lang="en">List of production tasks</value>
         <value xml:lang="fr">Liste des opérations de production</value>
     </property>
     <property key="PageTitleFabOrderDetailsMenu">
         <value xml:lang="en">Fabrication Order information</value>
         <value xml:lang="fr">Information sur l'Ordre de Fabrication</value>
+    </property>
+    <property key="PageTitleRoutingTaskTimeEntries">
+        <value xml:lang="en">Time entries</value>
+        <value xml:lang="fr">Pointages de temps</value>
     </property>
     <property key="PageTitleSelectFabOrder">
         <value xml:lang="en">Select Fabrication Order</value>

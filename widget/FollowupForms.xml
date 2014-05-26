@@ -34,7 +34,7 @@
         <field name="actualCompletionDate"><display/></field>
     </form>
     
-    <form name="ListProdTasks" type="list" list-name="listIt" default-entity-name="WorkEffortFabOrderTasksView" separate-columns="true"
+    <form name="ListRoutingTasks" type="list" list-name="listIt" default-entity-name="WorkEffortFabOrderTasksView" separate-columns="true"
         odd-row-style="alternate-row" header-row-style="header-row" default-table-style="basic-table hover-bar"  >
         <actions>
             <entity-condition list="listIt" entity-name="WorkEffortFabOrderTasksView" >
@@ -43,12 +43,12 @@
             </entity-condition>
         </actions>
         <field name="workEffortId" title="workEffortParentId = ${widget.workEffortParentId}">
-            <show-portlet portlet-id="FollowupProdTask" target="" description="${workEffortId}" area-id="PP_${portalPageId}FollowupProdTask${portletSeqId}">
+            <show-portlet portlet-id="FollowupRoutingTask" target="" description="${workEffortId}" area-id="PP_${portalPageId}FollowupRoutingTask${portletSeqId}">
                 <parameter param-name="workEffortId"/>
                 <parameter param-name="workEffortParentId"/>
                 <parameter param-name="idDescription" value=" : ${workEffortName} [${workEffortId}]"/>
             </show-portlet>
-            <show-portlet portlet-id="ProdTaskTimeEntries" target=""  area-id="PP_${portalPageId}ProdTaskTimeEntries${portletSeqId}">
+            <show-portlet portlet-id="RoutingTaskTimeEntries" target=""  area-id="PP_${portalPageId}RoutingTaskTimeEntries${portletSeqId}">
                 <parameter param-name="workEffortId"/>
                 <parameter param-name="workEffortParentId"/>
                 <parameter param-name="idDescription" value=" : ${workEffortName} [${workEffortId}]"/>
@@ -66,7 +66,7 @@
         <field name="description"><display/></field>
     </form>
 
-    <form name="FollowupProdTask" type="single" default-entity-name="WorkEffort" default-map-name="workEffort" target="startProductionTask">
+    <form name="FollowupRoutingTask" type="single" default-entity-name="WorkEffort" default-map-name="workEffort" target="startProductionTask">
         <actions>
             <set field="taskStatus" from-field="parameters.taskStatus"/>
             <set field="currentlyInProd" from-field="parameters.currentlyInProd"/>
@@ -91,46 +91,46 @@
         <field name="submitButton" use-when="${taskStatus == 'R'}" position="1" title="${uiLabelMap.FollowupTaskStart}"><submit button-type="button"/></field>
         <field name="submitButton" use-when="${taskStatus == 'S'}" position="1" title="${uiLabelMap.FollowupTaskEnd}"><submit button-type="button"/></field>
         <field name="breakButton" use-when="${taskStatus == 'S' &amp;&amp; currentlyInProd == 'Y'}" title=" " position="2" widget-style="buttontext">
-            <show-portlet portlet-id="FollowupProdTask" area-id="PP_${portalPageId}FollowupProdTask${portletSeqId}" description="${uiLabelMap.FollowupTaskBreak}" target="pauseProductionTask">
+            <show-portlet portlet-id="FollowupRoutingTask" area-id="PP_${portalPageId}FollowupRoutingTask${portletSeqId}" description="${uiLabelMap.FollowupTaskBreak}" target="pauseProductionTask">
                 <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
             </show-portlet>
-            <show-portlet portlet-id="FollowupProdTask" area-id="${currentAreaId}" >
+            <show-portlet portlet-id="FollowupRoutingTask" area-id="${currentAreaId}" >
                 <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
                 <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
             </show-portlet>
-            <show-portlet portlet-id="ProdTaskTimeEntries" area-id="PP_${portalPageId}ProdTaskTimeEntries${portletSeqId}">
+            <show-portlet portlet-id="RoutingTaskTimeEntries" area-id="PP_${portalPageId}RoutingTaskTimeEntries${portletSeqId}">
                 <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
                 <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
             </show-portlet>
         </field>
         <field name="resumeButton" use-when="${taskStatus == 'S' &amp;&amp; currentlyInProd == 'N'}" title=" " position="2" widget-style="buttontext">
-            <show-portlet portlet-id="FollowupProdTask" area-id="PP_${portalPageId}FollowupProdTask${portletSeqId}" description="${uiLabelMap.FollowupTaskResume}" target="resumeProductionTask">
+            <show-portlet portlet-id="FollowupRoutingTask" area-id="PP_${portalPageId}FollowupRoutingTask${portletSeqId}" description="${uiLabelMap.FollowupTaskResume}" target="resumeProductionTask">
                 <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
             </show-portlet>
-            <show-portlet portlet-id="FollowupProdTask" area-id="${currentAreaId}" >
+            <show-portlet portlet-id="FollowupRoutingTask" area-id="${currentAreaId}" >
                 <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
                 <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
             </show-portlet>
-            <show-portlet portlet-id="ProdTaskTimeEntries" area-id="PP_${portalPageId}ProdTaskTimeEntries${portletSeqId}">
+            <show-portlet portlet-id="RoutingTaskTimeEntries" area-id="PP_${portalPageId}RoutingTaskTimeEntries${portletSeqId}">
                 <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
                 <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
             </show-portlet>
         </field>
-        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}FollowupProdTask${portletSeqId}">
-            <parameter param-name="area-id" value="PP_${portalPageId}FollowupProdTask${portletSeqId}"/>
-            <parameter param-name="portalPortletId" value="FollowupProdTask"/>
+        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}FollowupRoutingTask${portletSeqId}">
+            <parameter param-name="area-id" value="PP_${portalPageId}FollowupRoutingTask${portletSeqId}"/>
+            <parameter param-name="portalPortletId" value="FollowupRoutingTask"/>
             <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
             <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
         </on-event-update-area>
-        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}ListProdTasks${portletSeqId}">
-            <parameter param-name="area-id" value="PP_${portalPageId}ListProdTasks${portletSeqId}"/>
-            <parameter param-name="portalPortletId" value="ListProdTasks"/>
+        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}ListRoutingTasks${portletSeqId}">
+            <parameter param-name="area-id" value="PP_${portalPageId}ListRoutingTasks${portletSeqId}"/>
+            <parameter param-name="portalPortletId" value="ListRoutingTasks"/>
             <parameter param-name="workEffortId" from-field="workEffort.workEffortParentId"/>
             <parameter param-name="idDescription" value=" "/>
         </on-event-update-area>
-        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}ProdTaskTimeEntries${portletSeqId}">
-            <parameter param-name="area-id" value="PP_${portalPageId}ProdTaskTimeEntries${portletSeqId}"/>
-            <parameter param-name="portalPortletId" value="ProdTaskTimeEntries"/>
+        <on-event-update-area area-target="showPortlet" event-type="submit" area-id="PP_${portalPageId}RoutingTaskTimeEntries${portletSeqId}">
+            <parameter param-name="area-id" value="PP_${portalPageId}RoutingTaskTimeEntries${portletSeqId}"/>
+            <parameter param-name="portalPortletId" value="RoutingTaskTimeEntries"/>
             <parameter param-name="workEffortId" from-field="workEffort.workEffortId"/>
             <parameter param-name="workEffortParentId" from-field="workEffort.workEffortParentId"/>
             <parameter param-name="idDescription" value=" "/>
@@ -143,7 +143,7 @@
         </on-event-update-area>
     </form>
 
-    <form name="ProdTaskTimeEntries" type="list" list-name="listIt" default-entity-name="TimeEntry" default-map-name="timeEntry" separate-columns="true"
+    <form name="RoutingTaskTimeEntries" type="list" list-name="listIt" default-entity-name="TimeEntry" default-map-name="timeEntry" separate-columns="true"
         odd-row-style="alternate-row" header-row-style="header-row" default-table-style="basic-table hover-bar" >
         <actions>
             <entity-condition list="listIt" entity-name="TimeEntry" >

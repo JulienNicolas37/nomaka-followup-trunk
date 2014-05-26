@@ -31,7 +31,7 @@ under the License.
         subComponent="Followup"/>
     <PortletPortletCategory portalPortletId="SelectFabOrder" portletCategoryId="FOLLOWUP"/>
 
-    <PortalPortlet portalPortletId="ListProdTasks"
+    <PortalPortlet portalPortletId="ListRoutingTasks"
         portletName="List Manufacturing tasks" 
         description="portlet to list Manufacturing tasks of a Fabrication order"
         portletTypeId="ScreenletList"
@@ -39,7 +39,7 @@ under the License.
         subComponent="Followup"
         pkIdName="workEffortId"
         useScript="Y"/>
-    <PortletPortletCategory portalPortletId="ListProdTasks" portletCategoryId="FOLLOWUP"/>
+    <PortletPortletCategory portalPortletId="ListRoutingTasks" portletCategoryId="FOLLOWUP"/>
 
     <PortalPortlet portalPortletId="FabOrderDetailsMenu"
         portletName="Fabrication order Details" 
@@ -50,7 +50,7 @@ under the License.
         pkIdName="workEffortId"/>
     <PortletPortletCategory portalPortletId="FabOrderDetailsMenu" portletCategoryId="FOLLOWUP"/>
 
-    <PortalPortlet portalPortletId="FollowupProdTask"
+    <PortalPortlet portalPortletId="FollowupRoutingTask"
         portletName="Follow-up Manufacturing tasks" 
         description="portlet to follow-up the production of a Manufacturing task"
         portletTypeId="Screenlet"
@@ -58,7 +58,7 @@ under the License.
         subComponent="Followup"
         pkIdName="workEffortId"
         useScript="Y"/>
-    <PortletPortletCategory portalPortletId="FollowupProdTask" portletCategoryId="FOLLOWUP"/>
+    <PortletPortletCategory portalPortletId="FollowupRoutingTask" portletCategoryId="FOLLOWUP"/>
 
     <PortalPortlet portalPortletId="FabOrderTaskDetail"
         portletTypeId="Empty"
@@ -69,7 +69,7 @@ under the License.
         useScript="Y"/>
     <PortletPortletCategory portalPortletId="FabOrderTaskDetail" portletCategoryId="FOLLOWUP"/>
 
-    <PortalPortlet portalPortletId="ProdTaskTimeEntries"
+    <PortalPortlet portalPortletId="RoutingTaskTimeEntries"
         portletName="List Time Entries of Manufacturing tasks" 
         description="portlet to list Time Entries of Manufacturing tasks contained in a Fabrication order"
         portletTypeId="ScreenletList"
@@ -77,5 +77,5 @@ under the License.
         subComponent="Followup"
         pkIdName="workEffortId"
         useScript="Y"/>
-    <PortletPortletCategory portalPortletId="ProdTaskTimeEntries" portletCategoryId="FOLLOWUP"/>
+    <PortletPortletCategory portalPortletId="RoutingTaskTimeEntries" portletCategoryId="FOLLOWUP"/>
 </entity-engine-xml>

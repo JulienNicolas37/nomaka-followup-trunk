@@ -21,11 +21,11 @@ under the License.
 <simple-methods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/simple-methods-v2.xsd">
 
-    <simple-method method-name="ListProdTasks" short-description="action for ListProdTasks portlet">
+    <simple-method method-name="ListRoutingTasks" short-description="action for ListRoutingTasks portlet">
         <set field="parameters.workEffortParentId" from-field="parameters.workEffortId" type="String"/>
     </simple-method>
    
-    <simple-method method-name="FollowupProdTask" short-description="action for FollowupProdTask portlet">
+    <simple-method method-name="FollowupRoutingTask" short-description="action for FollowupRoutingTask portlet">
         <if-empty field="parameters.workEffortParentId">
             <clear-field field="parameters.workEffortId"/>
         </if-empty>
@@ -53,7 +53,7 @@ under the License.
         </if-compare-field>
     </simple-method>
    
-    <simple-method method-name="ProdTaskTimeEntries" short-description="action for ProdTaskTimeEntries portlet">
+    <simple-method method-name="RoutingTaskTimeEntries" short-description="action for RoutingTaskTimeEntries portlet">
         <if-empty field="parameters.workEffortParentId">
             <clear-field field="parameters.workEffortId"/>
         </if-empty>
