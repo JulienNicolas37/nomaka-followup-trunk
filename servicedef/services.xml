@@ -38,7 +38,22 @@
         <attribute name="fabricationOrderId" type="String" mode="IN" optional="false"/>
         <attribute name="workEffortId" type="String" mode="IN" optional="false"/> <!-- The task id -->
         <attribute name="statusId" type="String" mode="IN" optional="true"/>
-        <attribute name="issueAllComponents" type="Boolean" mode="IN" optional="true"/>
+        <attribute name="productsId" type="String" mode="IN" optional="true"/>
+        <attribute name="productsQuantity" type="String" mode="IN" optional="true"/>
+        <attribute name="productsLotId" type="String" mode="IN" optional="true"/>
+    </service>
+
+    <service name="stopLastTask" engine="java" invoke="stopLastTask"
+        location="org.ofbiz.followup.FollowupServices" >
+        <description>Indicates produced quantity of fabrication order and stop production of last task</description>
+        <attribute name="fabricationOrderId" type="String" mode="IN" optional="false"/>
+        <attribute name="workEffortId" type="String" mode="IN" optional="false"/> <!-- The task id -->
+        <attribute name="statusId" type="String" mode="IN" optional="true"/>
+        <attribute name="fabOrderQuantity" type="BigDecimal" mode="IN" optional="false"/>
+        <attribute name="fabOrderLotId" type="String" mode="IN" optional="false"/>
+        <attribute name="productsId" type="String" mode="IN" optional="true"/>
+        <attribute name="productsQuantity" type="String" mode="IN" optional="true"/>
+        <attribute name="productsLotId" type="String" mode="IN" optional="true"/>
     </service>
 
 </services>

@@ -4,6 +4,30 @@
         <value xml:lang="en">Dashboard</value>
         <value xml:lang="fr">Tableau de bord</value>
     </property>
+    <property key="ComponentName">
+        <value xml:lang="en">Component name</value>
+        <value xml:lang="fr">Nom du composant</value>
+    </property>
+    <property key="ComponentRef">
+        <value xml:lang="en">Component ref.</value>
+        <value xml:lang="fr">Réf. du composant</value>
+    </property>
+    <property key="FinishedGood">
+        <value xml:lang="en">Finished Good</value>
+        <value xml:lang="fr">Produit Fini</value>
+    </property>
+    <property key="FinishedGoodName">
+        <value xml:lang="en">Finished good name</value>
+        <value xml:lang="fr">Nom du produit fini</value>
+    </property>
+    <property key="FinishedGoodRef">
+        <value xml:lang="en">Finished good ref.</value>
+        <value xml:lang="fr">Réf. du produit fini</value>
+    </property>
+    <property key="FO">
+        <value xml:lang="en">FO</value>
+        <value xml:lang="fr">OF</value>
+    </property>
     <property key="FO_Delayed">
         <value xml:lang="en">FO Delayed</value>
         <value xml:lang="fr">OF en retard</value>
@@ -59,9 +83,25 @@
         <value xml:lang="en">Estimated end of production</value>
         <value xml:lang="fr">Fin de production estimée</value>
     </property>
+    <property key="FollowupFabOrderId">
+        <value xml:lang="en">Fab Order Id</value>
+        <value xml:lang="fr">Ref de l'OF</value>
+    </property>
+    <property key="FollowupFabOrderName">
+        <value xml:lang="en">Fab order name</value>
+        <value xml:lang="fr">Nom de l'OF</value>
+    </property>
+    <property key="FollowupFabricationOrders">
+        <value xml:lang="en">Fabrication orders</value>
+        <value xml:lang="fr">Ordres de fabrication</value>
+    </property>
     <property key="FollowupFactory">
         <value xml:lang="en">Followup for Factory</value>
         <value xml:lang="fr">Suivi de production pour l'usine</value>
+    </property>
+    <property key="FollowupKeyinQuantityAndLotId">
+        <value xml:lang="en">Key in the quantity and the lot reference</value>
+        <value xml:lang="fr">Saisissez la quantité et la référence de lot</value>
     </property>
     <property key="FollowupLegalNotices">
         <value xml:lang="en">Legal notices</value>
@@ -74,18 +114,6 @@
     <property key="FollowupPortlet">
         <value xml:lang="en">Follow Up with Portlet</value>
         <value xml:lang="fr">Suivi de production par Portlet</value>
-    </property>
-    <property key="FollowupFabOrderId">
-        <value xml:lang="en">Fab Order Id</value>
-        <value xml:lang="fr">Ref de l'OF</value>
-    </property>
-    <property key="FollowupFabOrderName">
-        <value xml:lang="en">Fab order name</value>
-        <value xml:lang="fr">Nom de l'OF</value>
-    </property>
-    <property key="FollowupFabricationOrders">
-        <value xml:lang="en">Fabrication orders</value>
-        <value xml:lang="fr">Ordres de fabrication</value>
     </property>
     <property key="FollowupQuantityProduced">
         <value xml:lang="en">Produced quantity</value>
@@ -155,6 +183,10 @@
         <value xml:lang="en">Task unable to start</value>
         <value xml:lang="fr">Impossible de démarrer l'opération</value>
     </property>
+    <property key="FollowupTaskUnableToStop">
+        <value xml:lang="en">Task unable to stop</value>
+        <value xml:lang="fr">Impossible d'arrêter l'opération</value>
+    </property>
     <property key="FollowupViewPermissionError">
         <value xml:lang="en">You are not allowed to view this page.</value>
         <value xml:lang="fr">Vous n'êtes pas autorisé à visualiser cette page.</value>
@@ -163,6 +195,14 @@
     <property key="More">
         <value xml:lang="en">More...</value>
         <value xml:lang="fr">Plus...</value>
+    </property>
+    <property key="OfComponent">
+        <value xml:lang="en">of component</value>
+        <value xml:lang="fr">du composant</value>
+    </property>
+    <property key="OfFinishedGood">
+        <value xml:lang="en">of finished good</value>
+        <value xml:lang="fr">du produit fini</value>
     </property>
     <property key="PageTitleFollowupRoutingTask">
         <value xml:lang="en">Follow-up of Task</value>
@@ -183,6 +223,10 @@
     <property key="PageTitleSelectFabOrder">
         <value xml:lang="en">Select Fabrication Order</value>
         <value xml:lang="fr">Sélection de l'Ordre de Fabrication</value>
+    </property>
+    <property key="RawMaterial">
+        <value xml:lang="en">Raw Material</value>
+        <value xml:lang="fr">Matière Première</value>
     </property>
     
 </resource>

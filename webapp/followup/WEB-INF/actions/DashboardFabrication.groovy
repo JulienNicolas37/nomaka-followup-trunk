@@ -41,8 +41,6 @@ nbFabOrdersReady = 0;
 fabOrders = delegator.findList("WorkEffortFabOrdersView", null, null, UtilMisc.toList("estimatedCompletionDate ASC"), null, false);
 
 for (fabOrder in fabOrders) {
-	Debug.logInfo("FabOrder.estimatedCompletionDate:"+fabOrder.estimatedCompletionDate,"");
-
 	fabOrderShortDescript=(String) fabOrder.workEffortName;
 	if (fabOrderShortDescript.length()>(OFNameMax)) {
 		fabOrderShortDescript=fabOrderShortDescript.substring(0,OFNameMax);

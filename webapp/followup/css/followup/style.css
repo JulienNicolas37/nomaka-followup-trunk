@@ -105,7 +105,7 @@ body.login {
   transform: translateY(-50%);
   opacity: 0;
 }
-#popup-legal-notices-background #popup-legal-notices #content-popup {
+#popup-legal-notices-background #popup-legal-notices #content-legal-notices-popup {
   padding: 30px;
   width: 100%;
   -webkit-border-radius: 5px;
@@ -116,18 +116,18 @@ body.login {
   z-index: 1;
   position: relative;
 }
-#popup-legal-notices-background #popup-legal-notices #content-popup h3 {
+#popup-legal-notices-background #popup-legal-notices #content-legal-notices-popup h3 {
   margin: 10px 0 30px 0;
   font-family: 'robotoregular', sans-serif;
   font-weight: normal;
   font-size: 1.5em;
 }
-#popup-legal-notices-background #popup-legal-notices #content-popup h4 {
+#popup-legal-notices-background #popup-legal-notices #content-legal-notices-popup h4 {
   font-family: 'robotothin', sans-serif;
   font-weight: normal;
   font-size: 1.1em;
 }
-#popup-legal-notices-background #popup-legal-notices #content-popup a#btn-close-popup {
+#popup-legal-notices-background #popup-legal-notices #content-legal-notices-popup a#btn-close-legal-notices-popup {
   display: block;
   width: 40px;
   height: 38px;
@@ -157,6 +157,187 @@ body.login {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+/* @end */
+/* @group Ask for quantity */
+#popup-ask-for-quantity-background {
+/*   position: relative; */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 2;
+  pointer-events: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: 'robotothin', sans-serif;
+  font-weight: normal;
+  font-size: 1em;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 0;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup {
+  padding: 30px;
+  width: 100%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #2a2a2a;
+  color: #ffffff;
+  z-index: 1;
+  position: relative;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup #product-type-indicator {
+  position: relative;
+  vertical-align: middle;
+  margin-right: auto;
+  margin-left: auto;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup  #product-type-indicator label {
+  display: inline-block;
+  width: 400px;
+  height: 100px;
+  text-transform: uppercase;
+  font-family: 'robotoregular', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  float: left;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup a#img-content-component {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: url('../../images/followup/icon-bloc-puzzle.png') no-repeat left top;
+  float: left;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup a#img-content-fab-order {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: url('../../images/followup/icon-cube-puzzle.png') no-repeat left top;
+  float: left;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup h3 {
+  margin: 10px 0 30px 0;
+  font-family: 'robotoregular', sans-serif;
+  font-weight: normal;
+  font-size: 1.5em;
+  clear: left;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup label {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  margin-right: 25px;
+  font-family: 'robotothin', sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup p.controls {
+  margin: 30px;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup input.uniform-input {
+  font-family: 'robotoregular', sans-serif;
+  font-weight: normal;
+  font-size: 1.6em;
+  color: #2a2a2a;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup a#btn-close-ask-for-quantity-popup {
+  display: block;
+  width: 40px;
+  height: 38px;
+  background: url('../../images/followup/btn/btn-close-white.png') no-repeat left top;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup a#btn-validate-ask-for-quantity-popup {
+  margin: 4px auto;
+  background: #75d11b url('../../images/followup/btn/picto-stop-btn.png') no-repeat center 23px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup a#btn-next-component-popup {
+  margin: 4px auto;
+  background: #feb316 url('../../images/followup/btn/picto-next-btn.png') no-repeat center 23px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup a#btn-add-component-popup {
+  margin: 4px auto;
+  background: #feb316 url('../../images/followup/btn/picto-add-btn.png') no-repeat center 23px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 30px;
+  right: 150px;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup a {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  position: relative;
+  text-decoration: none;
+  text-transform: none;
+  color: #ffffff;
+}
+#popup-ask-for-quantity-background #popup-ask-for-quantity #content-popup a .txt-btn {
+  display: block;
+  width: 100%;
+  top: 60px;
+  left: 0;
+  position: absolute;
+  font-family: 'robotoregular', sans-serif;
+  font-weight: normal;
+  font-size: 1.1em;
+}
+
+#popup-ask-for-quantity-background #popup-ask-for-quantity .line-shadow {
+  z-index: 0;
+  display: block;
+  width: 99%;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -o-transform: rotate(0.3deg);
+  -webkit-transform: rotate(0.3deg);
+  -moz-transform: rotate(0.3deg);
+  -ms-transform: rotate(0.3deg);
+  transform: rotate(0.3deg);
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
 /* @end */
 /* @group Sidebar */
 #sidebar {
@@ -239,7 +420,7 @@ body.login {
   vertical-align: middle;
   display: inline-block;
   background: #2a2a2a;
-  width: 95px;
+  width: 100px;
   padding: 3px 4px 4px 4px;
   margin-top: 1px;
   -webkit-border-radius: 4px;
@@ -948,19 +1129,19 @@ body.login {
   color: #ffffff;
 }
 #block-content #content ul.elements-list li.list-line .block-bottom .block-btn a.btn-pause {
-  margin: 4px auto;
+  margin: 20px auto;
   background: #1f96ce url('../../images/followup/btn/picto-pause-btn.png') no-repeat center 27px;
 }
 #block-content #content ul.elements-list li.list-line .block-bottom .block-btn a.btn-stop {
-  margin: 4px auto;
+  margin: 20px auto;
   background: #75d11b url('../../images/followup/btn/picto-stop-btn.png') no-repeat center 23px;
 }
 #block-content #content ul.elements-list li.list-line .block-bottom .block-btn a.btn-start {
-  margin: 4px auto;
+  margin: 20px auto;
   background: #ba2def url('../../images/followup/btn/picto-start-btn.png') no-repeat center 23px;
 }
 #block-content #content ul.elements-list li.list-line .block-bottom .block-btn a.btn-resume {
-  margin: 4px auto;
+  margin: 20px auto;
   background: #75d11b url('../../images/followup/btn/picto-start-btn.png') no-repeat center 23px;
 }
 #block-content #content ul.elements-list li.list-line .block-bottom .block-btn a .txt-btn {
@@ -1465,11 +1646,11 @@ body.login {
 }
 #block-content #content ul.elements-list li.list-line.selec .block-bottom ul.elements-list-cont li.list-line-cont .block-bottom .block-btn a.btn-start {
   margin: 4px auto;
-  background: #75d11b url('../../images/followup/btn/picto-stop-btn.png') no-repeat center 23px;
+  background: #ba2def url('../../images/followup/btn/picto-start-btn.png') no-repeat center 23px;
 }
 #block-content #content ul.elements-list li.list-line.selec .block-bottom ul.elements-list-cont li.list-line-cont .block-bottom .block-btn a.btn-resume {
   margin: 4px auto;
-  background: #75d11b url('../../images/followup/btn/picto-stop-btn.png') no-repeat center 23px;
+  background: #75d11b url('../../images/followup/btn/picto-start-btn.png') no-repeat center 23px;
 }
 #block-content #content ul.elements-list li.list-line.selec .block-bottom ul.elements-list-cont li.list-line-cont .block-bottom .block-btn a .txt-btn {
   display: block;

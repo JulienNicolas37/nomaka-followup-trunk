@@ -89,12 +89,14 @@
                 <script location="component://followup/webapp/followup/WEB-INF/actions/LoadAvailableFabricationOrderAndTasks.groovy"/>
     
                 <set field="layoutSettings.styleSheets[]" value="/followup/css/followup/style.css" global="true"/>
+                <set field="layoutSettings.styleSheets[]" value="/followup/css/libs/uniform.default.css" global="true"/>
                 <!--the above line is used to access the newly added style.css inside the css folder-->
 
                 <set field="layoutSettings.javaScripts []" value="/followup/js/libs/jquery-1.8.0.min.js" global="true"/>
                 <set field="layoutSettings.javaScripts []" value="/followup/js/libs/jquery.peity.js" global="true"/>
                 <set field="layoutSettings.javaScripts []" value="/followup/js/libs/jquery.imageload.js" global="true"/>
                 <set field="layoutSettings.javaScripts []" value="/followup/js/libs/jquery.spriteanim.js" global="true"/>
+                <set field="layoutSettings.javaScripts []" value="/followup/js/libs/jquery.uniform.js" global="true"/>
                 <set field="layoutSettings.javaScripts []" value="/followup/js/libs/fastclick.js" global="true"/>
                 <set field="layoutSettings.javaScripts []" value="/followup/js/libs/tweens/TweenMax.min.js" global="true"/>
                 <set field="layoutSettings.javaScripts []" value="/followup/js/libs/tweens/utils/Draggable.min.js" global="true"/>

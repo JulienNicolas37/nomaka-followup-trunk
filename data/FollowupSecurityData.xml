@@ -5,6 +5,7 @@
     <SecurityPermission description="Update operations in the Followup Component." permissionId="FOLLOWUP_UPDATE"/>
     <SecurityPermission description="Delete operations in the Followup Component." permissionId="FOLLOWUP_DELETE"/>
     <SecurityPermission description="ALL operations in the Followup Component." permissionId="FOLLOWUP_ADMIN"/>
+    <SecurityGroupPermission groupId="SUPER" permissionId="FOLLOWUP_ADMIN"/>
     <SecurityGroupPermission groupId="FULLADMIN" permissionId="FOLLOWUP_ADMIN"/>
     <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FOLLOWUP_CREATE"/>
     <SecurityGroupPermission groupId="FLEXADMIN" permissionId="FOLLOWUP_DELETE"/>

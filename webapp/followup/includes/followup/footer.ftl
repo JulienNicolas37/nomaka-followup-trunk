@@ -17,15 +17,19 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-			<div id="sidebar">
-				<a href="#" class="btn-sidebar active" id="btn-faborder">${uiLabelMap.FollowupFabricationOrders}<span id="arrow-btn-faborder"></span><span class="shadow"></span></a>
-				<a href="#" class="btn-sidebar" id="btn-task">${uiLabelMap.FollowupTasks}<span id="arrow-btn-task"></span><div id="faborder-selec" class="mask">OF<span class="faborder-id-selec"></span><div id="btn-parent-faborder"></div></div><span class="shadow"></span></a>
-				<div id="block-bottom-sidebar">
-					<div class="logo"> </div>
-					<a href="#" id="btn-legal-notices">${uiLabelMap.FollowupLegalNotices}<span class="shadow"></span></a>
-				</div>
-			</div>
-			
-		</div>
-	</body>
+        <div id="sidebar">
+            <a href="#" class="btn-sidebar active" id="btn-faborder">${uiLabelMap.FollowupFabricationOrders}<span id="arrow-btn-faborder"></span><span class="shadow"></span></a>
+            <a href="#" class="btn-sidebar" id="btn-task">${uiLabelMap.FollowupTasks}<span id="arrow-btn-task"></span>
+              <div id="faborder-selec" class="mask">${uiLabelMap.FO}<span class="faborder-id-selec"></span>
+                  <div id="btn-parent-faborder"></div>
+              </div>
+              <span class="shadow"></span>
+            </a>
+            <div id="block-bottom-sidebar">
+                <div class="logo"> </div>
+                    <a href="#" id="btn-legal-notices">${uiLabelMap.FollowupLegalNotices}<span class="shadow"></span></a>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

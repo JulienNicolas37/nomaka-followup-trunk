@@ -81,6 +81,14 @@
         <security https="true" auth="true"/>
         <response name="success" type="view" value="followupPortlet"/>
     </request-map>
+    <request-map uri="stopLastTask">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="stopLastTask"/>
+        <response name="success" type="request" value="json"/>
+        <response name="error" type="request" value="json"/>
+    </request-map>
+
+
     <request-map uri="LookupFabricationOrder"><security https="true" auth="true"/><response name="success" type="view" value="LookupFabricationOrder"/></request-map>
 
     <request-map uri="dashboardFabrication"><security https="true" auth="true"/><response name="success" type="view" value="dashboardFabricationScreen"/></request-map>

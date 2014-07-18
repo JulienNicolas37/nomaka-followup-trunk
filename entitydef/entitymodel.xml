@@ -57,32 +57,6 @@
         </entity-condition>
     </view-entity>
 
-    <view-entity entity-name="AvailableFabOrderAndTasksView"
-            package-name="org.ofbiz.workeffort.workeffort"
-            title="Available Fabrication orders and tasks Entity">
-        <member-entity entity-alias="PR" entity-name="WorkEffort"/>
-        <member-entity entity-alias="T" entity-name="WorkEffort"/>
-        <alias entity-alias="PR" name="workEffortId"/>
-        <alias entity-alias="PR" name="workEffortName"/>
-        <alias entity-alias="PR" name="currentStatusId"/>
-        <alias entity-alias="T" name="workEffortId"/>
-        <alias entity-alias="T" name="workEffortParentId"/>
-        <alias entity-alias="T" name="workEffortName"/>
-        <alias entity-alias="T" name="currentStatusId"/>
-        <view-link rel-entity-alias="T" entity-alias="PR" rel-optional="true">
-            <key-map field-name="workEffortId" rel-field-name="workEffortParentId"/>
-        </view-link>
-<!--         <entity-condition> -->
-<!--             <condition-list> -->
-<!--                 <condition-expr entity-alias="PR" field-name="workEffortTypeId" operator="equals" value="PROD_ORDER_HEADER"/> -->
-<!--                 <condition-list combine="or"> -->
-<!--                     <condition-expr entity-alias="PR" field-name="currentStatusId" operator="equals" value="PRUN_DOC_PRINTED"/> -->
-<!--                     <condition-expr entity-alias="PR" field-name="currentStatusId" operator="equals" value="PRUN_RUNNING"/> -->
-<!--                 </condition-list> -->
-<!--             </condition-list> -->
-<!--         </entity-condition> -->
-    </view-entity>
-    
     <view-entity entity-name="WorkEffortFabOrdersView"
             package-name="org.ofbiz.workeffort.workeffort"
             title="Work Effort available to production Entity">
